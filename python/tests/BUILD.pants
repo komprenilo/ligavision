@@ -1,10 +1,8 @@
 python_tests(name = "tests",
-    sources=["**/*.py", "!**/conftest.py"],
+    sources=["**/*.py"],
     dependencies=[
         "//python/ligavision:sources",
     ],
     extra_env_vars=["ROOTDIR"],
     resolve="spark_3_2_1",
-    skip_pylint=True,
-    skip_mypy=True,
 )

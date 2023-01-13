@@ -28,8 +28,8 @@ from pyspark.sql.functions import col, concat, lit
 from pyspark.sql.types import ArrayType, StructField, StructType
 
 # Rikai
-from rikai.numpy import view
-from rikai.spark.functions import (
+from liga.numpy import view
+from ligavision.spark.functions import (
     area,
     box2d,
     box2d_from_center,
@@ -42,9 +42,9 @@ from rikai.spark.functions import (
     video_metadata,
     video_to_images,
 )
-from rikai.spark.types.geometry import Box2dType
-from rikai.spark.types.vision import ImageType
-from rikai.types import Box2d, Image, Segment, VideoStream, YouTubeVideo
+from ligavision.spark.types.geometry import Box2dType
+from ligavision.spark.types.vision import ImageType
+from ligavision.types import Box2d, Image, Segment, VideoStream, YouTubeVideo
 
 
 def test_init(spark):
