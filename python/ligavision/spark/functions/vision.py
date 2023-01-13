@@ -32,19 +32,19 @@ from pyspark.sql.types import (
     StructType,
 )
 
-# Rikai
-from rikai.io import copy as _copy
-from rikai.logging import logger
-from rikai.numpy import ndarray
-from rikai.spark.types.vision import ImageType
-from rikai.types.geometry import Box2d
-from rikai.types.video import (
+# Liga
+from liga.io import copy as _copy
+from liga.logging import logger
+from liga.numpy import ndarray
+from ligavision.spark.types.vision import ImageType
+from ligavision.types.geometry import Box2d
+from ligavision.types.video import (
     Segment,
     SingleFrameSampler,
     VideoStream,
     YouTubeVideo,
 )
-from rikai.types.vision import Image
+from ligavision.types.vision import Image
 
 __all__ = [
     "crop",

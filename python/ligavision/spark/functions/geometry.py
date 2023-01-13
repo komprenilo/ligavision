@@ -20,8 +20,8 @@ from pyspark.sql.types import FloatType
 
 # Rikai
 from liga.logging import logger
-from liga.spark.types.geometry import Box2dType
-from liga.types.geometry import Box2d
+from ligavision.spark.types.geometry import Box2dType
+from ligavision.types.geometry import Box2d
 
 __all__ = ["area", "box2d", "box2d_from_center", "box2d_from_top_left"]
 

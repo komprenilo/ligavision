@@ -19,7 +19,7 @@ from typing import Sequence
 
 import numpy as np
 
-from rikai.types import Box2d
+from ligavision.types import Box2d
 
 
 def iou_matrix_naive_version(

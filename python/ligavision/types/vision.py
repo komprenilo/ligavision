@@ -30,13 +30,13 @@ import numpy as np
 from PIL import Image as PILImage
 
 # Rikai
-from rikai.conf import options
-from rikai.internal.uri_utils import normalize_uri
-from rikai.io import copy, open_output_stream
-from rikai.mixin import Asset, Displayable, Drawable, ToDict, ToNumpy, ToPIL
-from rikai.spark.types import ImageType
-from rikai.types.geometry import Box2d
-from rikai.viz import Draw, PILRenderer
+from liga.conf import options
+from liga.internal.uri_utils import normalize_uri
+from liga.io import copy, open_output_stream
+from liga.mixin import Asset, Displayable, Drawable, ToDict, ToNumpy, ToPIL
+from ligavision.spark.types import ImageType
+from ligavision.types.geometry import Box2d
+from ligavision.viz import Draw, PILRenderer
 
 __all__ = ["Image"]
 

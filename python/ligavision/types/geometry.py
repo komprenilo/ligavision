@@ -25,15 +25,15 @@ import numpy as np
 from pandas import get_option
 from PIL import Image, ImageDraw
 
-from rikai import CONF_RIKAI_VIZ_COLOR
-from rikai.mixin import Drawable, ToDict, ToNumpy
-from rikai.spark.types.geometry import (
+from ligavision import CONF_RIKAI_VIZ_COLOR
+from liga.mixin import Drawable, ToDict, ToNumpy
+from ligavision.spark.types.geometry import (
     Box2dType,
     Box3dType,
     MaskType,
     PointType,
 )
-from rikai.types import rle
+from ligavision.types import rle
 
 __all__ = ["Point", "Box3d", "Box2d", "Mask"]
 

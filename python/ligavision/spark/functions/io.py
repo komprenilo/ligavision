@@ -19,7 +19,7 @@ from pyspark.sql.functions import udf
 from pyspark.sql.types import StringType
 
 # Rikai
-from rikai.io import copy as _copy
+from liga.io import copy as _copy
 
 __all__ = ["copy"]
 

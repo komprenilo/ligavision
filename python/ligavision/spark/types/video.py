@@ -42,7 +42,7 @@ class VideoStreamType(UserDefinedType):
 
     @classmethod
     def module(cls) -> str:
-        return "rikai.spark.types"
+        return "ligavision.spark.types"
 
     @classmethod
     def scalaUDT(cls) -> str:

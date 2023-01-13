@@ -45,7 +45,7 @@ class ImageType(UserDefinedType):
 
     @classmethod
     def module(cls) -> str:
-        return "rikai.spark.types.vision"
+        return "ligavision.spark.types.vision"
 
     @classmethod
     def scalaUDT(cls) -> str:

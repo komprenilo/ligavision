@@ -15,8 +15,8 @@
 """Video related types and utils"""
 from abc import ABC, abstractmethod
 
-from rikai.mixin import Displayable, ToDict
-from rikai.spark.types import SegmentType, VideoStreamType, YouTubeVideoType
+from liga.mixin import Displayable, ToDict
+from ligavision.spark.types import SegmentType, VideoStreamType, YouTubeVideoType
 
 __all__ = [
     "YouTubeVideo",

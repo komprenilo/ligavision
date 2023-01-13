@@ -30,8 +30,8 @@ from pyspark.sql.types import (
     UserDefinedType,
 )
 
-# Rikai
-from rikai.logging import logger
+# Liga
+from liga.logging import logger
 
 __all__ = ["PointType", "Box3dType", "Box2dType", "MaskType"]
 
@@ -52,13 +52,13 @@ class Box2dType(UserDefinedType):
 
     @classmethod
     def module(cls) -> str:
-        return "rikai.spark.types.geometry"
+        return "ligavision.spark.types.geometry"
 
     @classmethod
     def scalaUDT(cls) -> str:
         return "org.apache.spark.sql.rikai.Box2dType"
 
-    def serialize(self, obj: "rikai.types.geometry.Box2d"):
+    def serialize(self, obj: "ligavision.types.geometry.Box2d"):
         """Serialize a Box2d into a PySpark Row"""
         return Row(
             xmin=obj.xmin,
