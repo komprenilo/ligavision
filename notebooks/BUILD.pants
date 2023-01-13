@@ -1,0 +1,17 @@
+python_requirement(
+    name="requirements",
+    requirements=[
+        "jupyterlab",
+        "matplotlib",
+    ],
+    resolve="test",
+)
+
+python_sources(
+    name="ligavision",
+    sources=["lab.py"],
+    dependencies=[
+        "//python/ligavision:sources@resolve=test",
+    ],
+    resolve="test",
+)

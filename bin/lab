@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -x
+
+ROOTDIR=`pwd` ./pants run notebooks/lab.py:ligavision -- --notebook-dir notebooks
