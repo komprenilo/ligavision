@@ -44,8 +44,8 @@ def assert_count_equal(first: Iterable, second: Iterable, msg=None):
 
 def _check_roundtrip(spark: SparkSession, df: DataFrame, tmp_path: Path):
     df.show()
-    df.write.mode("overwrite").format("rikai").save(str(tmp_path))
-    actual_df = spark.read.format("rikai").load(str(tmp_path))
+    df.write.mode("overwrite").format("parquet").save(str(tmp_path))
+    actual_df = spark.read.format("parquet").load(str(tmp_path))
     assert_count_equal(df.collect(), actual_df.collect())
 
 

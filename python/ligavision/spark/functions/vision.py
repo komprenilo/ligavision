@@ -138,7 +138,7 @@ def numpy_to_image(
 
     See Also
     --------
-    :py:meth:`rikai.types.vision.Image.from_array`
+    :py:meth:`ligavision.types.vision.Image.from_array`
     """  # noqa: E501
     return Image.from_array(array, uri, format=format, **kwargs)
 

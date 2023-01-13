@@ -34,7 +34,7 @@ class Style(Drawable):
     --------
 
     >>> from ligavision.viz import Style
-    >>> from rikai.types import Box2d, Image
+    >>> from ligavision.types import Box2d, Image
     ...
     >>> img = Image(uri="s3://....")
     >>> bbox1, bbox2 = Box2d(1, 2, 3, 4), Box2d(3, 4, 5, 6)

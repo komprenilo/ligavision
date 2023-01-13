@@ -67,8 +67,8 @@ class Box2dType(UserDefinedType):
             ymax=obj.ymax,
         )
 
-    def deserialize(self, datum: Row) -> "rikai.types.geometry.Box2d":
-        from rikai.types.geometry import Box2d
+    def deserialize(self, datum: Row) -> "ligavision.types.geometry.Box2d":
+        from ligavision.types.geometry import Box2d
 
         if len(datum) != 4:
             logger.error(f"Deserialize box2d: not sufficient data: {datum}")
@@ -80,7 +80,7 @@ class Box2dType(UserDefinedType):
 
 
 class PointType(UserDefinedType):
-    """Spark UDT for :py:class:`rikai.types.geometry.Point` class."""
+    """Spark UDT for :py:class:`ligavision.types.geometry.Point` class."""
 
     @classmethod
     def sqlType(cls) -> StructType:
@@ -105,7 +105,7 @@ class PointType(UserDefinedType):
         return Row(x=obj.x, y=obj.y, z=obj.z)
 
     def deserialize(self, datum: Row) -> "Point":
-        from rikai.types.geometry import Point
+        from ligavision.types.geometry import Point
 
         if len(datum) < 3:
             logger.error(f"Deserialize Point: not sufficient data: {datum}")
@@ -117,7 +117,7 @@ class PointType(UserDefinedType):
 
 
 class Box3dType(UserDefinedType):
-    """Spark UDT for :py:class:`~rikai.types.geometry.Box3d` class."""
+    """Spark UDT for :py:class:`~ligavision.types.geometry.Box3d` class."""
 
     @classmethod
     def sqlType(cls) -> StructType:
@@ -144,7 +144,7 @@ class Box3dType(UserDefinedType):
         return Row(obj.center, obj.length, obj.width, obj.height, obj.heading)
 
     def deserialize(self, datum: Row) -> "Box3d":
-        from rikai.types.geometry import Box3d
+        from ligavision.types.geometry import Box3d
 
         if len(datum) < 5:
             logger.error(f"Deserialize Box3d: not sufficient data: {datum}")
@@ -182,7 +182,7 @@ class MaskType(UserDefinedType):
         return "org.apache.spark.sql.rikai.MaskType"
 
     def serialize(self, mask: "Mask") -> Row:
-        from rikai.types.geometry import Mask
+        from ligavision.types.geometry import Mask
 
         mask_type = mask.type.value
         if mask.type == Mask.Type.RLE or mask.type == Mask.Type.COCO_RLE:
@@ -205,7 +205,7 @@ class MaskType(UserDefinedType):
             raise ValueError(f"Unrecognized mask type: {mask.type}")
 
     def deserialize(self, datum: Row) -> "Mask":
-        from rikai.types.geometry import Mask
+        from ligavision.types.geometry import Mask
 
         mask_type = Mask.Type(datum["type"])
         height = datum["height"]

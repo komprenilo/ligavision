@@ -53,7 +53,7 @@ class VideoStreamType(UserDefinedType):
         return (obj.uri,)
 
     def deserialize(self, datum) -> "VideoStream":
-        from rikai.types import (
+        from ligavision.types import (
             VideoStream,
         )  # pylint: disable=import-outside-toplevel
 
@@ -83,7 +83,7 @@ class YouTubeVideoType(UserDefinedType):
 
     @classmethod
     def module(cls) -> str:
-        return "rikai.spark.types"
+        return "ligavision.spark.types"
 
     @classmethod
     def scalaUDT(cls) -> str:
@@ -94,7 +94,7 @@ class YouTubeVideoType(UserDefinedType):
         return (obj.vid,)
 
     def deserialize(self, datum) -> "YouTubeVideo":
-        from rikai.types import (
+        from ligavision.types import (
             YouTubeVideo,
         )  # pylint: disable=import-outside-toplevel
 
@@ -138,7 +138,7 @@ class SegmentType(UserDefinedType):
         return (obj.start_fno, obj.end_fno)
 
     def deserialize(self, datum) -> "Segment":
-        from rikai.types import (
+        from ligavision.types import (
             Segment,
         )  # pylint: disable=import-outside-toplevel
 

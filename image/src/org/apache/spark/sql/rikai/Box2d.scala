@@ -127,7 +127,7 @@ class Box2dType extends UserDefinedType[Box2d] {
       )
     )
 
-  override def pyUDT: String = "rikai.spark.types.geometry.Box2dType"
+  override def pyUDT: String = "ligavision.spark.types.geometry.Box2dType"
 
   override def serialize(obj: Box2d): Any = {
     val row = new GenericInternalRow(4)

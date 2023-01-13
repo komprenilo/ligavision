@@ -525,7 +525,7 @@ class Mask(ToNumpy, ToDict, Drawable):
     .. code-block:: python
 
         from pycocotools.coco import COCO
-        from rikai.types import Mask
+        from ligavision.types import Mask
 
         coco = COCO("instance_train2017.json")
         ann = coco.loadAnns(ann_id)

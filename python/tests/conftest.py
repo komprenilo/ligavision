@@ -1,4 +1,5 @@
 import pytest
+from pathlib import Path
 
 from pyspark.sql import SparkSession
 
@@ -20,3 +21,9 @@ def two_flickr_images() -> list:
 def spark(tmp_path_factory) -> SparkSession:
     warehouse_path = tmp_path_factory.mktemp("warehouse")
     return init_spark(jar_type="local")
+
+@pytest.fixture
+def asset_path() -> Path:
+    import os
+    project_path = os.environ.get("ROOTDIR")
+    return Path(project_path) / "video" / "test" / "resources" / "assets"

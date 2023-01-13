@@ -17,12 +17,12 @@ enable_resolves = true
 
 [python.resolves]
   spark_3_2_1 = "3rdparty/python/spark_3_2_1.lock"
+  test = "3rdparty/python/test.lock"
 
 [pytest]
   version = "pytest==7.0.1"
   extra_requirements.add = [
     "pytest-timeout",
-    "requests-mock",
   ]
   lockfile = "3rdparty/python/pytest.lock"
 

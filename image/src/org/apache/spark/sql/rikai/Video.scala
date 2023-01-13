@@ -41,7 +41,7 @@ class YouTubeVideoType extends UserDefinedType[YouTubeVideo] {
       )
     )
 
-  override def pyUDT: String = "rikai.spark.types.YouTubeVideoType"
+  override def pyUDT: String = "ligavision.spark.types.YouTubeVideoType"
 
   override def serialize(obj: YouTubeVideo): Any = {
     val row = new GenericInternalRow(1)
@@ -82,7 +82,7 @@ class VideoStreamType extends UserDefinedType[VideoStream] {
       )
     )
 
-  override def pyUDT: String = "rikai.spark.types.VideoStreamType"
+  override def pyUDT: String = "ligavision.spark.types.VideoStreamType"
 
   override def serialize(obj: VideoStream): Any = {
     val row = new GenericInternalRow(1);
@@ -133,7 +133,7 @@ class SegmentType extends UserDefinedType[Segment] {
       )
     )
 
-  override def pyUDT: String = "rikai.spark.types.SegmentType"
+  override def pyUDT: String = "ligavision.spark.types.SegmentType"
 
   override def serialize(obj: Segment): Any = {
     val row = new GenericInternalRow(2)
