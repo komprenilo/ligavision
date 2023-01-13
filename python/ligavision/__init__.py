@@ -103,15 +103,10 @@ def init_spark(jar_type="github", scala_version: str = "2.12"):
     liga_image_uri = _liga_vision_jar("image", jar_type, scala_version)
     conf = dict(
         [
-            {
+            (
                 "spark.jars",
-                ",".join(
-                    [
-                        liga_uri,
-                        liga_image_uri
-                    ]
-                )
-            }
+                ",".join([liga_uri,liga_image_uri])
+            )
         ]
     )
     return liga_init_spark(conf=conf)
