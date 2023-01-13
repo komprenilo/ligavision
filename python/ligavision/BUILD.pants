@@ -15,7 +15,7 @@ python_requirement(
 python_requirement(
     name="requirements",
     requirements=[
-        "liga==0.2.0.dev7",
+        "liga==0.2.0.dev8",
         "Pillow",
     ],
     resolve=parametrize("spark_3_2_1", "test"),

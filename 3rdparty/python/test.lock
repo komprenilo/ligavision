@@ -12,7 +12,7 @@
 //     "Pillow",
 //     "ipython!=8.0.0,>=7.31.1",
 //     "jupyterlab",
-//     "liga==0.2.0.dev7",
+//     "liga==0.2.0.dev8",
 //     "matplotlib",
 //     "pyspark==3.2.1"
 //   ],
@@ -2323,13 +2323,13 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "cea0afe826f034174685ae6289c388a45721bd861e79fb258e8e8bdc97e09a6b",
-              "url": "https://files.pythonhosted.org/packages/fb/e8/0a53c1b47e23416c297d1644eb983d257b3189e34a9f5ab207c665b60d1a/liga-0.2.0.dev7-py3-none-any.whl"
+              "hash": "746126e56c4fe876bf845e485a5ada715ec76aed690f9f359d214e3863b47fad",
+              "url": "https://files.pythonhosted.org/packages/32/02/4c961a399d631eaa65bc15ba82d764a5d96637e01f3fbbb45087dcfbd649/liga-0.2.0.dev8-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "6d8f35a4544466838f3dee1cde57b92ae23b0719d51f3210211aaa5171df2f14",
-              "url": "https://files.pythonhosted.org/packages/43/1c/86dc9847cad9bb30f4f1c2c5e665d1f75f222b112bb57f8a307f4f11f9bf/liga-0.2.0.dev7.tar.gz"
+              "hash": "30b5267c6e3b72d2d4f4140fd3f6215ba85002f3b7b92f442835a538df71b06b",
+              "url": "https://files.pythonhosted.org/packages/38/c9/bd384050267a7f5801865d73835551429b2c8f852582b46431edddff3ff7/liga-0.2.0.dev8.tar.gz"
             }
           ],
           "project_name": "liga",
@@ -2348,7 +2348,7 @@
             "scikit-learn"
           ],
           "requires_python": "<3.10,>=3.8",
-          "version": "0.2.dev7"
+          "version": "0.2.dev8"
         },
         {
           "artifacts": [
@@ -5030,7 +5030,7 @@
     "Pillow",
     "ipython!=8.0.0,>=7.31.1",
     "jupyterlab",
-    "liga==0.2.0.dev7",
+    "liga==0.2.0.dev8",
     "matplotlib",
     "pyspark==3.2.1"
   ],
