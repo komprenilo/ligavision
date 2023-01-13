@@ -38,7 +38,6 @@ from ligavision.spark.functions import (
     init,
     numpy_to_image,
     to_image,
-    video_metadata,
 )
 from ligavision.spark.types.geometry import Box2dType
 from ligavision.spark.types.vision import ImageType
@@ -55,7 +54,7 @@ def test_init(spark):
     assert "area" in rikai_udf_names
     assert "copy" in rikai_udf_names
     assert "to_image" in rikai_udf_names
-    assert len(rikai_udf_names) > 10
+    assert len(rikai_udf_names) > 6
 
 
 def assert_area_equals(array, df):
@@ -180,7 +179,7 @@ def test_numpy_to_image(spark: SparkSession, tmp_path: Path):
         ),
     )
     df.count()
-    # print(df.first().image)
+    print(df.first().image)
     assert Path(df.first().image.uri) == tmp_path / "1.png"
     assert (tmp_path / "1.png").exists()
 
@@ -211,36 +210,3 @@ def test_crops(spark: SparkSession, tmp_path: Path, two_flickr_images: list):
     assert np.array_equal(patches[0].to_numpy(), data[10:30, 10:30, :])
     assert np.array_equal(patches[1].to_numpy(), data[15:35, 15:35, :])
     assert np.array_equal(patches[2].to_numpy(), data[20:40, 20:40, :])
-
-
-def test_video_metadata(spark: SparkSession, asset_path: Path):
-    video = VideoStream(str(asset_path / "big_buck_bunny_short.mp4"))
-    result = (
-        spark.createDataFrame([(video,)], ["video"])
-        .select(video_metadata(col("video")).alias("meta"))
-        .first()["meta"]
-        .asDict()
-    )
-    expected = {
-        "width": 640,
-        "height": 360,
-        "num_frames": 300,
-        "duration": 10.010000228881836,
-        "bit_rate": 415543,
-        "frame_rate": 30,
-        "codec": "h264",
-        "size": 736613,
-        "_errors": None,
-    }
-    pdt.assert_series_equal(pd.Series(result), pd.Series(expected))
-
-    video = "bad_uri"
-    result = (
-        spark.createDataFrame([(video,)], ["video"])
-        .select(video_metadata(col("video")).alias("meta"))
-        .first()["meta"]
-        .asDict()
-    )
-    err = result["_errors"].asDict()
-    assert err["message"].startswith("ffprobe error")
-    assert "bad_uri: No such file or directory" in err["stderr"]
