@@ -256,7 +256,7 @@ class Box2d(ToNumpy, Sequence, ToDict, Drawable):
         x_scale, y_scale = self._verified_scale(scale)
         return self / (1.0 / x_scale, 1.0 / y_scale)
 
-    def _render(self, render: "rikai.viz.Renderer", **kwargs) -> None:
+    def _render(self, render: "ligavision.viz.Renderer", **kwargs) -> None:
         render.rectangle(self, **kwargs)
 
     def to_numpy(self) -> np.ndarray:
@@ -396,10 +396,10 @@ class Box2d(ToNumpy, Sequence, ToDict, Drawable):
 
     def with_label(
         self, text: str, color: str = get_option(CONF_RIKAI_VIZ_COLOR)
-    ) -> "rikai.viz.Draw":
-        from rikai.viz import Draw, Text
+    ) -> "ligavision.viz.Draw":
+        from ligavision.viz import Draw, Text
 
-        """return a `rikai.viz.Draw`, which contains a label,
+        """return a `ligavision.viz.Draw`, which contains a label,
         used as a convenient tool to give a box a label
         in visualization.
         Parameters
@@ -412,7 +412,7 @@ class Box2d(ToNumpy, Sequence, ToDict, Drawable):
         Returns
         -------
         box_with_label
-            rikai.viz.Draw
+            ligavision.viz.Draw
         """
         # TODO add font size
         return Draw(

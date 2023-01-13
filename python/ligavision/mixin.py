@@ -72,11 +72,11 @@ class Drawable(ABC):
     """Mixin for a class that is drawable"""
 
     @abstractmethod
-    def _render(self, render: "rikai.viz.Renderer", **kwargs) -> None:
+    def _render(self, render: "ligavision.viz.Renderer", **kwargs) -> None:
         """Render the object using render."""
 
-    def __matmul__(self, style: Union[dict, "rikai.viz.Style"]) -> Drawable:
-        from rikai.viz import Style
+    def __matmul__(self, style: Union[dict, "ligavision.viz.Style"]) -> Drawable:
+        from ligavision.viz import Style
 
         if not isinstance(style, (Mapping, Style)):
             raise ValueError(

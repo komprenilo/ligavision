@@ -33,7 +33,7 @@ class Style(Drawable):
     Examples
     --------
 
-    >>> from rikai.viz import Style
+    >>> from ligavision.viz import Style
     >>> from rikai.types import Box2d, Image
     ...
     >>> img = Image(uri="s3://....")
@@ -109,7 +109,7 @@ class Draw(Displayable, ABC):
     def __or__(self, other: Union[Drawable, list[Drawable]]) -> Draw:
         return self.draw(other)
 
-    def __matmul__(self, style: Union[dict, "rikai.viz.Style"]) -> Draw:
+    def __matmul__(self, style: Union[dict, "ligavision.viz.Style"]) -> Draw:
         new_layers = [x @ style for x in self.layers]
         return Draw(new_layers)
 
