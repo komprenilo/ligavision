@@ -37,10 +37,8 @@ from ligavision.spark.functions import (
     image_copy,
     init,
     numpy_to_image,
-    spectrogram_image,
     to_image,
     video_metadata,
-    video_to_images,
 )
 from ligavision.spark.types.geometry import Box2dType
 from ligavision.spark.types.vision import ImageType
@@ -213,62 +211,6 @@ def test_crops(spark: SparkSession, tmp_path: Path, two_flickr_images: list):
     assert np.array_equal(patches[0].to_numpy(), data[10:30, 10:30, :])
     assert np.array_equal(patches[1].to_numpy(), data[15:35, 15:35, :])
     assert np.array_equal(patches[2].to_numpy(), data[20:40, 20:40, :])
-
-
-@pytest.mark.timeout(30)
-@pytest.mark.webtest
-def test_video_to_images(
-    spark: SparkSession, tmp_path: Path, asset_path: Path
-):
-    """Test extract video frames from YouTubeVideo/VideoStream types
-    into list of Image assets.
-    """
-    sample_rate = 2
-    max_samples = 10
-    video = VideoStream(str(asset_path / "big_buck_bunny_short.mp4"))
-    df1 = spark.createDataFrame(
-        [(video, Segment(0, 20))], ["video", "segment"]
-    )
-    output_dir = tmp_path / "videostream_test"
-    output_dir.mkdir(parents=True)
-    df1 = df1.withColumn(
-        "images",
-        video_to_images(
-            col("video"),
-            lit(str(output_dir)),
-            col("segment"),
-            lit(sample_rate),
-            lit(max_samples),
-        ),
-    )
-
-    videostream_sample = df1.first()["images"]
-
-    assert (
-        type(videostream_sample) == list
-        and type(videostream_sample[0]) == Image
-        and len(videostream_sample) == max_samples
-    )
-
-
-@pytest.mark.timeout(20)
-@pytest.mark.webtest
-def test_spectrogram_image(
-    spark: SparkSession, tmp_path: Path, asset_path: Path
-):
-    """Test generate spectrogram image
-    from YouTubeVideo/VideoStream videos types."""
-    video = VideoStream(str(asset_path / "big_buck_bunny_short.mp4"))
-    s1 = (
-        spark.createDataFrame([(video,)], ["video"])
-        .withColumn(
-            "spectrogram",
-            spectrogram_image(col("video"), lit(str(tmp_path / "s1.jpg"))),
-        )
-        .first()["spectrogram"]
-    )
-    assert type(s1) == Image
-    # TODO include an actual expected answer
 
 
 def test_video_metadata(spark: SparkSession, asset_path: Path):

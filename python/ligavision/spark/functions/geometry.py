@@ -58,7 +58,7 @@ def box2d_from_top_left(coords) -> Box2d:
 
     >>> #! pyspark --packages ai.eto:rikai_2.1:0.0.1
     >>> import json
-    >>> from rikai.spark.functions.geometry import box2d_from_top_left
+    >>> from ligavision.spark.functions.geometry import box2d_from_top_left
     >>>
     >>> with open("coco_sample/annotations/train_sample.json") as fobj:
     ...     coco = json.load(fobj)

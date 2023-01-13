@@ -40,8 +40,6 @@ def init(spark: SparkSession):
         "to_image",
         "image_copy",
         "numpy_to_image",
-        "video_to_images",
-        "spectrogram_image",
         "video_metadata",
     ]
     for name in all_geo_udfs:

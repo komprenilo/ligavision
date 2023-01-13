@@ -94,7 +94,7 @@ class PointType(UserDefinedType):
 
     @classmethod
     def module(cls) -> str:
-        return "rikai.spark.types.geometry"
+        return "ligavision.spark.types.geometry"
 
     @classmethod
     def scalaUDT(cls) -> str:
@@ -133,7 +133,7 @@ class Box3dType(UserDefinedType):
 
     @classmethod
     def module(cls) -> str:
-        return "rikai.spark.types.geometry"
+        return "ligavision.spark.types.geometry"
 
     @classmethod
     def scalaUDT(cls) -> str:
@@ -175,7 +175,7 @@ class MaskType(UserDefinedType):
 
     @classmethod
     def module(cls) -> str:
-        return "rikai.spark.types.geometry"
+        return "ligavision.spark.types.geometry"
 
     @classmethod
     def scalaUDT(cls) -> str:

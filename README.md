@@ -1,7 +1,7 @@
 # Liga Vision: the Liga solution for Computer Vision
 ## Developers' Guide
 ### Cheatsheet for mill
-```
+``` bash
 ## video
 ./mill 'video[2.12].test'
 ./mill 'video[2.12].test.testOnly' '**.MLImageTest.scala'

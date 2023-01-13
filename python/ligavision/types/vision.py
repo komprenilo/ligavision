@@ -96,7 +96,7 @@ class Image(ToNumpy, ToPIL, Asset, Displayable, ToDict):
         See Also
         --------
         :py:class:`PIL.Image.fromarray`
-        :py:func:`~rikai.spark.functions.vision.numpy_to_image`
+        :py:func:`~ligavision.spark.functions.vision.numpy_to_image`
 
         """  # noqa: E501
 

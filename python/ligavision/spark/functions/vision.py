@@ -51,8 +51,6 @@ __all__ = [
     "to_image",
     "image_copy",
     "numpy_to_image",
-    "video_to_images",
-    "spectrogram_image",
     "video_metadata",
     "video_metadata_schema",
 ]
@@ -143,80 +141,6 @@ def numpy_to_image(
     return Image.from_array(array, uri, format=format, **kwargs)
 
 
-@udf(returnType=ArrayType(ImageType()))
-def video_to_images(
-    video: Union[VideoStream, YouTubeVideo],
-    output_uri: str,
-    segment: Segment = Segment(0, -1),
-    sample_rate: int = 1,
-    max_samples: int = 15000,
-    quality: str = "worst",
-    image_format: str = "png",
-    **image_kwargs,
-) -> list:
-    """Extract video frames into a list of images.
-
-    Parameters
-    ----------
-    video : Video
-        An video object, either YouTubeVideo or VideoStream.
-    output_uri: str
-        Frames will be written as <output_uri>/<fno>.<img_format>
-    segment: Segment, default Segment(0, -1)
-        A Segment object, localizing video in time to (start_fno, end_fno)
-    sample_rate : int, default 1
-        Keep 1 out of every sample_rate frames.
-    max_samples : int, default 15000
-        Return at most this many frames (-1 means no max)
-    quality: str, default 'worst'
-        Either 'worst' (lowest bitrate) or 'best' (highest bitrate)
-        See: https://pythonhosted.org/Pafy/index.html#Pafy.Pafy.getbest
-    image_format : str, optional
-        The image format to save as. See
-        `supported formats <https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.save>`_ for details.
-    image_kwargs : dict, optional
-        Optional arguments to pass to `PIL.Image.save <https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.save>`_.
-    ------
-    List
-        Return a list of images from video indexed by frame number.
-    """  # noqa: E501
-    assert isinstance(
-        video, (YouTubeVideo, VideoStream)
-    ), "Input type must be YouTubeVideo or VideoStream"
-    assert isinstance(segment, Segment), "Second input type must be Segment"
-
-    start_frame = segment.start_fno
-    if segment.end_fno > 0:
-        max_samples = min((segment.end_fno - start_frame), max_samples)
-
-    if isinstance(video, YouTubeVideo):
-        video_iterator = SingleFrameSampler(
-            video.get_stream(quality=quality),
-            sample_rate,
-            start_frame,
-            max_samples,
-        )
-    else:
-        video_iterator = SingleFrameSampler(
-            video, sample_rate, start_frame, max_samples
-        )
-
-    return [
-        Image.from_array(
-            img,
-            os.path.join(
-                output_uri,
-                "{}.{}".format(
-                    (start_frame + idx) * sample_rate, image_format
-                ),
-            ),
-            format=image_format,
-            **image_kwargs,
-        )
-        for idx, img in enumerate(video_iterator)
-    ]
-
-
 video_metadata_schema = StructType(
     [
         StructField("width", IntegerType(), True),
@@ -266,7 +190,7 @@ def video_metadata(video: Union[str, VideoStream]) -> dict:
     --------
     The following returns the fps rounded to the nearest integer:
 
-    import rikai.spark.functions as RF
+    import ligavision.spark.functions as RF
     (spark.createDataFrame([(VideoStream(<uri>),)], ['video'])
     .withColumn('meta', RF.video_metadata('video'))
     .select('meta.data.frame_rate'))
@@ -309,7 +233,7 @@ def _probe(video):
         raise ImportError(
             "Couldn't import ffmpeg. Please make sure to "
             "`pip install ffmpeg-python` explicitly or install "
-            "the correct extras like `pip install rikai[video]`"
+            "the correct extras like `pip install ligavision[video]`"
         ) from e
 
     uri = video.uri if isinstance(video, VideoStream) else video
@@ -345,82 +269,6 @@ def _error(message, stderr=None, probe=None):
     if probe is not None:
         err["probe"] = str(probe)
     return {"_errors": err}
-
-
-@udf(returnType=ImageType())
-def spectrogram_image(
-    video: Union[VideoStream, YouTubeVideo],
-    output_uri: str,
-    segment: Segment = Segment(0, -1),
-    size: int = 224,
-    max_samples: int = 15000,
-    image_format: str = None,
-    **image_kwargs,
-) -> Image:
-    """Applies ffmpeg filter to generate spectrogram image.
-
-    Parameters
-    ----------
-    video : VideoStream or YouTubeVideo
-        A video object whose audio track will be converted to spectrogram
-    output_uri: str
-        The uri to which the spectrogram image will be written to
-    segment: Segment
-            A Segment object, localizing video in time to (start_fno, end_fno)
-    max_samples : Int
-            Yield at most this many frames (-1 means no max)
-    size : Int
-        Sets resolution of frequency, time spectrogram image.
-    image_format : str, optional
-        The image format to save as. See
-        `supported formats <https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.save>`_ for details.
-    image_kwargs : dict, optional
-        Optional arguments to pass to `PIL.Image.save <https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.save>`_.
-
-    Return
-    ------
-    Image
-        Return an Image of the audio spectrogram.
-    """  # noqa: E501
-    try:
-        import ffmpeg
-    except ImportError:
-        raise ValueError(
-            "Couldn't import ffmpeg. Please make sure to "
-            "`pip install ffmpeg-python` explicitly or install "
-            "the correct extras like `pip install rikai[video]`"
-        )
-    assert isinstance(
-        video, (YouTubeVideo, VideoStream)
-    ), "Input type must be YouTubeVideo or VideoStream"
-    assert isinstance(segment, Segment), "Second input type must be Segment"
-
-    start_frame = segment.start_fno
-    if segment.end_fno > 0:
-        max_samples = min((segment.end_fno - start_frame), max_samples)
-    video_uri = (
-        video.get_stream().uri
-        if isinstance(video, YouTubeVideo)
-        else video.uri
-    )
-    output, _ = (
-        ffmpeg.input(video_uri)
-        .filter("showspectrumpic", "{}x{}".format(size, size), legend=0)
-        .output(
-            "pipe:",
-            format="rawvideo",
-            pix_fmt="rgb24",
-            start_number=start_frame,
-            vframes=max_samples,
-        )
-        .run(capture_stdout=True)
-    )
-    return Image.from_array(
-        np.frombuffer(output, np.uint8).reshape([size, size, 3]),
-        output_uri,
-        format=image_format,
-        **image_kwargs,
-    )
 
 
 @udf(returnType=ArrayType(ImageType(), True))
