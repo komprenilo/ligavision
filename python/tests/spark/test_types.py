@@ -17,9 +17,9 @@ from pathlib import Path
 
 from pyspark.sql import DataFrame, Row, SparkSession
 
-# Rikai
-from rikai.testing.asserters import assert_count_equal
-from rikai.types import (
+# Liga
+from liga.testing.asserters import assert_count_equal
+from ligavision.types import (
     Box2d,
     Box3d,
     Image,

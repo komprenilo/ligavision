@@ -29,19 +29,19 @@ from pyspark.sql.types import (
 )
 
 # Rikai
-import rikai
-from rikai.spark.types.geometry import (
+import liga
+from ligavision.spark.types.geometry import (
     Box2dType,
     Box3dType,
     MaskType,
     PointType,
 )
-from rikai.spark.types.video import (
+from ligavision.spark.types.video import (
     SegmentType,
     VideoStreamType,
     YouTubeVideoType,
 )
-from rikai.spark.types.vision import ImageType
+from ligavision.spark.types.vision import ImageType
 
 __all__ = [
     "ImageType",
@@ -105,7 +105,7 @@ class NDArrayType(UserDefinedType):
         )
 
     def deserialize(self, datum: Row) -> np.ndarray:
-        import rikai.numpy
+        import liga.numpy
 
         return (
             np.frombuffer(datum[2], dtype=np.dtype(datum[0]))

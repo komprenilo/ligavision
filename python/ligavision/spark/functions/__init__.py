@@ -17,16 +17,16 @@
 
 from pyspark.sql import SparkSession
 
-from rikai.spark.functions.geometry import *
-from rikai.spark.functions.io import *
-from rikai.spark.functions.vision import *
+from ligavision.spark.functions.geometry import *
+from ligavision.spark.functions.io import *
+from ligavision.spark.functions.vision import *
 
 __all__ = ["init"]
 
 
 def init(spark: SparkSession):
     """Register all rikai UDFs"""
-    from rikai.spark.functions import geometry, io, vision
+    from ligavision.spark.functions import geometry, io, vision
 
     all_geo_udfs = [
         "area",

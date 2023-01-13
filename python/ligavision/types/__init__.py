@@ -12,12 +12,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-"""Semantic types
-
-:noindex:
-"""
-
 # __all__ is defined in these
-from rikai.types.geometry import *
-from rikai.types.video import *
-from rikai.types.vision import *
+from ligavision.types.geometry import *
+from ligavision.types.video import *
+from ligavision.types.vision import *
