@@ -16,15 +16,14 @@
 
 package org.apache.spark.sql.rikai
 
-import ai.eto.rikai.SparkTestSession
 import org.apache.spark.sql.SaveMode
-import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.FunSuite
 
 import java.io.File
 import java.nio.file.Files
 import scala.reflect.io.Directory
 
-class Box3dTest extends AnyFunSuite with SparkTestSession {
+class Box3dTest extends FunSuite with SparkTestSession {
   import spark.implicits._
 
   test("test serialize 3d bounding box") {
@@ -45,9 +44,9 @@ class Box3dTest extends AnyFunSuite with SparkTestSession {
       )
     ).toDF()
 
-    df.write.mode(SaveMode.Overwrite).format("rikai").save(testDir.toString())
+    df.write.mode(SaveMode.Overwrite).format("parquet").save(testDir.toString())
 
-    val actualDf = spark.read.format("rikai").load(testDir.toString())
+    val actualDf = spark.read.format("parquet").load(testDir.toString())
     assert(df.count() == actualDf.count())
     assert(df.exceptAll(actualDf).isEmpty)
 

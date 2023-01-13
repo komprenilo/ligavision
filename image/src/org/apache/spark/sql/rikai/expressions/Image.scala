@@ -14,8 +14,6 @@
 
 package org.apache.spark.sql.rikai.expressions
 
-import com.thoughtworks.enableIf
-import com.thoughtworks.enableIf.classpathMatches
 import org.apache.spark.sql.catalyst.InternalRow
 import org.apache.spark.sql.catalyst.expressions.{
   Expression,
@@ -56,7 +54,6 @@ case class Image(child: Expression)
     dataType.asInstanceOf[ImageType].serialize(image)
   }
 
-  @enableIf(classpathMatches(".*spark-catalyst_2\\.\\d+-3\\.[^01]\\..*".r))
   override def withNewChildInternal(newChild: Expression): Expression =
     copy(child = newChild)
 }

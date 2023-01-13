@@ -16,36 +16,36 @@
 
 package org.apache.spark.sql.rikai
 
-import ai.eto.rikai.SparkTestSession
 import org.apache.spark.sql.SaveMode
-import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.FunSuite
 
 import java.io.File
 import java.nio.file.Files
+import scala.reflect.io.Directory
 
-class MaskTest extends AnyFunSuite with SparkTestSession {
+class PointTest extends FunSuite with SparkTestSession {
 
   import spark.implicits._
 
-  test("test create mask data") {
+  test("test point equality") {
+    assert(new Point(1, 2, 3) == new Point(1, 2, 3))
+    assert(new Point(1, 2, 3) != new Point(10, 20, 30))
+  }
+
+  test("test serialize points") {
     val testDir =
-      new File(Files.createTempDirectory("rikai").toFile, "dataset")
+      new File(Files.createTempDirectory("rikai").toFile(), "dataset")
 
-    val df =
-      Seq(
-        (1, Mask.fromRLE(Array(1, 2, 3), 10, 5)),
-        (2, Mask.fromPolygon(Array(Array(1, 1, 5, 5, 10, 10)), 5, 20))
-      ).toDF("id", "segmentation")
+    val df = Seq((1, new Point(1, 2, 3))).toDF()
 
-    df.write.mode(SaveMode.Overwrite).format("rikai").save(testDir.toString)
-
-    val actualDf = spark.read.load(testDir.toString)
-    assert(df.count() == actualDf.count())
-    assert(df.exceptAll(actualDf).isEmpty)
+    df.write.format("parquet").mode(SaveMode.Overwrite).save(testDir.toString())
     df.show()
 
-    val polygon = actualDf.filter("id = 2").first()
-    assert(polygon.getAs[Mask]("segmentation").width == 5);
-    assert(polygon.getAs[Mask]("segmentation").height == 20);
+    val actualDf = spark.read.format("parquet").load(testDir.toString())
+    assert(df.count() == actualDf.count())
+    actualDf.show()
+    assert(df.collect() sameElements actualDf.collect())
+
+    new Directory(testDir).deleteRecursively()
   }
 }

@@ -15,12 +15,7 @@ __pycache__
 docs/_build
 docs/api
 
-notebooks/coco
-notebooks/coco_sample*
-notebooks/dataset
-notebooks/out
 **/.ipynb_checkpoints
-project/project
 
 python/rikai/jars/
 
@@ -35,3 +30,5 @@ python/rikai/jars/
 python/test-artifact
 
 *.iml
+
+out/
