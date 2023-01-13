@@ -1,0 +1,28 @@
+[anonymous-telemetry]
+enabled = false
+
+[GLOBAL]
+pants_version = "2.14.0"
+
+backend_packages.add = [
+  "pants.backend.python",
+]
+
+[source]
+root_patterns = ["python", "notebooks"]
+
+[python]
+interpreter_constraints = [">=3.8,<3.10"]
+enable_resolves = true
+
+[python.resolves]
+  spark_3_2_1 = "3rdparty/python/spark_3_2_1.lock"
+
+[pytest]
+  version = "pytest==7.0.1"
+  extra_requirements.add = [
+    "pytest-timeout",
+    "requests-mock",
+  ]
+  lockfile = "3rdparty/python/pytest.lock"
+
