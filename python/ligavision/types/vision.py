@@ -169,18 +169,23 @@ class Image(ToNumpy, ToPIL, Asset, Displayable, ToDict):
         -------
         img: IPython.display.Image
         """
-        from IPython.display import Image
+        from IPython.display import Image as IPythonImage
 
         if not self.is_embedded and self.uri.startswith("http"):
-            return Image(url=self.uri, **kwargs)
+            return IPythonImage(url=self.uri, **kwargs)
         else:
-            # Using Data URIs for Databricks Notebook
-            with self.open() as fobj:
-                data = fobj.read()
-                inferred_format = Image(data).format
-                encoded = base64.b64encode(data).decode("utf-8")
-                url = f"data:image;base64,{encoded}"
-                return Image(url=url, format=inferred_format)
+            if options.ligavision.notebook.platform == "databricks":
+                # Using Data URIs for Databricks Notebook
+                with self.open() as fobj:
+                    data = fobj.read()
+                    inferred_format = IPythonImage(data).format
+                    encoded = base64.b64encode(data).decode("utf-8")
+                    url = f"data:image;base64,{encoded}"
+                    return IPythonImage(url=url, format=inferred_format)
+            else:
+                with self.open() as fobj:
+                    data = fobj.read()
+                    return IPythonImage(data=data)
 
     def draw(self, drawable: Union[Drawable, list[Drawable], Draw]) -> Draw:
         return ImageDraw(self).draw(drawable)
