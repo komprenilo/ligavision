@@ -1,0 +1,13 @@
+python_sources(
+    name="sources",
+    sources=["**/*.py"],
+    resolve="spark_3_2_1",
+)
+
+python_requirement(
+    name="requirements",
+    requirements=[
+        "liga==0.2.0.dev7",
+    ],
+    resolve="spark_3_2_1",
+)
