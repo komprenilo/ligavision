@@ -24,3 +24,8 @@ register_option(CONF_RIKAI_VIZ_COLOR, DEFAULT_RIKAI_VIZ_COLOR)
 CONF_RIKAI_IMAGE_DEFAULT_FORMAT = "ligavision.image.default.format"
 DEFAULT_IMAGE_DEFAULT_FORMAT = "PNG"
 register_option(CONF_RIKAI_IMAGE_DEFAULT_FORMAT, DEFAULT_IMAGE_DEFAULT_FORMAT)
+
+# The hack for Databricks Notebook breaks the Github Notebook Preview
+CONF_RIKAI_NOTEBOOK_PLATFORM = "ligavision.notebook.platform"
+DEFAULT_NOTEBOOK_PLATFORM = "databricks"
+register_option(CONF_RIKAI_NOTEBOOK_PLATFORM, DEFAULT_NOTEBOOK_PLATFORM)
