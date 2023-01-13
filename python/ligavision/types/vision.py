@@ -139,7 +139,7 @@ class Image(ToNumpy, ToPIL, Asset, Displayable, ToDict):
             Optional arguments to pass to `PIL.Image.save <https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.save>`_.
         """  # noqa: E501
 
-        format = format if format else options.rikai.image.default.format
+        format = format if format else options.ligavision.image.default.format
 
         if uri is None:
             buf = BytesIO()
