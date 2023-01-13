@@ -32,3 +32,6 @@ python/test-artifact
 *.iml
 
 out/
+
+.pants.d/
+.pids/

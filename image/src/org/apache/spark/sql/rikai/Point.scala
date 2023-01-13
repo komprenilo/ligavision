@@ -58,7 +58,7 @@ private[rikai] class PointType extends UserDefinedType[Point] {
       )
     )
 
-  override def pyUDT: String = "rikai.spark.types.geometry.PointType"
+  override def pyUDT: String = "ligavision.spark.types.geometry.PointType"
 
   override def serialize(obj: Point): Any = {
     val row = new GenericInternalRow(3)

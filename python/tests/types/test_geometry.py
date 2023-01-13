@@ -18,7 +18,7 @@ import numpy as np
 import pytest
 from PIL import Image, ImageDraw
 
-from rikai.types import Box2d, Box3d, Mask, Point
+from ligavision.types import Box2d, Box3d, Mask, Point
 
 
 def test_scale_box2d():

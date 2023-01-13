@@ -96,7 +96,7 @@ private[spark] class MaskType extends UserDefinedType[Mask] {
     )
   )
 
-  override def pyUDT: String = "rikai.spark.types.geometry.MaskType"
+  override def pyUDT: String = "ligavision.spark.types.geometry.MaskType"
 
   override def serialize(m: Mask): InternalRow = {
     val row = new GenericInternalRow(5)

@@ -24,10 +24,10 @@ import pytest
 from PIL import Image as PILImage
 from PIL import ImageDraw as PILImageDraw
 
-from rikai.io import open_uri
-from rikai.types.geometry import Box2d
-from rikai.types.vision import Image, ImageDraw
-from rikai.viz import Style, Text
+from liga.io import open_uri
+from ligavision.types.geometry import Box2d
+from ligavision.types.vision import Image, ImageDraw
+from ligavision.viz import Style, Text
 
 
 @pytest.fixture

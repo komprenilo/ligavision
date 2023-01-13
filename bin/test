@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ROOTDIR=`pwd` ./pants test  python/tests:tests
+

@@ -1,0 +1,22 @@
+python_sources(
+    name="sources",
+    sources=["**/*.py"],
+    resolve=parametrize("spark_3_2_1", "test"),
+)
+
+python_requirement(
+    name="spark_3_2",
+    requirements=[
+        "pyspark==3.2.1",
+    ],
+    resolve=parametrize("spark_3_2_1", "test"),
+)
+
+python_requirement(
+    name="requirements",
+    requirements=[
+        "liga==0.2.0.dev8",
+        "Pillow",
+    ],
+    resolve=parametrize("spark_3_2_1", "test"),
+)
