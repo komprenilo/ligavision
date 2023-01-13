@@ -110,7 +110,7 @@ class NDArrayType(UserDefinedType):
         return (
             np.frombuffer(datum[2], dtype=np.dtype(datum[0]))
             .reshape(datum[1])
-            .view(rikai.numpy.ndarray)
+            .view(liga.numpy.ndarray)
         )
 
     def simpleString(self) -> str:
