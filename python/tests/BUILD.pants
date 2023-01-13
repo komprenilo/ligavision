@@ -19,7 +19,6 @@ python_requirement(
     name="requirements",
     requirements=[
         "ipython>=7.31.1,!=8.0.0",
-        "ffmpeg-python",
     ],
     resolve="test",
 )

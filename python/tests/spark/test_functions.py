@@ -179,7 +179,7 @@ def test_numpy_to_image(spark: SparkSession, tmp_path: Path):
         ),
     )
     df.count()
-    print(df.first().image)
+    # print(df.first().image)
     assert Path(df.first().image.uri) == tmp_path / "1.png"
     assert (tmp_path / "1.png").exists()
 
