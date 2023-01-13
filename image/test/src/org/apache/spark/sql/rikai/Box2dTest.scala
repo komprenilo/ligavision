@@ -16,11 +16,10 @@
 
 package org.apache.spark.sql.rikai
 
-import ai.eto.rikai.SparkTestSession
 import org.scalactic.{Equality, TolerantNumerics}
-import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.FunSuite
 
-class Box2dTest extends AnyFunSuite with SparkTestSession {
+class Box2dTest extends FunSuite with SparkTestSession {
 
   implicit val doubleEq: Equality[Double] =
     TolerantNumerics.tolerantDoubleEquality(1e-4f)

@@ -1,9 +1,8 @@
 package org.apache.spark.sql.rikai
 
-import ai.eto.rikai.SparkTestSession
-import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.FunSuite
 
-class ImageTest extends AnyFunSuite with SparkTestSession {
+class ImageTest extends FunSuite with SparkTestSession {
 
   test("image udf") {
     val uri = "s3://path/to/image.png"
