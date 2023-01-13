@@ -13,3 +13,8 @@
 #  limitations under the License.
 
 from ligavision.conf import CONF_RIKAI_VIZ_COLOR
+from liga import init_spark as liga_init_spark
+
+
+def init_spark(jar_type="github"):
+    return liga_init_spark(jar_type=jar_type)

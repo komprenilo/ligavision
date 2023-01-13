@@ -14,11 +14,11 @@
 
 import secrets
 from pathlib import Path
+from typing import Iterable
 
 from pyspark.sql import DataFrame, Row, SparkSession
 
 # Liga
-from liga.testing.asserters import assert_count_equal
 from ligavision.types import (
     Box2d,
     Box3d,
@@ -29,6 +29,17 @@ from ligavision.types import (
     VideoStream,
     YouTubeVideo,
 )
+
+def assert_count_equal(first: Iterable, second: Iterable, msg=None):
+    """Assert ``first`` has the same elements as ``second``, regardless of
+    the order.
+    See Also
+    --------
+    :py:meth:`unittest.TestCase.assertCountEqual`
+    """
+    from unittest import TestCase
+
+    TestCase().assertCountEqual(first, second, msg=msg)
 
 
 def _check_roundtrip(spark: SparkSession, df: DataFrame, tmp_path: Path):

@@ -14,7 +14,7 @@
 
 import numpy as np
 
-from liga.types import rle
+from ligavision.types import rle
 
 
 def test_rle_encoding():
