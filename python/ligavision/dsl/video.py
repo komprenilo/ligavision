@@ -15,7 +15,7 @@
 """Video related types and utils"""
 from abc import ABC, abstractmethod
 
-from ligavision.mixin import Displayable, ToDict
+from ligavision.dsl.mixin import Displayable, ToDict
 from ligavision.spark.types import SegmentType, VideoStreamType, YouTubeVideoType
 
 __all__ = [
