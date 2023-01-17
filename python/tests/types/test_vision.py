@@ -25,8 +25,8 @@ from PIL import Image as PILImage
 from PIL import ImageDraw as PILImageDraw
 
 from liga.io import open_uri
-from ligavision.types.geometry import Box2d
-from ligavision.types.vision import Image, ImageDraw
+from ligavision.dsl.geometry import Box2d
+from ligavision.dsl.vision import Image, ImageDraw
 from ligavision.viz import Style, Text
 
 

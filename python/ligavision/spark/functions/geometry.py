@@ -21,7 +21,7 @@ from pyspark.sql.types import FloatType
 # Rikai
 from liga.logging import logger
 from ligavision.spark.types.geometry import Box2dType
-from ligavision.types.geometry import Box2d
+from ligavision.dsl.geometry import Box2d
 
 __all__ = ["area", "box2d", "box2d_from_center", "box2d_from_top_left"]
 
@@ -39,7 +39,7 @@ def box2d_from_center(coords) -> Box2d:
 
     See Also
     --------
-    :py:meth:`ligavision.types.geometry.Box2d.from_center`
+    :py:meth:`ligavision.dsl.geometry.Box2d.from_center`
     """
     return Box2d.from_center(coords[0], coords[1], coords[2], coords[3])
 
@@ -87,7 +87,7 @@ def box2d_from_top_left(coords) -> Box2d:
 
     See Also
     --------
-    :py:meth:`ligavision.types.geometry.Box2d.from_top_left`.
+    :py:meth:`ligavision.dsl.geometry.Box2d.from_top_left`.
     """
     return Box2d.from_top_left(coords[0], coords[1], coords[2], coords[3])
 

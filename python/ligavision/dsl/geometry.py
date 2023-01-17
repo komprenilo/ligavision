@@ -33,7 +33,7 @@ from ligavision.spark.types.geometry import (
     MaskType,
     PointType,
 )
-from ligavision.types import rle
+from ligavision.dsl import rle
 
 __all__ = ["Point", "Box3d", "Box2d", "Mask"]
 
@@ -525,7 +525,7 @@ class Mask(ToNumpy, ToDict, Drawable):
     .. code-block:: python
 
         from pycocotools.coco import COCO
-        from ligavision.types import Mask
+        from ligavision.dsl import Mask
 
         coco = COCO("instance_train2017.json")
         ann = coco.loadAnns(ann_id)

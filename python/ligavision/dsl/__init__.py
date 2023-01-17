@@ -13,6 +13,6 @@
 #  limitations under the License.
 
 # __all__ is defined in these
-from ligavision.types.geometry import *
-from ligavision.types.video import *
-from ligavision.types.vision import *
+from ligavision.dsl.geometry import *
+from ligavision.dsl.video import *
+from ligavision.dsl.vision import *

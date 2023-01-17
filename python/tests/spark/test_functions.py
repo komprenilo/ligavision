@@ -41,7 +41,7 @@ from ligavision.spark.functions import (
 )
 from ligavision.spark.types.geometry import Box2dType
 from ligavision.spark.types.vision import ImageType
-from ligavision.types import Box2d, Image, Segment, VideoStream, YouTubeVideo
+from ligavision.dsl import Box2d, Image, Segment, VideoStream, YouTubeVideo
 
 
 def test_init(spark):
