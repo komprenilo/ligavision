@@ -16,35 +16,21 @@
 """
 
 # Standard library
-import os
 from pathlib import Path
-from typing import List, Optional, Union
+from typing import List, Union
 
 # Third Party
 import numpy as np
 from pyspark.sql.functions import udf
-from pyspark.sql.types import (
-    ArrayType,
-    FloatType,
-    IntegerType,
-    StringType,
-    StructField,
-    StructType,
-)
+from pyspark.sql.types import ArrayType
 
 # Liga
 from liga.io import copy as _copy
 from liga.logging import logger
 from liga.numpy import ndarray
 from ligavision.spark.types.vision import ImageType
-from ligavision.types.geometry import Box2d
-from ligavision.types.video import (
-    Segment,
-    SingleFrameSampler,
-    VideoStream,
-    YouTubeVideo,
-)
-from ligavision.types.vision import Image
+from ligavision.dsl.geometry import Box2d
+from ligavision.dsl.vision import Image
 
 __all__ = [
     "crop",
@@ -134,7 +120,7 @@ def numpy_to_image(
 
     See Also
     --------
-    :py:meth:`ligavision.types.vision.Image.from_array`
+    :py:meth:`ligavision.dsl.vision.Image.from_array`
     """  # noqa: E501
     return Image.from_array(array, uri, format=format, **kwargs)
 

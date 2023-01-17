@@ -1,0 +1,9 @@
+python_sources(
+    name="sources",
+    resolve=parametrize("spark_3_2_1", "test"),
+)
+
+python_tests(
+    name="tests",
+    resolve="test",
+)

@@ -14,7 +14,7 @@
 
 import numpy as np
 
-from ligavision.types import rle
+from ligavision.dsl import rle
 
 
 def test_rle_encoding():

@@ -19,7 +19,7 @@ from typing import Iterable
 from pyspark.sql import DataFrame, Row, SparkSession
 
 # Liga
-from ligavision.types import (
+from ligavision.dsl import (
     Box2d,
     Box3d,
     Image,

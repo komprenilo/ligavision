@@ -25,15 +25,15 @@ import numpy as np
 from pandas import get_option
 from PIL import Image, ImageDraw
 
-from ligavision import CONF_RIKAI_VIZ_COLOR
-from ligavision.mixin import Drawable, ToDict, ToNumpy
+from ligavision.dsl.conf import CONF_RIKAI_VIZ_COLOR
+from ligavision.dsl.mixin import Drawable, ToDict, ToNumpy
 from ligavision.spark.types.geometry import (
     Box2dType,
     Box3dType,
     MaskType,
     PointType,
 )
-from ligavision.types import rle
+from ligavision.dsl import rle
 
 __all__ = ["Point", "Box3d", "Box2d", "Mask"]
 
@@ -256,7 +256,7 @@ class Box2d(ToNumpy, Sequence, ToDict, Drawable):
         x_scale, y_scale = self._verified_scale(scale)
         return self / (1.0 / x_scale, 1.0 / y_scale)
 
-    def _render(self, render: "ligavision.viz.Renderer", **kwargs) -> None:
+    def _render(self, render: "ligavision.dsl.Renderer", **kwargs) -> None:
         render.rectangle(self, **kwargs)
 
     def to_numpy(self) -> np.ndarray:
@@ -396,10 +396,10 @@ class Box2d(ToNumpy, Sequence, ToDict, Drawable):
 
     def with_label(
         self, text: str, color: str = get_option(CONF_RIKAI_VIZ_COLOR)
-    ) -> "ligavision.viz.Draw":
-        from ligavision.viz import Draw, Text
+    ) -> "ligavision.dsl.Draw":
+        from ligavision.dsl import Draw, Text
 
-        """return a `ligavision.viz.Draw`, which contains a label,
+        """return a `ligavision.dsl.Draw`, which contains a label,
         used as a convenient tool to give a box a label
         in visualization.
         Parameters
@@ -412,7 +412,7 @@ class Box2d(ToNumpy, Sequence, ToDict, Drawable):
         Returns
         -------
         box_with_label
-            ligavision.viz.Draw
+            ligavision.dsl.Draw
         """
         # TODO add font size
         return Draw(
@@ -525,7 +525,7 @@ class Mask(ToNumpy, ToDict, Drawable):
     .. code-block:: python
 
         from pycocotools.coco import COCO
-        from ligavision.types import Mask
+        from ligavision.dsl import Mask
 
         coco = COCO("instance_train2017.json")
         ann = coco.loadAnns(ann_id)

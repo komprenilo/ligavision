@@ -53,7 +53,7 @@ class VideoStreamType(UserDefinedType):
         return (obj.uri,)
 
     def deserialize(self, datum) -> "VideoStream":
-        from ligavision.types import (
+        from ligavision.dsl import (
             VideoStream,
         )  # pylint: disable=import-outside-toplevel
 
@@ -94,7 +94,7 @@ class YouTubeVideoType(UserDefinedType):
         return (obj.vid,)
 
     def deserialize(self, datum) -> "YouTubeVideo":
-        from ligavision.types import (
+        from ligavision.dsl import (
             YouTubeVideo,
         )  # pylint: disable=import-outside-toplevel
 
@@ -138,7 +138,7 @@ class SegmentType(UserDefinedType):
         return (obj.start_fno, obj.end_fno)
 
     def deserialize(self, datum) -> "Segment":
-        from ligavision.types import (
+        from ligavision.dsl import (
             Segment,
         )  # pylint: disable=import-outside-toplevel
 

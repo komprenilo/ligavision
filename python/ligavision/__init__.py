@@ -20,7 +20,6 @@ from pyspark.sql import SparkSession
 from liga.logging import logger
 from liga.spark import _liga_assembly_jar
 
-from ligavision.conf import CONF_RIKAI_VIZ_COLOR
 from ligavision.__version__ import version
 
 def liga_init_spark(

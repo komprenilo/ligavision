@@ -33,10 +33,10 @@ from PIL import Image as PILImage
 from liga.conf import options
 from liga.internal.uri_utils import normalize_uri
 from liga.io import copy, open_output_stream
-from ligavision.mixin import Asset, Displayable, Drawable, ToDict, ToNumpy, ToPIL
+from ligavision.dsl.mixin import Asset, Displayable, Drawable, ToDict, ToNumpy, ToPIL
 from ligavision.spark.types import ImageType
-from ligavision.types.geometry import Box2d
-from ligavision.viz import Draw, PILRenderer
+from ligavision.dsl.geometry import Box2d
+from ligavision.dsl.base import Draw, PILRenderer
 
 __all__ = ["Image"]
 

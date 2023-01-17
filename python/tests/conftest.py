@@ -3,7 +3,7 @@ from pathlib import Path
 
 from pyspark.sql import SparkSession
 
-from ligavision.types.vision import Image
+from ligavision.dsl.vision import Image
 from ligavision import init_spark
 
 
