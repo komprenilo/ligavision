@@ -12,8 +12,10 @@ python_requirement(
     name="requirements",
     requirements=[
         "Pillow",
+        # fsspec with HTTP support
         "fsspec",
         "requests",
+        "aiohttp",
     ],
     resolve=parametrize("dsl", "spark_3_2_1", "test"),
 )
