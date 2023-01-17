@@ -1,0 +1,10 @@
+python_distribution(
+    name="ligavision-dsl",
+    dependencies=[
+        "python/ligavision/dsl:sources@resolve=dsl",
+    ],
+    provides=python_artifact(
+        name="ligavision-dsl",
+        version="0.2.0.dev0",
+    ),
+)
