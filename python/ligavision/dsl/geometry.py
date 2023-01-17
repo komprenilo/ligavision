@@ -20,6 +20,7 @@ from __future__ import annotations
 from enum import Enum
 from numbers import Real
 from typing import List, Optional, Sequence, Tuple, Union
+from importlib.util import find_spec
 
 import numpy as np
 from PIL import Image, ImageDraw

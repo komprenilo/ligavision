@@ -14,6 +14,7 @@
 
 """Video related types and utils"""
 from abc import ABC, abstractmethod
+from importlib.util import find_spec
 
 from ligavision.dsl.mixin import Displayable, ToDict
 
