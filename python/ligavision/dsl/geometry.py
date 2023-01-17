@@ -20,19 +20,13 @@ from __future__ import annotations
 from enum import Enum
 from numbers import Real
 from typing import List, Optional, Sequence, Tuple, Union
+from importlib.util import find_spec
 
 import numpy as np
-from pandas import get_option
 from PIL import Image, ImageDraw
 
-from ligavision.dsl.conf import CONF_RIKAI_VIZ_COLOR
+from ligavision.dsl import conf
 from ligavision.dsl.mixin import Drawable, ToDict, ToNumpy
-from ligavision.spark.types.geometry import (
-    Box2dType,
-    Box3dType,
-    MaskType,
-    PointType,
-)
 from ligavision.dsl import rle
 
 __all__ = ["Point", "Box3d", "Box2d", "Mask"]
@@ -51,13 +45,14 @@ class Point(ToNumpy, ToDict):
         The Z coordinate.
     """
 
-    __UDT__ = PointType()
-
     def __init__(self, x: float, y: float, z: float):
         # pylint: disable=invalid-name
         self.x = float(x)
         self.y = float(y)
         self.z = float(z)
+        if find_spec("ligavision"):
+            from ligavision.spark.types.geometry import PointType
+            self.__UDT__ = PointType()
 
     def __repr__(self) -> str:
         return f"Point({self.x}, {self.y}, {self.z})"
@@ -104,8 +99,6 @@ class Box2d(ToNumpy, Sequence, ToDict, Drawable):
     >>> draw.rectangle(box, fill="green", width=2)
     """
 
-    __UDT__ = Box2dType()
-
     def __init__(self, xmin: float, ymin: float, xmax: float, ymax: float):
         assert (
             0 <= xmin <= xmax
@@ -117,6 +110,9 @@ class Box2d(ToNumpy, Sequence, ToDict, Drawable):
         self.ymin = float(ymin)
         self.xmax = float(xmax)
         self.ymax = float(ymax)
+        if find_spec("ligavision"):
+            from ligavision.spark.types.geometry import Box2dType
+            self.__UDT__ = Box2dType()
 
     @classmethod
     def from_center(
@@ -395,7 +391,7 @@ class Box2d(ToNumpy, Sequence, ToDict, Drawable):
         return iou_arr
 
     def with_label(
-        self, text: str, color: str = get_option(CONF_RIKAI_VIZ_COLOR)
+        self, text: str, color: str = conf.text.color
     ) -> "ligavision.dsl.Draw":
         from ligavision.dsl import Draw, Text
 
@@ -452,8 +448,6 @@ class Box3d(ToNumpy, ToDict):
     * Waymo Dataset Spec https://github.com/waymo-research/waymo-open-dataset/blob/master/waymo_open_dataset/label.proto
     """  # noqa: E501
 
-    __UDT__ = Box3dType()
-
     def __init__(
         self,
         center: Point,
@@ -467,6 +461,9 @@ class Box3d(ToNumpy, ToDict):
         self.width = float(width)
         self.height = float(height)
         self.heading = float(heading)
+        if find_spec("ligavision"):
+            from ligavision.spark.types.geometry import Box3dType
+            self.__UDT__ = Box3dType()
 
     def __repr__(self) -> str:
         return (
@@ -545,8 +542,6 @@ class Mask(ToNumpy, ToDict, Drawable):
 
     """
 
-    __UDT__ = MaskType()
-
     class Type(Enum):
         """Mask type."""
 
@@ -571,6 +566,9 @@ class Mask(ToNumpy, ToDict, Drawable):
 
         self.width = width
         self.height = height
+        if find_spec("ligavision"):
+            from ligavision.spark.types.geometry import MaskType
+            self.__UDT__ = MaskType()
 
     @staticmethod
     def from_rle(data: list[int], width: int, height: int) -> Mask:

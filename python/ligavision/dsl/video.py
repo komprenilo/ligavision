@@ -14,9 +14,9 @@
 
 """Video related types and utils"""
 from abc import ABC, abstractmethod
+from importlib.util import find_spec
 
 from ligavision.dsl.mixin import Displayable, ToDict
-from ligavision.spark.types import SegmentType, VideoStreamType, YouTubeVideoType
 
 __all__ = [
     "YouTubeVideo",
@@ -35,7 +35,6 @@ class YouTubeVideo(Displayable):
     VideoStream instance which represents a particular video stream file obj
     """
 
-    __UDT__ = YouTubeVideoType()
 
     def __init__(self, vid: str):
         """
@@ -47,6 +46,10 @@ class YouTubeVideo(Displayable):
         self.vid = vid
         self.uri = "https://www.youtube.com/watch?v={0}".format(self.vid)
         self.embed_url = "http://www.youtube.com/embed/{0}".format(self.vid)
+
+        if find_spec("ligavision"):
+            from ligavision.spark.types import YouTubeVideoType
+            self.__UDT__ = YouTubeVideoType()
 
     def __repr__(self) -> str:
         return "YouTubeVideo({0})".format(self.vid)
@@ -146,10 +149,11 @@ def getworst(v_pafy, preftype="any", ftypestrict=True, vidonly=False):
 class VideoStream(Displayable, ToDict):
     """Represents a particular video stream at a given uri"""
 
-    __UDT__ = VideoStreamType()
-
     def __init__(self, uri: str):
         self.uri = uri
+        if find_spec("ligavision"):
+            from ligavision.spark.types import VideoStreamType
+            self.__UDT__ = VideoStreamType()
 
     def __repr__(self) -> str:
         return f"VideoStream(uri={self.uri})"
@@ -194,8 +198,6 @@ class VideoStream(Displayable, ToDict):
 class Segment:
     """A video segment bounded by frame numbers"""
 
-    __UDT__ = SegmentType()
-
     def __init__(self, start_fno: int, end_fno: int):
         """
 
@@ -218,6 +220,9 @@ class Segment:
             )
         self.start_fno = start_fno
         self.end_fno = end_fno
+        if find_spec("ligavision"):
+            from ligavision.spark.types import SegmentType
+            self.__UDT__ = SegmentType()
 
     def __repr__(self) -> str:
         return f"Segment(start_fno={self.start_fno}, end_fno={self.end_fno})"

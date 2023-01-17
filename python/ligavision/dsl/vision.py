@@ -30,11 +30,10 @@ import numpy as np
 from PIL import Image as PILImage
 
 # Rikai
-from liga.conf import options
 from liga.internal.uri_utils import normalize_uri
 from liga.io import copy, open_output_stream
+from ligavision.dsl import conf
 from ligavision.dsl.mixin import Asset, Displayable, Drawable, ToDict, ToNumpy, ToPIL
-from ligavision.spark.types import ImageType
 from ligavision.dsl.geometry import Box2d
 from ligavision.dsl.base import Draw, PILRenderer
 
@@ -52,7 +51,6 @@ class Image(ToNumpy, ToPIL, Asset, Displayable, ToDict):
         It can be the content of image, or a URI / Path of an image.
     """
 
-    __UDT__ = ImageType()
 
     def __init__(
         self,
@@ -66,6 +64,11 @@ class Image(ToNumpy, ToPIL, Asset, Displayable, ToDict):
         else:
             uri = image
         super().__init__(data=data, uri=uri)
+
+        from importlib.util import find_spec
+        if find_spec("ligavision"):
+            from ligavision.spark.types import ImageType
+            self.__UDT__ = ImageType()
 
     @classmethod
     def from_array(
@@ -139,7 +142,7 @@ class Image(ToNumpy, ToPIL, Asset, Displayable, ToDict):
             Optional arguments to pass to `PIL.Image.save <https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.save>`_.
         """  # noqa: E501
 
-        format = format if format else options.ligavision.image.default.format
+        format = format if format else conf.image.format
 
         if uri is None:
             buf = BytesIO()
@@ -174,7 +177,7 @@ class Image(ToNumpy, ToPIL, Asset, Displayable, ToDict):
         if not self.is_embedded and self.uri.startswith("http"):
             return IPythonImage(url=self.uri, **kwargs)
         else:
-            if options.ligavision.notebook.platform == "databricks":
+            if conf.image.notebook == "databricks":
                 # Using Data URIs for Databricks Notebook
                 with self.open() as fobj:
                     data = fobj.read()

@@ -1,31 +1,20 @@
-try:
-    from pandas._config.config import (
-        get_option,
-        register_option,
-        reset_option,
-        set_option,
-    )
-except ModuleNotFoundError:
-    from pandas.core.config import (
-        get_option,
-        register_option,
-        reset_option,
-        set_option,
-    )
+#  Copyright 2021 Liga Authors
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
 
-import pandas as pd
+class image:
+    format = "PNG"
+    notebook = "databricks"
 
-options = pd.options
-
-CONF_RIKAI_VIZ_COLOR = "ligavision.dsl.color"
-DEFAULT_RIKAI_VIZ_COLOR = "red"
-register_option(CONF_RIKAI_VIZ_COLOR, DEFAULT_RIKAI_VIZ_COLOR)
-
-CONF_RIKAI_IMAGE_DEFAULT_FORMAT = "ligavision.image.default.format"
-DEFAULT_IMAGE_DEFAULT_FORMAT = "PNG"
-register_option(CONF_RIKAI_IMAGE_DEFAULT_FORMAT, DEFAULT_IMAGE_DEFAULT_FORMAT)
-
-# The hack for Databricks Notebook breaks the Github Notebook Preview
-CONF_RIKAI_NOTEBOOK_PLATFORM = "ligavision.notebook.platform"
-DEFAULT_NOTEBOOK_PLATFORM = "databricks"
-register_option(CONF_RIKAI_NOTEBOOK_PLATFORM, DEFAULT_NOTEBOOK_PLATFORM)
+class text:
+    color = "red"

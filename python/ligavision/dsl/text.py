@@ -15,7 +15,7 @@
 from typing import Tuple
 
 from ligavision.dsl.base import Drawable, Renderer
-from ligavision.dsl.conf import CONF_RIKAI_VIZ_COLOR, get_option
+from ligavision.dsl import conf
 
 
 class Text(Drawable):
@@ -35,7 +35,7 @@ class Text(Drawable):
             self,
             text: str,
             xy: Tuple[int, int],
-            color: str = get_option(CONF_RIKAI_VIZ_COLOR),
+            color: str = conf.text.color,
     ):
         self.text = text
         self.xy = xy
