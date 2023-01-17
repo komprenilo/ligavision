@@ -27,7 +27,7 @@ from PIL import ImageDraw as PILImageDraw
 from liga.io import open_uri
 from ligavision.dsl.geometry import Box2d
 from ligavision.dsl.vision import Image, ImageDraw
-from ligavision.viz import Style, Text
+from ligavision.dsl import Style, Text
 
 
 @pytest.fixture

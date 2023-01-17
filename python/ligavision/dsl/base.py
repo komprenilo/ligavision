@@ -15,7 +15,7 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from typing import Optional, Tuple, Union, Mapping
+from typing import Union
 
 import numpy as np
 from PIL import Image as PILImage
@@ -23,50 +23,6 @@ from PIL import ImageDraw
 
 from ligavision.conf import CONF_RIKAI_VIZ_COLOR, get_option
 from ligavision.mixin import Displayable, Drawable
-
-__all__ = ["Style", "Text"]
-
-
-class Style(Drawable):
-    """Styling a drawable-component.
-
-    Examples
-    --------
-
-    >>> from ligavision.viz import Style
-    >>> from ligavision.dsl import Box2d, Image
-    ...
-    >>> img = Image(uri="s3://....")
-    >>> bbox1, bbox2 = Box2d(1, 2, 3, 4), Box2d(3, 4, 5, 6)
-    >>> bbox_style = Style(color="yellow", width=4)
-    >>> image | bbox_style(bbox1) | bbox_style(bbox2)
-    """
-
-    def __init__(self, **kwarg):
-        self.kwargs = kwarg
-        self.inner = None  # type: Optional[list[Drawable]]
-
-    def __repr__(self):
-        return f"style({self.kwargs})"
-
-    def __call__(self, inner: Union[Drawable, list[Drawable]]) -> Drawable:
-        # Make a copy of Style so the same style can be applied
-        # to multiple drawables
-        s = Style(**self.kwargs)
-        if isinstance(inner, Drawable):
-            inner = [inner]
-        s.inner = inner
-        return s
-
-    def _render(self, render: Renderer, **kwargs):
-        if self.inner is None:
-            raise ValueError(
-                "This style object has not attack to a Drawable yet"
-            )
-        # TODO: catch excessive parameters
-        kwargs.update(self.kwargs)
-        for inner_draw in self.inner:
-            inner_draw._render(render, **kwargs)
 
 
 class Draw(Displayable, ABC):
@@ -109,7 +65,7 @@ class Draw(Displayable, ABC):
     def __or__(self, other: Union[Drawable, list[Drawable]]) -> Draw:
         return self.draw(other)
 
-    def __matmul__(self, style: Union[dict, "ligavision.viz.Style"]) -> Draw:
+    def __matmul__(self, style: Union[dict, "ligavision.dsl.Style"]) -> Draw:
         new_layers = [x @ style for x in self.layers]
         return Draw(new_layers)
 
@@ -119,7 +75,7 @@ class Renderer(ABC):
 
     @abstractmethod
     def rectangle(
-        self, xy, color: str = get_option(CONF_RIKAI_VIZ_COLOR), width: int = 1
+            self, xy, color: str = get_option(CONF_RIKAI_VIZ_COLOR), width: int = 1
     ):
         pass
 
@@ -148,15 +104,15 @@ class PILRenderer(Renderer):
         return self.img
 
     def rectangle(
-        self, xy, color: str = get_option(CONF_RIKAI_VIZ_COLOR), width: int = 1
+            self, xy, color: str = get_option(CONF_RIKAI_VIZ_COLOR), width: int = 1
     ):
         self.draw.rectangle(xy, outline=color, width=width)
 
     def polygon(
-        self,
-        xy,
-        color: str = get_option(CONF_RIKAI_VIZ_COLOR),
-        fill: bool = True,
+            self,
+            xy,
+            color: str = get_option(CONF_RIKAI_VIZ_COLOR),
+            fill: bool = True,
     ):
         if fill:
             overlay = PILImage.new("RGBA", self.img.size, (255, 255, 255, 0))
@@ -172,12 +128,12 @@ class PILRenderer(Renderer):
             self.draw.polygon(xy=xy, outline=color)
 
     def text(
-        self, xy, text: str, color: str = get_option(CONF_RIKAI_VIZ_COLOR)
+            self, xy, text: str, color: str = get_option(CONF_RIKAI_VIZ_COLOR)
     ):
         self.draw.text(xy, text, fill=color)
 
     def mask(
-        self, arr: np.ndarray, color: str = get_option(CONF_RIKAI_VIZ_COLOR)
+            self, arr: np.ndarray, color: str = get_option(CONF_RIKAI_VIZ_COLOR)
     ):
         overlay = PILImage.new("RGBA", self.img.size, (255, 255, 255, 0))
         overlay_draw = ImageDraw.Draw(overlay)
@@ -187,29 +143,42 @@ class PILRenderer(Renderer):
         self.draw = ImageDraw.Draw(self.img)
 
 
-class Text(Drawable):
-    """Render a Text
+class Style(Drawable):
+    """Styling a drawable-component.
 
-    Parameters
-    ----------
-    text : str
-        The text content to be rendered
-    xy : Tuple[int, int]
-        The location to render the text
-    color : str, optional
-        The RGB color string to render the text
+    Examples
+    --------
+
+    >>> from ligavision.dsl import Box2d, Image, Style
+    ...
+    >>> img = Image(uri="s3://....")
+    >>> bbox1, bbox2 = Box2d(1, 2, 3, 4), Box2d(3, 4, 5, 6)
+    >>> bbox_style = Style(color="yellow", width=4)
+    >>> image | bbox_style(bbox1) | bbox_style(bbox2)
     """
 
-    def __init__(
-        self,
-        text: str,
-        xy: Tuple[int, int],
-        color: str = get_option(CONF_RIKAI_VIZ_COLOR),
-    ):
-        self.text = text
-        self.xy = xy
-        self.color = color
+    def __init__(self, **kwarg):
+        self.kwargs = kwarg
+        self.inner = None  # type: Optional[list[Drawable]]
+
+    def __repr__(self):
+        return f"style({self.kwargs})"
+
+    def __call__(self, inner: Union[Drawable, list[Drawable]]) -> Drawable:
+        # Make a copy of Style so the same style can be applied
+        # to multiple drawables
+        s = Style(**self.kwargs)
+        if isinstance(inner, Drawable):
+            inner = [inner]
+        s.inner = inner
+        return s
 
     def _render(self, render: Renderer, **kwargs):
-        kwargs["color"] = kwargs.get("color", self.color)
-        return render.text(self.xy, self.text, **kwargs)
+        if self.inner is None:
+            raise ValueError(
+                "This style object has not attack to a Drawable yet"
+            )
+        # TODO: catch excessive parameters
+        kwargs.update(self.kwargs)
+        for inner_draw in self.inner:
+            inner_draw._render(render, **kwargs)

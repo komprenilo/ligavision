@@ -17,7 +17,7 @@ import pandas as pd
 
 options = pd.options
 
-CONF_RIKAI_VIZ_COLOR = "ligavision.viz.color"
+CONF_RIKAI_VIZ_COLOR = "ligavision.dsl.color"
 DEFAULT_RIKAI_VIZ_COLOR = "red"
 register_option(CONF_RIKAI_VIZ_COLOR, DEFAULT_RIKAI_VIZ_COLOR)
 

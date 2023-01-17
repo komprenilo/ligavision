@@ -13,6 +13,8 @@
 #  limitations under the License.
 
 # __all__ is defined in these
+from ligavision.dsl.base import Style, Draw, Renderer, PILRenderer
 from ligavision.dsl.geometry import *
 from ligavision.dsl.video import *
 from ligavision.dsl.vision import *
+from ligavision.dsl.text import Text
