@@ -36,6 +36,15 @@ def test_image() -> PILImage:
     rescaled = (255.0 / data.max() * (data - data.min())).astype(np.uint8)
     return PILImage.fromarray(rescaled)
 
+@pytest.fixture
+def two_flickr_images() -> list:
+    return [
+        Image.read(uri)
+        for uri in [
+            "http://farm2.staticflickr.com/1129/4726871278_4dd241a03a_z.jpg",
+            "http://farm4.staticflickr.com/3726/9457732891_87c6512b62_z.jpg",
+        ]
+    ]
 
 def assert_mimebundle(obj: Union[Image, ImageDraw], prefix):
     mimebundle = obj.display()._repr_mimebundle_()
