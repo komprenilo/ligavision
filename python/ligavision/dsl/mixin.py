@@ -127,4 +127,5 @@ class Asset(ABC):
         """Open the asset and returned as random-accessible file object."""
         if self.is_embedded:
             return BytesIO(self.data)
-        return open_uri(self.uri, mode=mode)
+        import fsspec
+        return fsspec.open(self.uri, mode)

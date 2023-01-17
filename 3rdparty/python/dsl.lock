@@ -9,7 +9,8 @@
 //     "CPython<3.10,>=3.8"
 //   ],
 //   "generated_with_requirements": [
-//     "Pillow"
+//     "Pillow",
+//     "fsspec"
 //   ],
 //   "manylinux": "manylinux2014",
 //   "requirement_constraints": [],
@@ -27,6 +28,50 @@
   "locked_resolves": [
     {
       "locked_requirements": [
+        {
+          "artifacts": [
+            {
+              "algorithm": "sha256",
+              "hash": "d6e462003e3dcdcb8c7aa84c73a228f8227e72453cd22570e2363e8844edfe7b",
+              "url": "https://files.pythonhosted.org/packages/37/57/eb7c3c10b187d3b8565946772ce0229c79e3c623010eda0aeb5032ff56f4/fsspec-2022.11.0-py3-none-any.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "259d5fd5c8e756ff2ea72f42e7613c32667dc2049a4ac3d84364a7ca034acb8b",
+              "url": "https://files.pythonhosted.org/packages/44/7c/fb753d18e2eeb186a47ecd6939326f7633a027fe23a44ee7912978e64819/fsspec-2022.11.0.tar.gz"
+            }
+          ],
+          "project_name": "fsspec",
+          "requires_dists": [
+            "adlfs; extra == \"abfs\"",
+            "adlfs; extra == \"adl\"",
+            "aiohttp!=4.0.0a0,!=4.0.0a1; extra == \"http\"",
+            "dask; extra == \"dask\"",
+            "distributed; extra == \"dask\"",
+            "dropbox; extra == \"dropbox\"",
+            "dropboxdrivefs; extra == \"dropbox\"",
+            "fusepy; extra == \"fuse\"",
+            "gcsfs; extra == \"gcs\"",
+            "gcsfs; extra == \"gs\"",
+            "importlib-metadata; python_version < \"3.8\" and extra == \"entrypoints\"",
+            "libarchive-c; extra == \"libarchive\"",
+            "ocifs; extra == \"oci\"",
+            "panel; extra == \"gui\"",
+            "paramiko; extra == \"sftp\"",
+            "paramiko; extra == \"ssh\"",
+            "pyarrow>=1; extra == \"arrow\"",
+            "pyarrow>=1; extra == \"hdfs\"",
+            "pygit2; extra == \"git\"",
+            "requests; extra == \"dropbox\"",
+            "requests; extra == \"github\"",
+            "requests; extra == \"http\"",
+            "s3fs; extra == \"s3\"",
+            "smbprotocol; extra == \"smb\"",
+            "tqdm; extra == \"tqdm\""
+          ],
+          "requires_python": ">=3.7",
+          "version": "2022.11"
+        },
         {
           "artifacts": [
             {
@@ -238,7 +283,8 @@
   "pip_version": "20.3.4-patched",
   "prefer_older_binary": false,
   "requirements": [
-    "Pillow"
+    "Pillow",
+    "fsspec"
   ],
   "requires_python": [
     "<3.10,>=3.8"

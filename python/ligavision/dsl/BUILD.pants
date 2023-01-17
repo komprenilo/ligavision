@@ -9,9 +9,10 @@ python_tests(
 )
 
 python_requirement(
-    name="Pillow",
+    name="requirements",
     requirements=[
         "Pillow",
+        "fsspec",
     ],
     resolve=parametrize("dsl", "spark_3_2_1", "test"),
 )

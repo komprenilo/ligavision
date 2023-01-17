@@ -10,6 +10,7 @@
 //   ],
 //   "generated_with_requirements": [
 //     "Pillow",
+//     "fsspec",
 //     "liga==0.2.0.dev8",
 //     "pyspark==3.2.1"
 //   ],
@@ -33,13 +34,13 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "a9781ed0979a20341c2cbb56bd22bd8db4fc1913f955e705444bd3a97c59fa32",
-              "url": "https://files.pythonhosted.org/packages/67/8d/694d5c1de901de71cd6d5fb2d0e19cad29b5615c6b56dabcf0a4aaf34082/alembic-1.9.1-py3-none-any.whl"
+              "hash": "e8a6ff9f3b1887e1fed68bfb8fb9a000d8f61c21bdcc85b67bb9f87fcbc4fce3",
+              "url": "https://files.pythonhosted.org/packages/f4/88/08b24576e30f73a8c327a36a08415781745b54ff4d7186e3cc7fb8b7cd55/alembic-1.9.2-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "f9f76e41061f5ebe27d4fe92600df9dd612521a7683f904dab328ba02cffa5a2",
-              "url": "https://files.pythonhosted.org/packages/81/87/5c531d2923c61e7ae68b23c8660df289ae4241a0d38f3fbcbd8dba64ca6b/alembic-1.9.1.tar.gz"
+              "hash": "6880dec4f28dd7bd999d2ed13fbe7c9d4337700a44d11a524c0ce0c59aaf0dbd",
+              "url": "https://files.pythonhosted.org/packages/1b/57/b2f76a894b5642c69a57df6d729e3e1b743d666353d7e5f1ab9f7c88cf13/alembic-1.9.2.tar.gz"
             }
           ],
           "project_name": "alembic",
@@ -51,7 +52,7 @@
             "python-dateutil; extra == \"tz\""
           ],
           "requires_python": ">=3.7",
-          "version": "1.9.1"
+          "version": "1.9.2"
         },
         {
           "artifacts": [
@@ -1184,8 +1185,8 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "43521ce2c4b865d385e78579a082b6ad1166ebed2b1a2293c3be1d68dd7ca3b9",
-              "url": "https://files.pythonhosted.org/packages/5c/2a/72b80cd8a35fac89142afb35aabab6ce2631a3261043b6216664c9137b29/Pillow-9.4.0-1-pp39-pypy39_pp73-macosx_10_10_x86_64.whl"
+              "hash": "99d92d148dd03fd19d16175b6d355cc1b01faf80dae93c6c3eb4163709edc0a9",
+              "url": "https://files.pythonhosted.org/packages/cf/ae/b20344b540ed6a9f38b8bf6444cc102dd4ae3855ba44ddcb092286843b2b/Pillow-9.4.0-2-pp39-pypy39_pp73-macosx_10_10_x86_64.whl"
             },
             {
               "algorithm": "sha256",
@@ -1231,6 +1232,11 @@
               "algorithm": "sha256",
               "hash": "0845adc64fe9886db00f5ab68c4a8cd933ab749a87747555cec1c95acea64b0b",
               "url": "https://files.pythonhosted.org/packages/53/9c/198822d4f9d7a50f17f1e04c5b1e9bf3f0ed8638e76e367490bce79544eb/Pillow-9.4.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "43521ce2c4b865d385e78579a082b6ad1166ebed2b1a2293c3be1d68dd7ca3b9",
+              "url": "https://files.pythonhosted.org/packages/5c/2a/72b80cd8a35fac89142afb35aabab6ce2631a3261043b6216664c9137b29/Pillow-9.4.0-1-pp39-pypy39_pp73-macosx_10_10_x86_64.whl"
             },
             {
               "algorithm": "sha256",
@@ -1284,6 +1290,16 @@
             },
             {
               "algorithm": "sha256",
+              "hash": "013016af6b3a12a2f40b704677f8b51f72cb007dac785a9933d5c86a72a7fe33",
+              "url": "https://files.pythonhosted.org/packages/95/d2/d444a3a1751874210ff3dd792dc2f27f2052be2a3e5386ddaab4751a7171/Pillow-9.4.0-2-pp38-pypy38_pp73-macosx_10_10_x86_64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "9e5f94742033898bfe84c93c831a6f552bb629448d4072dd312306bab3bd96f1",
+              "url": "https://files.pythonhosted.org/packages/9e/73/4aacfaeee07328835131683c27d8246b50b10260ff30982e5d988d04e06f/Pillow-9.4.0-2-cp39-cp39-macosx_10_10_x86_64.whl"
+            },
+            {
+              "algorithm": "sha256",
               "hash": "28676836c7796805914b76b1837a40f76827ee0d5398f72f7dcc634bae7c6264",
               "url": "https://files.pythonhosted.org/packages/9e/91/f0ae261eaa8e06550e89c169176fbca209b9fc74014581956cd0ffc705ee/Pillow-9.4.0-cp39-cp39-manylinux_2_17_i686.manylinux2014_i686.whl"
             },
@@ -1326,6 +1342,11 @@
               "algorithm": "sha256",
               "hash": "e8c5cf126889a4de385c02a2c3d3aba4b00f70234bfddae82a5eaa3ee6d5e3e6",
               "url": "https://files.pythonhosted.org/packages/de/e2/d1dda94185dba4fc019744076e52e2c6b450620938b2ded7b31ba90bd559/Pillow-9.4.0-cp39-cp39-manylinux_2_28_x86_64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "83125753a60cfc8c412de5896d10a0a405e0bd88d0470ad82e0869ddf0cb3848",
+              "url": "https://files.pythonhosted.org/packages/e8/cd/6dbd1286a28a074dd8c47583c2224617c0283e69749a6cea45e084d99c8a/Pillow-9.4.0-2-cp38-cp38-macosx_10_10_x86_64.whl"
             },
             {
               "algorithm": "sha256",
@@ -1658,19 +1679,19 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "93007def75ae22f7cd991c84e02d434876818661f8df9ad5df9e950ff4e52cfd",
-              "url": "https://files.pythonhosted.org/packages/3d/19/4de17f0d5cf5a0d87aa67532d4c2fa75e6e7d8df13c27635ff40fa6f4b76/pytz-2022.7-py2.py3-none-any.whl"
+              "hash": "78f4f37d8198e0627c5f1143240bb0206b8691d8d7ac6d78fee88b78733f8c4a",
+              "url": "https://files.pythonhosted.org/packages/2e/09/fbd3c46dce130958ee8e0090f910f1fe39e502cc5ba0aadca1e8a2b932e5/pytz-2022.7.1-py2.py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "7ccfae7b4b2c067464a6733c6261673fdb8fd1be905460396b97a073e9fa683a",
-              "url": "https://files.pythonhosted.org/packages/6d/37/54f2d7c147e42dc85ffbc6910862bb4f141fb3fc14d9a88efaa1a76c7df2/pytz-2022.7.tar.gz"
+              "hash": "01a0681c4b9684a28304615eba55d1ab31ae00bf68ec157ec3708a8182dbbcd0",
+              "url": "https://files.pythonhosted.org/packages/03/3e/dc5c793b62c60d0ca0b7e58f1fdd84d5aaa9f8df23e7589b39cc9ce20a03/pytz-2022.7.1.tar.gz"
             }
           ],
           "project_name": "pytz",
           "requires_dists": [],
           "requires_python": null,
-          "version": "2022.7"
+          "version": "2022.7.1"
         },
         {
           "artifacts": [
@@ -1948,13 +1969,13 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "8ab4f1dbf2b4a65f7eec5ad0c620e84c34111a68d3349833494b9088212214dd",
-              "url": "https://files.pythonhosted.org/packages/ff/97/9dc902414912192d68364cc01cf17e826d259ef9753504b7ae1a256f2e35/setuptools-65.7.0-py3-none-any.whl"
+              "hash": "a78d01d1e2c175c474884671dde039962c9d74c7223db7369771fcf6e29ceeab",
+              "url": "https://files.pythonhosted.org/packages/bd/ef/76cffd20061a0c6512dad4ba3537314904c6350738b99526c2f48992ff58/setuptools-66.0.0-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "4d3c92fac8f1118bb77a22181355e29c239cabfe2b9effdaa665c66b711136d7",
-              "url": "https://files.pythonhosted.org/packages/a1/29/f2ad3b78b9ebd24afa282eed9add27b47ef52b37291198021154b4b65166/setuptools-65.7.0.tar.gz"
+              "hash": "bd6eb2d6722568de6d14b87c44a96fac54b2a45ff5e940e639979a3d1792adb6",
+              "url": "https://files.pythonhosted.org/packages/67/ba/27235b9eebee2492fbf03ac1828a997d3d686031445d491f9cfa36a7085e/setuptools-66.0.0.tar.gz"
             }
           ],
           "project_name": "setuptools",
@@ -2006,7 +2027,7 @@
             "wheel; extra == \"testing-integration\""
           ],
           "requires_python": ">=3.7",
-          "version": "65.7"
+          "version": "66"
         },
         {
           "artifacts": [
@@ -2304,6 +2325,7 @@
   "prefer_older_binary": false,
   "requirements": [
     "Pillow",
+    "fsspec",
     "liga==0.2.0.dev8",
     "pyspark==3.2.1"
   ],
