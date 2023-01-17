@@ -13,6 +13,7 @@ python_requirement(
     requirements=[
         "Pillow",
         "fsspec",
+        "requests",
     ],
     resolve=parametrize("dsl", "spark_3_2_1", "test"),
 )

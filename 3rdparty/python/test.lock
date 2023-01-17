@@ -15,7 +15,8 @@
 //     "jupyterlab",
 //     "liga==0.2.0.dev8",
 //     "matplotlib",
-//     "pyspark==3.2.1"
+//     "pyspark==3.2.1",
+//     "requests"
 //   ],
 //   "manylinux": "manylinux2014",
 //   "requirement_constraints": [],
@@ -5054,7 +5055,8 @@
     "jupyterlab",
     "liga==0.2.0.dev8",
     "matplotlib",
-    "pyspark==3.2.1"
+    "pyspark==3.2.1",
+    "requests"
   ],
   "requires_python": [
     "<3.10,>=3.8"

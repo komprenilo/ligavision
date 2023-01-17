@@ -128,4 +128,4 @@ class Asset(ABC):
         if self.is_embedded:
             return BytesIO(self.data)
         import fsspec
-        return fsspec.open(self.uri, mode)
+        return fsspec.open(self.uri, mode).open()
