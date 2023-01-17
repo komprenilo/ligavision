@@ -25,7 +25,7 @@ import numpy as np
 from pandas import get_option
 from PIL import Image, ImageDraw
 
-from ligavision.dsl.conf import CONF_RIKAI_VIZ_COLOR
+from ligavision.dsl import conf
 from ligavision.dsl.mixin import Drawable, ToDict, ToNumpy
 from ligavision.spark.types.geometry import (
     Box2dType,
@@ -395,7 +395,7 @@ class Box2d(ToNumpy, Sequence, ToDict, Drawable):
         return iou_arr
 
     def with_label(
-        self, text: str, color: str = get_option(CONF_RIKAI_VIZ_COLOR)
+        self, text: str, color: str = conf.text.color
     ) -> "ligavision.dsl.Draw":
         from ligavision.dsl import Draw, Text
 

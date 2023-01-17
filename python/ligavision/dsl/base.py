@@ -21,7 +21,7 @@ import numpy as np
 from PIL import Image as PILImage
 from PIL import ImageDraw
 
-from ligavision.dsl.conf import CONF_RIKAI_VIZ_COLOR, get_option
+from ligavision.dsl import conf
 from ligavision.dsl.mixin import Displayable, Drawable
 
 
@@ -75,7 +75,7 @@ class Renderer(ABC):
 
     @abstractmethod
     def rectangle(
-            self, xy, color: str = get_option(CONF_RIKAI_VIZ_COLOR), width: int = 1
+            self, xy, color: str = conf.text.color, width: int = 1
     ):
         pass
 
@@ -104,14 +104,14 @@ class PILRenderer(Renderer):
         return self.img
 
     def rectangle(
-            self, xy, color: str = get_option(CONF_RIKAI_VIZ_COLOR), width: int = 1
+            self, xy, color: str = conf.text.color, width: int = 1
     ):
         self.draw.rectangle(xy, outline=color, width=width)
 
     def polygon(
             self,
             xy,
-            color: str = get_option(CONF_RIKAI_VIZ_COLOR),
+            color: str = conf.text.color,
             fill: bool = True,
     ):
         if fill:
@@ -128,12 +128,12 @@ class PILRenderer(Renderer):
             self.draw.polygon(xy=xy, outline=color)
 
     def text(
-            self, xy, text: str, color: str = get_option(CONF_RIKAI_VIZ_COLOR)
+            self, xy, text: str, color: str = conf.text.color
     ):
         self.draw.text(xy, text, fill=color)
 
     def mask(
-            self, arr: np.ndarray, color: str = get_option(CONF_RIKAI_VIZ_COLOR)
+            self, arr: np.ndarray, color: str = conf.text.color
     ):
         overlay = PILImage.new("RGBA", self.img.size, (255, 255, 255, 0))
         overlay_draw = ImageDraw.Draw(overlay)

@@ -16,7 +16,7 @@
 from abc import ABC, abstractmethod
 
 from ligavision.dsl.mixin import Displayable, ToDict
-from ligavision.spark.types import SegmentType, VideoStreamType, YouTubeVideoType
+from ligavision.spark.types import SegmentType, VideoStreamType
 
 __all__ = [
     "YouTubeVideo",
@@ -35,7 +35,6 @@ class YouTubeVideo(Displayable):
     VideoStream instance which represents a particular video stream file obj
     """
 
-    __UDT__ = YouTubeVideoType()
 
     def __init__(self, vid: str):
         """
@@ -47,6 +46,10 @@ class YouTubeVideo(Displayable):
         self.vid = vid
         self.uri = "https://www.youtube.com/watch?v={0}".format(self.vid)
         self.embed_url = "http://www.youtube.com/embed/{0}".format(self.vid)
+
+        if find_spec("ligavision"):
+            from ligavision.spark.types import YouTubeVideoType
+            self.__UDT__ = YouTubeVideoType()
 
     def __repr__(self) -> str:
         return "YouTubeVideo({0})".format(self.vid)
