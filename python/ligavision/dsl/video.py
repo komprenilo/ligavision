@@ -16,7 +16,6 @@
 from abc import ABC, abstractmethod
 
 from ligavision.dsl.mixin import Displayable, ToDict
-from ligavision.spark.types import SegmentType, VideoStreamType
 
 __all__ = [
     "YouTubeVideo",
@@ -149,10 +148,11 @@ def getworst(v_pafy, preftype="any", ftypestrict=True, vidonly=False):
 class VideoStream(Displayable, ToDict):
     """Represents a particular video stream at a given uri"""
 
-    __UDT__ = VideoStreamType()
-
     def __init__(self, uri: str):
         self.uri = uri
+        if find_spec("ligavision"):
+            from ligavision.spark.types import VideoStreamType
+            self.__UDT__ = VideoStreamType()
 
     def __repr__(self) -> str:
         return f"VideoStream(uri={self.uri})"
@@ -197,8 +197,6 @@ class VideoStream(Displayable, ToDict):
 class Segment:
     """A video segment bounded by frame numbers"""
 
-    __UDT__ = SegmentType()
-
     def __init__(self, start_fno: int, end_fno: int):
         """
 
@@ -221,6 +219,9 @@ class Segment:
             )
         self.start_fno = start_fno
         self.end_fno = end_fno
+        if find_spec("ligavision"):
+            from ligavision.spark.types import SegmentType
+            self.__UDT__ = SegmentType()
 
     def __repr__(self) -> str:
         return f"Segment(start_fno={self.start_fno}, end_fno={self.end_fno})"
