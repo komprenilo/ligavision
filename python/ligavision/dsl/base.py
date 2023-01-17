@@ -21,7 +21,7 @@ import numpy as np
 from PIL import Image as PILImage
 from PIL import ImageDraw
 
-from ligavision.conf import CONF_RIKAI_VIZ_COLOR, get_option
+from ligavision.dsl.conf import CONF_RIKAI_VIZ_COLOR, get_option
 from ligavision.dsl.mixin import Displayable, Drawable
 
 

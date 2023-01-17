@@ -25,7 +25,7 @@ import numpy as np
 from pandas import get_option
 from PIL import Image, ImageDraw
 
-from ligavision import CONF_RIKAI_VIZ_COLOR
+from ligavision.dsl.conf import CONF_RIKAI_VIZ_COLOR
 from ligavision.dsl.mixin import Drawable, ToDict, ToNumpy
 from ligavision.spark.types.geometry import (
     Box2dType,
