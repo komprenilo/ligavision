@@ -18,6 +18,7 @@ enable_resolves = true
 [python.resolves]
   spark_3_2_1 = "3rdparty/python/spark_3_2_1.lock"
   test = "3rdparty/python/test.lock"
+  dsl = "3rdparty/python/dsl.lock"
 
 [pytest]
   version = "pytest==7.0.1"
