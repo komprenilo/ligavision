@@ -12,6 +12,7 @@
 //     "Pillow",
 //     "aiohttp",
 //     "fsspec",
+//     "numpy",
 //     "requests"
 //   ],
 //   "manylinux": "manylinux2014",
@@ -663,6 +664,69 @@
           "artifacts": [
             {
               "algorithm": "sha256",
+              "hash": "ad2925567f43643f51255220424c23d204024ed428afc5aad0f86f3ffc080086",
+              "url": "https://files.pythonhosted.org/packages/49/47/12ef5c22217e16afdf1ba1e7cbf6bc36b5df2e0ddee3f5557bc1e41c9e41/numpy-1.24.1-pp38-pypy38_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "ed5fb71d79e771ec930566fae9c02626b939e37271ec285e9efaf1b5d4370e7d",
+              "url": "https://files.pythonhosted.org/packages/01/a8/de4f84ccbbe0b616b4c36bd74dd21ddcac9f0d69466b91a60e3b8647d5ca/numpy-1.24.1-pp38-pypy38_pp73-macosx_10_9_x86_64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "26089487086f2648944f17adaa1a97ca6aee57f513ba5f1c0b7ebdabbe2b9954",
+              "url": "https://files.pythonhosted.org/packages/14/5d/df640c8bc151c742d5166aecfc394134bf92bba432472bfa7d606badd0fc/numpy-1.24.1-cp38-cp38-macosx_11_0_arm64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "b0677a52f5d896e84414761531947c7a330d1adc07c3a4372262f25d84af7bf7",
+              "url": "https://files.pythonhosted.org/packages/3b/2b/75d7ed116b17202a89e6cf1eba7e91ba83abb79ece7924d5b2c820f59025/numpy-1.24.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "ef85cf1f693c88c1fd229ccd1055570cb41cdf4875873b7728b6301f12cd05bf",
+              "url": "https://files.pythonhosted.org/packages/43/55/fea3342371187dea4044521c0ba82b90fb5a42fb92446be019b316dd3320/numpy-1.24.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "28bc9750ae1f75264ee0f10561709b1462d450a4808cd97c013046073ae64ab6",
+              "url": "https://files.pythonhosted.org/packages/81/3a/faa8aa531ec3001ff3b215892de791142e01516105da4c5e40a5686edca2/numpy-1.24.1-cp39-cp39-macosx_10_9_x86_64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "8e669fbdcdd1e945691079c2cae335f3e3a56554e06bbd45d7609a6cf568c700",
+              "url": "https://files.pythonhosted.org/packages/ad/9a/98490aee9ca665cd04291658dd76e19c9b9d17680404aa9a122d5ef6ff79/numpy-1.24.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "84e789a085aabef2f36c0515f45e459f02f570c4b4c4c108ac1179c34d475ed7",
+              "url": "https://files.pythonhosted.org/packages/af/74/070f80c41427f41a48bd4c873768f4989aacac7b8c0a3060566402339ce9/numpy-1.24.1-cp39-cp39-macosx_11_0_arm64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "caf65a396c0d1f9809596be2e444e3bd4190d86d5c1ce21f5fc4be60a3bc5b36",
+              "url": "https://files.pythonhosted.org/packages/c5/f7/df97e91bf7f4125ce7fa24296f4dfb6f1fc172c08413146b456f5b1299f1/numpy-1.24.1-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "2386da9a471cc00a1f47845e27d916d5ec5346ae9696e01a8a34760858fe9dd2",
+              "url": "https://files.pythonhosted.org/packages/ce/b8/c170db50ec49d5845bd771bc5549fe734ee73083c5c52791915f95d8e2bc/numpy-1.24.1.tar.gz"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "b162ac10ca38850510caf8ea33f89edcb7b0bb0dfa5592d59909419986b72407",
+              "url": "https://files.pythonhosted.org/packages/fa/c2/00bed438bc58fd80429b7ea2b28382f99156659ebc6dfa750d1520df59d6/numpy-1.24.1-cp38-cp38-macosx_10_9_x86_64.whl"
+            }
+          ],
+          "project_name": "numpy",
+          "requires_dists": [],
+          "requires_python": ">=3.8",
+          "version": "1.24.1"
+        },
+        {
+          "artifacts": [
+            {
+              "algorithm": "sha256",
               "hash": "99d92d148dd03fd19d16175b6d355cc1b01faf80dae93c6c3eb4163709edc0a9",
               "url": "https://files.pythonhosted.org/packages/cf/ae/b20344b540ed6a9f38b8bf6444cc102dd4ae3855ba44ddcb092286843b2b/Pillow-9.4.0-2-pp39-pypy39_pp73-macosx_10_10_x86_64.whl"
             },
@@ -1074,6 +1138,7 @@
     "Pillow",
     "aiohttp",
     "fsspec",
+    "numpy",
     "requests"
   ],
   "requires_python": [
