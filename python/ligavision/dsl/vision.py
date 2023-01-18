@@ -24,20 +24,44 @@ from pathlib import Path
 from tempfile import NamedTemporaryFile
 from typing import List, Optional, Sequence, Union, Tuple
 from urllib.parse import urlparse
+import os
 
 # Third-party libraries
 import numpy as np
 from PIL import Image as PILImage
+import fsspec
 
 # Rikai
-from liga.internal.uri_utils import normalize_uri
-from liga.io import copy, open_output_stream
 from ligavision.dsl import conf
 from ligavision.dsl.mixin import Asset, Displayable, Drawable, ToDict, ToNumpy, ToPIL
 from ligavision.dsl.geometry import Box2d
 from ligavision.dsl.base import Draw, PILRenderer
 
 __all__ = ["Image"]
+
+
+def normalize_uri(uri: Union[str, Path]) -> str:
+    """Normalize URI
+
+    Convert a file path with "file://" schema.
+    Convert a relative path to absolute path
+
+    Parameters
+    ----------
+    uri : str or Path
+
+    Return
+    ------
+    str
+        Normalized URI with schema
+
+    """
+    if isinstance(uri, Path):
+        uri = str(uri.absolute())
+    parsed = urlparse(uri)
+    if parsed.scheme == "":
+        return "file://" + os.path.abspath(uri)
+    return uri
 
 
 class Image(ToNumpy, ToPIL, Asset, Displayable, ToDict):
@@ -156,7 +180,8 @@ class Image(ToNumpy, ToPIL, Asset, Displayable, ToDict):
             with NamedTemporaryFile() as fobj:
                 img.save(fobj, format=format, **kwargs)
                 fobj.flush()
-                copy(fobj.name, uri)
+                fs = fsspec.filesystem(parsed.scheme)
+                fs.copy(fobj.name, uri)
         return Image(uri)
 
     def display(self, **kwargs):
@@ -271,11 +296,13 @@ class Image(ToNumpy, ToPIL, Asset, Displayable, ToDict):
             A new image with the new URI / path
         """
         uri = str(uri)
+        parsed = urlparse(normalize_uri(self.uri))
+        fs = fsspec.filesystem(parsed.scheme)
         if self.is_embedded:
-            with open_output_stream(str(uri)) as fobj:
+            with fs.open(str(uri), mode="wb") as fobj:
                 fobj.write(self.data)
         else:
-            copy(self.uri, uri)
+            fs.copy(self.uri, uri)
         return Image(uri)
 
     def crop(
