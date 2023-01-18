@@ -24,9 +24,6 @@ from typing import BinaryIO, Mapping, Optional, Union
 # Third Party
 import numpy as np
 
-# Liga
-from liga.internal.uri_utils import uri_equal
-
 __all__ = [
     "Asset",
     "Displayable",
@@ -34,6 +31,19 @@ __all__ = [
     "ToDict",
 ]
 
+
+def uri_equal(uri1: str, uri2: str) -> bool:
+    """Return True if two URIs are equal."""
+    if uri1 == uri2:
+        return True
+    from urllib.parse import urlparse
+    parsed1 = urlparse(uri1)
+    parsed2 = urlparse(uri2)
+    if parsed1.scheme in ["", "file"] and parsed2.scheme in ["", "file"]:
+        return (
+                parsed1.netloc == parsed2.netloc and parsed1.path == parsed2.path
+        )
+    return False
 
 class ToNumpy(ABC):
     """ToNumpy Mixin."""

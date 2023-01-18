@@ -24,7 +24,6 @@ import pytest
 from PIL import Image as PILImage
 from PIL import ImageDraw as PILImageDraw
 
-from liga.io import open_uri
 from ligavision.dsl.geometry import Box2d
 from ligavision.dsl.vision import Image, ImageDraw
 from ligavision.dsl import Style, Text
