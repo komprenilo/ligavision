@@ -299,7 +299,7 @@ class Image(ToNumpy, ToPIL, Asset, Displayable, ToDict):
         parsed = urlparse(normalize_uri(self.uri))
         fs = fsspec.filesystem(parsed.scheme)
         if self.is_embedded:
-            with fs.open(str(uri), mode="w") as fobj:
+            with fs.open(str(uri), mode="wb") as fobj:
                 fobj.write(self.data)
         else:
             fs.copy(self.uri, uri)
