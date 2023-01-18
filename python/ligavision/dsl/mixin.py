@@ -26,7 +26,6 @@ import numpy as np
 
 # Liga
 from liga.internal.uri_utils import uri_equal
-from liga.io import open_uri
 
 __all__ = [
     "Asset",
