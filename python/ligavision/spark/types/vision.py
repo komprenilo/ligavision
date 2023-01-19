@@ -14,9 +14,10 @@
 
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, Optional
 from pathlib import Path
 
+from PIL import Image as PILImage
 from pyspark.sql.types import (
     BinaryType,
     StringType,
@@ -75,3 +76,15 @@ class Image(DslImage):
     def read(uri: Union[str, Path]) -> Image:
         image = DslImage.read(uri)
         return Image(image.data)
+
+    @staticmethod
+    def from_pil(
+        img: PILImage,
+        uri: Optional[Union[str, Path]] = None,
+        format: Optional[str] = None,
+        **kwargs,
+    ) -> Image:
+        dsl_image = DslImage.form_pil(img, uri, format, **kwargs)
+        image = Image(dsl_image.data)
+        image.uri = dsl_image.uri
+        return image

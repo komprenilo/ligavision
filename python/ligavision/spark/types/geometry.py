@@ -231,3 +231,14 @@ class Mask(DslMask):
     def from_rle(data: list[int], width: int, height: int) -> Mask:
         return Mask(DslMask.from_rle(data, width, height))
         
+    @staticmethod
+    def from_coco_rle(data: list[int], width: int, height: int) -> Mask:
+        return Mask(DslMask.from_coco_rle(data, width, height))
+
+    @staticmethod
+    def from_polygon(data: list[list[float]], width: int, height: int) -> Mask:
+        return Mask(DslMask.from_polygon(data, width, height))
+
+    @staticmethod
+    def from_mask(mask: np.ndarray) -> Mask:
+        return Mask(DslMask.from_mask(mask))
