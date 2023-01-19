@@ -41,9 +41,10 @@ from ligavision.spark.types.video import (
     VideoStreamType,
     YouTubeVideoType,
 )
-from ligavision.spark.types.vision import ImageType
+from ligavision.spark.types.vision import Image, ImageType
 
 __all__ = [
+    "Image",
     "ImageType",
     "NDArrayType",
     "PointType",
@@ -51,6 +52,7 @@ __all__ = [
     "Box2dType",
     "VideoStreamType",
     "YouTubeVideoType",
+    "Mask",
     "MaskType",
     "SegmentType",
 ]

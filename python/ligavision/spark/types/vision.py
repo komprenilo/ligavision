@@ -21,6 +21,9 @@ from pyspark.sql.types import (
     UserDefinedType,
 )
 
+from ligavision.dsl.vision import Image as DslImage
+
+
 __all__ = ["ImageType"]
 
 
@@ -56,9 +59,10 @@ class ImageType(UserDefinedType):
         return (obj.data, obj.uri)
 
     def deserialize(self, datum) -> "Image":
-        from ligavision.dsl.vision import Image
-
         return Image(datum[0] or datum[1])
 
     def simpleString(self) -> str:
         return "image"
+
+class Image(DslImage):
+    __UDT__ = ImageType()
