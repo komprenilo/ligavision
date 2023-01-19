@@ -49,11 +49,6 @@ class Point(ToNumpy, ToDict):
         self.x = float(x)
         self.y = float(y)
         self.z = float(z)
-        try:
-            from ligavision.spark.types.geometry import PointType
-            self.__UDT__ = PointType()
-        except ModuleNotFoundError:
-            pass
 
     def __repr__(self) -> str:
         return f"Point({self.x}, {self.y}, {self.z})"
@@ -459,11 +454,6 @@ class Box3d(ToNumpy, ToDict):
         self.width = float(width)
         self.height = float(height)
         self.heading = float(heading)
-        try:
-            from ligavision.spark.types.geometry import Box3dType
-            self.__UDT__ = Box3dType()
-        except ModuleNotFoundError:
-            pass
 
     def __repr__(self) -> str:
         return (

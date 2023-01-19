@@ -32,14 +32,19 @@ from pyspark.sql.types import (
 from ligavision.spark.types.geometry import (
     Box2d,
     Box2dType,
+    Box3d,
     Box3dType,
     Mask,
     MaskType,
+    Point,
     PointType,
 )
 from ligavision.spark.types.video import (
+    Segment,
     SegmentType,
+    VideoStream,
     VideoStreamType,
+    YouTubeVideo,
     YouTubeVideoType,
 )
 from ligavision.spark.types.vision import Image, ImageType
@@ -48,14 +53,19 @@ __all__ = [
     "Image",
     "ImageType",
     "NDArrayType",
+    "Point",
     "PointType",
+    "Box3d",
     "Box3dType",
     "Box2d",
     "Box2dType",
+    "VideoStream",
     "VideoStreamType",
+    "YouTubeVideo",
     "YouTubeVideoType",
     "Mask",
     "MaskType",
+    "Segment",
     "SegmentType",
 ]
 

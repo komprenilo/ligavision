@@ -34,8 +34,10 @@ from pyspark.sql.types import (
 from liga.logging import logger
 from ligavision.dsl import Mask as DslMask
 from ligavision.dsl import Box2d as DslBox2d
+from ligavision.dsl import Box3d as DslBox3d
+from ligavision.dsl import Point as DslPoint
 
-__all__ = ["PointType", "Box3dType", "Box2dType", "MaskType"]
+__all__ = ["Point", "PointType", "Box3d", "Box3dType", "Box2d", "Box2dType", "Mask","MaskType"]
 
 
 class Box2dType(UserDefinedType):
@@ -108,8 +110,6 @@ class PointType(UserDefinedType):
         return Row(x=obj.x, y=obj.y, z=obj.z)
 
     def deserialize(self, datum: Row) -> "Point":
-        from ligavision.dsl.geometry import Point
-
         if len(datum) < 3:
             logger.error(f"Deserialize Point: not sufficient data: {datum}")
 
@@ -118,9 +118,12 @@ class PointType(UserDefinedType):
     def simpleString(self) -> str:
         return "point"
 
+class Point(DslPoint):
+    __UDT__ = PointType()
+
 
 class Box3dType(UserDefinedType):
-    """Spark UDT for :py:class:`~ligavision.dsl.geometry.Box3d` class."""
+    """Spark UDT for :py:class:`~Box3d` class."""
 
     @classmethod
     def sqlType(cls) -> StructType:
@@ -147,14 +150,15 @@ class Box3dType(UserDefinedType):
         return Row(obj.center, obj.length, obj.width, obj.height, obj.heading)
 
     def deserialize(self, datum: Row) -> "Box3d":
-        from ligavision.dsl.geometry import Box3d
-
         if len(datum) < 5:
             logger.error(f"Deserialize Box3d: not sufficient data: {datum}")
         return Box3d(datum[0], datum[1], datum[2], datum[3], datum[4])
 
     def simpleString(self) -> str:
         return "box3d"
+
+class Box3d(DslBox3d):
+    __UDT__ = Box3dType()
 
 
 class MaskType(UserDefinedType):
