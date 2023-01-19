@@ -10,13 +10,9 @@
 //   ],
 //   "generated_with_requirements": [
 //     "Pillow",
-//     "aiohttp",
-//     "fsspec",
 //     "liga==0.2.0.dev8",
-//     "ligavision-dsl==0.2.0.dev3",
-//     "numpy",
-//     "pyspark==3.2.1",
-//     "requests"
+//     "ligavision-dsl==0.2.0.dev4",
+//     "pyspark==3.2.1"
 //   ],
 //   "manylinux": "manylinux2014",
 //   "requirement_constraints": [],
@@ -1054,13 +1050,13 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "1cb97e67b05f497c13e53bab1830c6312cef87eaf2044132947cb36bed92f95c",
-              "url": "https://files.pythonhosted.org/packages/13/3e/610c1b9fdb9cad61ccad3453c7d0fc0360e8410c4617f655f61817c6f567/ligavision_dsl-0.2.0.dev3-py3-none-any.whl"
+              "hash": "c486592b2365b7b6d6345fb0629356af48aee6cdc12b9dfecb22aabd6d4fc281",
+              "url": "https://files.pythonhosted.org/packages/f9/b3/4f7489a0233d002e437ffc18fcfdf1cb7f24f4cd84946df31178adb898d4/ligavision_dsl-0.2.0.dev4-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "ffca3b95b1aff4fcba1cb644e64e57b7e0cae72f12cafc7df616e7b90ab53cf0",
-              "url": "https://files.pythonhosted.org/packages/9f/85/5b82352d5594d277ba200be28f3ce8d424332488e35de9e97660f1e8333c/ligavision-dsl-0.2.0.dev3.tar.gz"
+              "hash": "f41c601d9aafaa92d149a1af54a91b5a8db36167e7a52355d902ba34e2b0b57d",
+              "url": "https://files.pythonhosted.org/packages/c6/64/1b7fded36f891c071207f49ca5f4f8e29cf3f78415bcf85d6c98a8bfe5f5/ligavision-dsl-0.2.0.dev4.tar.gz"
             }
           ],
           "project_name": "ligavision-dsl",
@@ -1072,7 +1068,7 @@
             "requests"
           ],
           "requires_python": "<3.10,>=3.8",
-          "version": "0.2.dev3"
+          "version": "0.2.dev4"
         },
         {
           "artifacts": [
@@ -1496,58 +1492,58 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "344021ed3e639e017b452aa8f5f6bf38a8806f5852e217a7594417fb9bbfa00e",
-              "url": "https://files.pythonhosted.org/packages/5e/ed/5c9cdaa5d48c7194bef4335eab3cdc2f8afa868a5546027e018ea9deb4c3/pandas-1.5.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+              "hash": "9f69c4029613de47816b1bb30ff5ac778686688751a5e9c99ad8c7031f6508e5",
+              "url": "https://files.pythonhosted.org/packages/e1/4d/3eb96e53a9208350ee21615f850c4be9a246d32bf1d34cd36682cb58c3b7/pandas-1.5.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "9608000a5a45f663be6af5c70c3cbe634fa19243e720eb380c0d378666bc7702",
-              "url": "https://files.pythonhosted.org/packages/24/c3/8182eb4e261e9fd24a992f78a6895b4b60b6a353ff03b83da748b8c7c03c/pandas-1.5.2-cp39-cp39-macosx_10_9_universal2.whl"
+              "hash": "c4c00e0b0597c8e4f59e8d461f797e5d70b4d025880516a8261b2817c47759ee",
+              "url": "https://files.pythonhosted.org/packages/02/4a/8e2513db9d15929b833147f975d8424dc6a3e18100ead10aab78756a1aad/pandas-1.5.3-cp39-cp39-macosx_10_9_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "c009a92e81ce836212ce7aa98b219db7961a8b95999b97af566b8dc8c33e9519",
-              "url": "https://files.pythonhosted.org/packages/36/bd/3e73defb8b643d9dacde5d875319287d960a86e62e721140961773f22910/pandas-1.5.2-cp38-cp38-macosx_10_9_x86_64.whl"
+              "hash": "26d9c71772c7afb9d5046e6e9cf42d83dd147b5cf5bcb9d97252077118543792",
+              "url": "https://files.pythonhosted.org/packages/0e/1d/f964977eea9ed72d5f1c53af56038aca2ce781a0cc8bce8aeb33da039ca1/pandas-1.5.3-cp38-cp38-macosx_11_0_arm64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "220b98d15cee0b2cd839a6358bd1f273d0356bf964c1a1aeb32d47db0215488b",
-              "url": "https://files.pythonhosted.org/packages/4d/07/c4d69e1acb7723ca49d24fc60a89aa07a914dfb8e7a07fdbb9d8646630cd/pandas-1.5.2.tar.gz"
+              "hash": "14e45300521902689a81f3f41386dc86f19b8ba8dd5ac5a3c7010ef8d2932813",
+              "url": "https://files.pythonhosted.org/packages/26/c1/469f5d7863a9901d92b795d9fc5c7c4acccd7df62b13367c7fac0d499c3b/pandas-1.5.3-cp38-cp38-macosx_10_9_universal2.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "a40dd1e9f22e01e66ed534d6a965eb99546b41d4d52dbdb66565608fde48203f",
-              "url": "https://files.pythonhosted.org/packages/5b/7c/afc4ed0a1d289bfbdb728fa51b418d8600ddfa84a4bdfda17fff38924b6c/pandas-1.5.2-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+              "hash": "9842b6f4b8479e41968eced654487258ed81df7d1c9b7b870ceea24ed9459b31",
+              "url": "https://files.pythonhosted.org/packages/2b/63/fa344006a41dd696720328af0f1f914f530e9eca2f794607f6af9158897d/pandas-1.5.3-cp38-cp38-macosx_10_9_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "0183cb04a057cc38fde5244909fca9826d5d57c4a5b7390c0cc3fa7acd9fa883",
-              "url": "https://files.pythonhosted.org/packages/67/16/5b7621255df6c0851b1f03052d48fd9f229c414dd366f6fda51da47cb96c/pandas-1.5.2-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+              "hash": "565fa34a5434d38e9d250af3c12ff931abaf88050551d9fbcdfafca50d62babf",
+              "url": "https://files.pythonhosted.org/packages/54/a0/c62d63c5c69be9aae07836e4d7e25e7a6f5590be3d8f2d53f43eeec5c475/pandas-1.5.3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "315e19a3e5c2ab47a67467fc0362cb36c7c60a93b6457f675d7d9615edad2ebe",
-              "url": "https://files.pythonhosted.org/packages/7f/73/8ac702651edb2282ba059575ad73e3eba0f129df72c7c2d417af8b528896/pandas-1.5.2-cp39-cp39-macosx_10_9_x86_64.whl"
+              "hash": "74a3fd7e5a7ec052f183273dc7b0acd3a863edf7520f5d3a1765c04ffdb3b0b1",
+              "url": "https://files.pythonhosted.org/packages/74/ee/146cab1ff6d575b54ace8a6a5994048380dc94879b0125b25e62edcb9e52/pandas-1.5.3.tar.gz"
             },
             {
               "algorithm": "sha256",
-              "hash": "457d8c3d42314ff47cc2d6c54f8fc0d23954b47977b2caed09cd9635cb75388b",
-              "url": "https://files.pythonhosted.org/packages/82/d9/f550aa2c6ceb89c6b1b2cc5491b605568624cbc53c86a05f350be9f0d583/pandas-1.5.2-cp38-cp38-macosx_10_9_universal2.whl"
+              "hash": "dd05f7783b3274aa206a1af06f0ceed3f9b412cf665b7247eacd83be41cf7bf0",
+              "url": "https://files.pythonhosted.org/packages/7d/d6/92be61dca3880c7cec99a9b4acf6260b3dc00519673fdb3e6666ac6096ce/pandas-1.5.3-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "e18bc3764cbb5e118be139b3b611bc3fbc5d3be42a7e827d1096f46087b395eb",
-              "url": "https://files.pythonhosted.org/packages/94/c1/a1f4662c585a820dc85c6c8251af89b80d1326bcfd3b341a878ed009e997/pandas-1.5.2-cp39-cp39-macosx_11_0_arm64.whl"
+              "hash": "c74a62747864ed568f5a82a49a23a8d7fe171d0c69038b38cedf0976831296fa",
+              "url": "https://files.pythonhosted.org/packages/90/19/1a92d73cda1233326e787a4c14362a1fcce4c7d9f28316fd769308aefb99/pandas-1.5.3-cp39-cp39-macosx_10_9_universal2.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "5ae7e989f12628f41e804847a8cc2943d362440132919a69429d4dea1f164da0",
-              "url": "https://files.pythonhosted.org/packages/9c/6c/3bfce7f343360c1b537fb59ecbf6865e21d5c8d9e07a632bc6725744e919/pandas-1.5.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+              "hash": "a50d9a4336a9621cab7b8eb3fb11adb82de58f9b91d84c2cd526576b881a0c5a",
+              "url": "https://files.pythonhosted.org/packages/a7/2b/c71df8794e8e75ba1ec9da1c1a2efc946590aa79a05148a4138405ef5f72/pandas-1.5.3-cp39-cp39-macosx_11_0_arm64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "71f510b0efe1629bf2f7c0eadb1ff0b9cf611e87b73cd017e6b7d6adb40e2b3a",
-              "url": "https://files.pythonhosted.org/packages/b3/e9/177dae31a2e3c75a3bfdb63136b72bb036d9de0817d8fbbd7c33c37ce07e/pandas-1.5.2-cp38-cp38-macosx_11_0_arm64.whl"
+              "hash": "5fbcb19d6fceb9e946b3e23258757c7b225ba450990d9ed63ccceeb8cae609f7",
+              "url": "https://files.pythonhosted.org/packages/b2/87/e0a0e9a0ab9ede47192aa40887b7e31d048c98326a41d6b57c658d1a809d/pandas-1.5.3-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
             }
           ],
           "project_name": "pandas",
@@ -1562,7 +1558,7 @@
             "pytz>=2020.1"
           ],
           "requires_python": ">=3.8",
-          "version": "1.5.2"
+          "version": "1.5.3"
         },
         {
           "artifacts": [
@@ -2855,13 +2851,9 @@
   "prefer_older_binary": false,
   "requirements": [
     "Pillow",
-    "aiohttp",
-    "fsspec",
     "liga==0.2.0.dev8",
-    "ligavision-dsl==0.2.0.dev3",
-    "numpy",
-    "pyspark==3.2.1",
-    "requests"
+    "ligavision-dsl==0.2.0.dev4",
+    "pyspark==3.2.1"
   ],
   "requires_python": [
     "<3.10,>=3.8"

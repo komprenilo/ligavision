@@ -8,3 +8,14 @@ python_distribution(
         version="0.2.0.dev4",
     ),
 )
+
+python_distribution(
+    name="ligavision",
+    dependencies=[
+        "python/ligavision:sources@resolve=spark_3_2_1",
+    ],
+    provides=python_artifact(
+        name="ligavision",
+        version="0.2.0.dev0",
+    ),
+)
