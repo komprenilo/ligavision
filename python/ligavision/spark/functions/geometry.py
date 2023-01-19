@@ -19,7 +19,6 @@ from pyspark.sql.functions import udf
 from pyspark.sql.types import FloatType
 
 # Rikai
-from liga.logging import logger
 from ligavision.spark.types.geometry import Box2dType
 from ligavision.dsl.geometry import Box2d
 

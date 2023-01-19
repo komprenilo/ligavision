@@ -1,6 +1,5 @@
-python_sources(
-    name="sources",
-    sources=["*.py", "spark/**/*.py"],
+python_requirements(
+    name="requirements",
     resolve=parametrize("spark_3_2_1", "test"),
 )
 
@@ -8,16 +7,13 @@ python_requirement(
     name="spark_3_2",
     requirements=[
         "pyspark==3.2.1",
-        "ligavision-dsl==0.2.0.dev3",
     ],
     resolve=parametrize("spark_3_2_1", "test"),
 )
 
-python_requirement(
-    name="requirements",
-    requirements=[
-        "liga==0.2.0.dev8",
-        "Pillow",
-    ],
+
+python_sources(
+    name="sources",
+    sources=["!test_*.py", "!conftest.py", "*.py", "spark/**/*.py"],
     resolve=parametrize("spark_3_2_1", "test"),
 )

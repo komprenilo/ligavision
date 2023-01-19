@@ -1,0 +1,3 @@
+ligavision-dsl==0.2.0.dev3
+liga==0.2.0.dev8
+Pillow

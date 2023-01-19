@@ -1,4 +1,4 @@
 #!/bin/bash
 
-ROOTDIR=`pwd` ./pants test  python/tests:tests python/ligavision/dsl:tests
+ROOTDIR=`pwd` ./pants test  python/ligavision/spark:tests python/ligavision/dsl:tests
 

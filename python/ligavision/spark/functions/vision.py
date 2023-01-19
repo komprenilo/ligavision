@@ -25,8 +25,6 @@ from pyspark.sql.functions import udf
 from pyspark.sql.types import ArrayType
 
 # Liga
-from liga.io import copy as _copy
-from liga.logging import logger
 from liga.numpy import ndarray
 from ligavision.spark.types.vision import ImageType
 from ligavision.dsl.geometry import Box2d
@@ -35,7 +33,6 @@ from ligavision.dsl.vision import Image
 __all__ = [
     "crop",
     "to_image",
-    "image_copy",
     "numpy_to_image",
 ]
 
@@ -63,26 +60,6 @@ def to_image(image_data: Union[bytes, bytearray, str, Path]) -> Image:
     >>> df.withColumn("new_image", to_image("image.data"))
     """
     return Image(image_data)
-
-
-@udf(returnType=ImageType())
-def image_copy(img: Image, uri: str) -> Image:
-    """Copy the image to a new destination, specified by the URI.
-
-    Parameters
-    ----------
-    img : Image
-        An image object
-    uri : str
-        The base directory to copy the image to.
-
-    Return
-    ------
-    Image
-        Return a new image pointed to the new URI
-    """
-    logger.info("Copying image src=%s dest=%s", img.uri, uri)
-    return Image(_copy(img.uri, uri))
 
 
 @udf(returnType=ImageType())

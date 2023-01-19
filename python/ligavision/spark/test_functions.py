@@ -34,7 +34,6 @@ from ligavision.spark.functions import (
     box2d,
     box2d_from_center,
     crop,
-    image_copy,
     init,
     numpy_to_image,
     to_image,
@@ -112,27 +111,6 @@ def test_box2d_top_left(spark: SparkSession):
     ).withColumn("bbox", box2d_from_center("values"))
     df = df.withColumn("area", area(col("bbox")))
     assert_area_equals([1.0, 5.0], df)
-
-
-def test_image_copy(spark: SparkSession, tmpdir):
-    source_image = os.path.join(tmpdir, "source_image")
-    with open(source_image, "w") as fobj:
-        fobj.write("abc")
-    os.makedirs(os.path.join(tmpdir, "out"))
-
-    df = spark.createDataFrame(
-        [(Image(source_image),)], ["image"]
-    )  # type: pyspark.sql.DataFrame
-    df = df.withColumn(
-        "image",
-        image_copy(col("image"), lit(os.path.join(tmpdir, "out/"))),
-    )
-    data = df.collect()  # force lazy calculation
-    out_file = os.path.join(tmpdir, "out", "source_image")
-    assert Image(out_file) == data[0].image
-
-    with open(os.path.join(out_file)) as fobj:
-        assert fobj.read() == "abc"
 
 
 def test_to_image(spark: SparkSession, asset_path: Path):
