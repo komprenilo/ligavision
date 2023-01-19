@@ -32,6 +32,7 @@ from pyspark.sql.types import (
 
 # Liga
 from liga.logging import logger
+from ligavision.dsl import Mask as DslMask
 
 __all__ = ["PointType", "Box3dType", "Box2dType", "MaskType"]
 
@@ -205,8 +206,6 @@ class MaskType(UserDefinedType):
             raise ValueError(f"Unrecognized mask type: {mask.type}")
 
     def deserialize(self, datum: Row) -> "Mask":
-        from ligavision.dsl.geometry import Mask
-
         mask_type = Mask.Type(datum["type"])
         height = datum["height"]
         width = datum["width"]
@@ -223,3 +222,6 @@ class MaskType(UserDefinedType):
 
     def simpleString(self) -> str:
         return "mask"
+
+class Mask(DslMask):
+    __UDT__ = MaskType()

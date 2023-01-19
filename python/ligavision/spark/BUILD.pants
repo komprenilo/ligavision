@@ -2,7 +2,7 @@
 python_sources(
     name="sources",
     sources=["conftest.py"],
-    resolve="test",
+    resolve=parametrize("test", "mono"),
 )
 
 python_tests(name = "tests",
@@ -14,10 +14,18 @@ python_tests(name = "tests",
     resolve="test",
 )
 
+python_tests(name = "tests_mono",
+    dependencies=[
+        ":sources",
+    ],
+    extra_env_vars=["ROOTDIR"],
+    resolve="mono",
+)
+
 python_requirement(
     name="ipython",
     requirements=[
         "ipython>=7.31.1,!=8.0.0",
     ],
-    resolve="test",
+    resolve=parametrize("test", "mono"),
 )
