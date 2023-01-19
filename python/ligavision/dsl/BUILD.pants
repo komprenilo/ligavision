@@ -1,11 +1,11 @@
 python_sources(
     name="sources",
-    resolve=parametrize("dsl", "spark_3_2_1", "test"),
+    resolve=parametrize("dsl", "dsl_test", "spark_3_2_1", "test"),
 )
 
 python_tests(
     name="tests",
-    resolve="test",
+    resolve="dsl_test",
 )
 
 python_requirement(
@@ -18,5 +18,13 @@ python_requirement(
         "requests",
         "aiohttp",
     ],
-    resolve=parametrize("dsl", "spark_3_2_1", "test"),
+    resolve=parametrize("dsl", "dsl_test", "spark_3_2_1", "test"),
+)
+
+python_requirement(
+    name="test_requirements",
+    requirements=[
+        "ipython>=7.31.1,!=8.0.0",
+    ],
+    resolve="dsl_test",
 )
