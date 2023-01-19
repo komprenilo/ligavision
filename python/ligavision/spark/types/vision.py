@@ -12,6 +12,10 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
+from __future__ import annotations
+
+from typing import Union
+from pathlib import Path
 
 from pyspark.sql.types import (
     BinaryType,
@@ -24,7 +28,7 @@ from pyspark.sql.types import (
 from ligavision.dsl.vision import Image as DslImage
 
 
-__all__ = ["ImageType"]
+__all__ = ["ImageType", "Image"]
 
 
 class ImageType(UserDefinedType):
@@ -66,3 +70,8 @@ class ImageType(UserDefinedType):
 
 class Image(DslImage):
     __UDT__ = ImageType()
+
+    @staticmethod
+    def read(uri: Union[str, Path]) -> Image:
+        image = DslImage.read(uri)
+        return Image(image.data)
