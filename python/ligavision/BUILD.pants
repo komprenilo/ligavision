@@ -14,7 +14,7 @@ python_requirement(
 python_requirement(
     name="ligavision-dsl",
     requirements=[
-        "ligavision-dsl==0.2.0.dev3",
+        "ligavision-dsl==0.2.0.dev4",
     ],
     resolve=parametrize("spark_3_2_1", "test"),
 )
