@@ -84,7 +84,5 @@ class Image(DslImage):
         format: Optional[str] = None,
         **kwargs,
     ) -> Image:
-        dsl_image = DslImage.form_pil(img, uri, format, **kwargs)
-        image = Image(dsl_image.data)
-        image.uri = dsl_image.uri
-        return image
+        dsl_image = DslImage.from_pil(img, uri, format, **kwargs)
+        return Image(dsl_image.uri)

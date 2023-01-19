@@ -30,6 +30,7 @@ from pyspark.sql.types import (
 
 # Rikai
 from ligavision.spark.types.geometry import (
+    Box2d,
     Box2dType,
     Box3dType,
     Mask,
@@ -49,6 +50,7 @@ __all__ = [
     "NDArrayType",
     "PointType",
     "Box3dType",
+    "Box2d",
     "Box2dType",
     "VideoStreamType",
     "YouTubeVideoType",

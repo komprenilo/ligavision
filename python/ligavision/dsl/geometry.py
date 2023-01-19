@@ -111,11 +111,6 @@ class Box2d(ToNumpy, Sequence, ToDict, Drawable):
         self.ymin = float(ymin)
         self.xmax = float(xmax)
         self.ymax = float(ymax)
-        try:
-            from ligavision.spark.types.geometry import Box2dType
-            self.__UDT__ = Box2dType()
-        except ModuleNotFoundError:
-            pass
 
     @classmethod
     def from_center(

@@ -33,6 +33,7 @@ from pyspark.sql.types import (
 # Liga
 from liga.logging import logger
 from ligavision.dsl import Mask as DslMask
+from ligavision.dsl import Box2d as DslBox2d
 
 __all__ = ["PointType", "Box3dType", "Box2dType", "MaskType"]
 
@@ -59,7 +60,7 @@ class Box2dType(UserDefinedType):
     def scalaUDT(cls) -> str:
         return "org.apache.spark.sql.rikai.Box2dType"
 
-    def serialize(self, obj: "ligavision.dsl.geometry.Box2d"):
+    def serialize(self, obj: "Box2d"):
         """Serialize a Box2d into a PySpark Row"""
         return Row(
             xmin=obj.xmin,
@@ -68,9 +69,7 @@ class Box2dType(UserDefinedType):
             ymax=obj.ymax,
         )
 
-    def deserialize(self, datum: Row) -> "ligavision.dsl.geometry.Box2d":
-        from ligavision.dsl.geometry import Box2d
-
+    def deserialize(self, datum: Row) -> "Box2d":
         if len(datum) != 4:
             logger.error(f"Deserialize box2d: not sufficient data: {datum}")
 
@@ -78,6 +77,9 @@ class Box2dType(UserDefinedType):
 
     def simpleString(self) -> str:
         return "box2d"
+
+class Box2d(DslBox2d):
+    __UDT__ = Box2dType()
 
 
 class PointType(UserDefinedType):

@@ -26,8 +26,7 @@ from pyspark.sql.types import ArrayType
 
 # Liga
 from liga.numpy import ndarray
-from ligavision.dsl.geometry import Box2d
-from ligavision.spark.types import Image, ImageType
+from ligavision.spark.types import Box2d, Image, ImageType
 
 __all__ = [
     "crop",
