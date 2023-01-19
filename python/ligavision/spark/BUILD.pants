@@ -5,7 +5,7 @@ python_sources(
     resolve=parametrize("test", "mono"),
 )
 
-python_tests(name = "tests",
+python_tests(name = "tests2",
     dependencies=[
         ":sources",
         "//python/ligavision:requirements#ligavision-dsl@resolve=test"
@@ -14,7 +14,7 @@ python_tests(name = "tests",
     resolve="test",
 )
 
-python_tests(name = "tests_mono",
+python_tests(name = "tests",
     dependencies=[
         ":sources",
     ],
