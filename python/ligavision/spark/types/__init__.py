@@ -29,10 +29,10 @@ from pyspark.sql.types import (
 )
 
 # Rikai
-import liga
 from ligavision.spark.types.geometry import (
     Box2dType,
     Box3dType,
+    Mask,
     MaskType,
     PointType,
 )

@@ -183,8 +183,6 @@ class MaskType(UserDefinedType):
         return "org.apache.spark.sql.rikai.MaskType"
 
     def serialize(self, mask: "Mask") -> Row:
-        from ligavision.dsl.geometry import Mask
-
         mask_type = mask.type.value
         if mask.type == Mask.Type.RLE or mask.type == Mask.Type.COCO_RLE:
             return Row(
@@ -225,3 +223,11 @@ class MaskType(UserDefinedType):
 
 class Mask(DslMask):
     __UDT__ = MaskType()
+    
+    def __init__(self, dsl: DslMask):
+        super().__init__(dsl.data, dsl.width, dsl.height, dsl.type)
+
+    @staticmethod
+    def from_rle(data: list[int], width: int, height: int) -> Mask:
+        return Mask(DslMask.from_rle(data, width, height))
+        

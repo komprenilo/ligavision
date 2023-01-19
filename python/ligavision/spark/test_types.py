@@ -19,11 +19,11 @@ from typing import Iterable
 from pyspark.sql import DataFrame, Row, SparkSession
 
 # Liga
+from ligavision.spark.types import Mask
 from ligavision.dsl import (
     Box2d,
     Box3d,
     Image,
-    Mask,
     Point,
     Segment,
     VideoStream,
