@@ -571,11 +571,6 @@ class Mask(ToNumpy, ToDict, Drawable):
 
         self.width = width
         self.height = height
-        try:
-            from ligavision.spark.types.geometry import MaskType
-            self.__UDT__ = MaskType()
-        except ModuleNotFoundError:
-            pass
 
     @staticmethod
     def from_rle(data: list[int], width: int, height: int) -> Mask:
