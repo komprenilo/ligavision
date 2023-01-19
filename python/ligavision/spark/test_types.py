@@ -19,16 +19,17 @@ from typing import Iterable
 from pyspark.sql import DataFrame, Row, SparkSession
 
 # Liga
-from ligavision.dsl import (
+from ligavision.spark.types import (
+    Mask,
+    Image,
     Box2d,
     Box3d,
-    Image,
-    Mask,
     Point,
     Segment,
     VideoStream,
     YouTubeVideo,
 )
+
 
 def assert_count_equal(first: Iterable, second: Iterable, msg=None):
     """Assert ``first`` has the same elements as ``second``, regardless of

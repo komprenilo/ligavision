@@ -47,12 +47,6 @@ class YouTubeVideo(Displayable):
         self.uri = "https://www.youtube.com/watch?v={0}".format(self.vid)
         self.embed_url = "http://www.youtube.com/embed/{0}".format(self.vid)
 
-        try:
-            from ligavision.spark.types import YouTubeVideoType
-            self.__UDT__ = YouTubeVideoType()
-        except ModuleNotFoundError:
-            pass
-
     def __repr__(self) -> str:
         return "YouTubeVideo({0})".format(self.vid)
 
@@ -153,12 +147,6 @@ class VideoStream(Displayable, ToDict):
 
     def __init__(self, uri: str):
         self.uri = uri
-        try:
-            if distribution("ligavision"):
-                from ligavision.spark.types import VideoStreamType
-                self.__UDT__ = VideoStreamType()
-        except PackageNotFoundError:
-            pass
 
     def __repr__(self) -> str:
         return f"VideoStream(uri={self.uri})"
@@ -225,12 +213,6 @@ class Segment:
             )
         self.start_fno = start_fno
         self.end_fno = end_fno
-        try:
-            if distribution("ligavision"):
-                from ligavision.spark.types import SegmentType
-                self.__UDT__ = SegmentType()
-        except PackageNotFoundError:
-            pass
 
     def __repr__(self) -> str:
         return f"Segment(start_fno={self.start_fno}, end_fno={self.end_fno})"

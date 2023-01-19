@@ -20,6 +20,7 @@ enable_resolves = true
   dsl_test = "3rdparty/python/dsl_test.lock"
   spark_3_2_1 = "3rdparty/python/spark_3_2_1.lock"
   test = "3rdparty/python/test.lock"
+  mono = "3rdparty/python/mono.lock"
 
 [pytest]
   version = "pytest==7.0.1"

@@ -89,12 +89,6 @@ class Image(ToNumpy, ToPIL, Asset, Displayable, ToDict):
             uri = image
         super().__init__(data=data, uri=uri)
 
-        try:
-            from ligavision.spark.types import ImageType
-            self.__UDT__ = ImageType()
-        except ModuleNotFoundError:
-            pass
-
     @classmethod
     def from_array(
         cls,

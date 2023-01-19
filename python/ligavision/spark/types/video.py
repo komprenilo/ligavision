@@ -20,6 +20,10 @@ from pyspark.sql.types import (
     UserDefinedType,
 )
 
+from ligavision.dsl import YouTubeVideo as DslYouTubeVideo
+from ligavision.dsl import VideoStream as DslVideoStream
+from ligavision.dsl import Segment as DslSegment
+
 __all__ = ["YouTubeVideoType", "VideoStreamType"]
 
 
@@ -53,14 +57,13 @@ class VideoStreamType(UserDefinedType):
         return (obj.uri,)
 
     def deserialize(self, datum) -> "VideoStream":
-        from ligavision.dsl import (
-            VideoStream,
-        )  # pylint: disable=import-outside-toplevel
-
         return VideoStream(datum[0])
 
     def simpleString(self) -> str:
         return "videostream"
+
+class VideoStream(DslVideoStream):
+    __UDT__ = VideoStreamType()
 
 
 class YouTubeVideoType(UserDefinedType):
@@ -94,14 +97,13 @@ class YouTubeVideoType(UserDefinedType):
         return (obj.vid,)
 
     def deserialize(self, datum) -> "YouTubeVideo":
-        from ligavision.dsl import (
-            YouTubeVideo,
-        )  # pylint: disable=import-outside-toplevel
-
         return YouTubeVideo(datum[0])
 
     def simpleString(self) -> str:
         return "youtubevideo"
+
+class YouTubeVideo(DslYouTubeVideo):
+    __DSL__ = YouTubeVideoType()
 
 
 class SegmentType(UserDefinedType):
@@ -138,11 +140,10 @@ class SegmentType(UserDefinedType):
         return (obj.start_fno, obj.end_fno)
 
     def deserialize(self, datum) -> "Segment":
-        from ligavision.dsl import (
-            Segment,
-        )  # pylint: disable=import-outside-toplevel
-
         return Segment(datum[0], datum[1])
 
     def simpleString(self) -> str:
         return "segment"
+
+class Segment(DslSegment):
+    __DSL__ = SegmentType()

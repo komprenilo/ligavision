@@ -49,11 +49,6 @@ class Point(ToNumpy, ToDict):
         self.x = float(x)
         self.y = float(y)
         self.z = float(z)
-        try:
-            from ligavision.spark.types.geometry import PointType
-            self.__UDT__ = PointType()
-        except ModuleNotFoundError:
-            pass
 
     def __repr__(self) -> str:
         return f"Point({self.x}, {self.y}, {self.z})"
@@ -111,11 +106,6 @@ class Box2d(ToNumpy, Sequence, ToDict, Drawable):
         self.ymin = float(ymin)
         self.xmax = float(xmax)
         self.ymax = float(ymax)
-        try:
-            from ligavision.spark.types.geometry import Box2dType
-            self.__UDT__ = Box2dType()
-        except ModuleNotFoundError:
-            pass
 
     @classmethod
     def from_center(
@@ -464,11 +454,6 @@ class Box3d(ToNumpy, ToDict):
         self.width = float(width)
         self.height = float(height)
         self.heading = float(heading)
-        try:
-            from ligavision.spark.types.geometry import Box3dType
-            self.__UDT__ = Box3dType()
-        except ModuleNotFoundError:
-            pass
 
     def __repr__(self) -> str:
         return (
@@ -571,11 +556,6 @@ class Mask(ToNumpy, ToDict, Drawable):
 
         self.width = width
         self.height = height
-        try:
-            from ligavision.spark.types.geometry import MaskType
-            self.__UDT__ = MaskType()
-        except ModuleNotFoundError:
-            pass
 
     @staticmethod
     def from_rle(data: list[int], width: int, height: int) -> Mask:

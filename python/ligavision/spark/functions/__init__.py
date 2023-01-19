@@ -38,7 +38,6 @@ def init(spark: SparkSession):
     all_vis_udfs = [
         "crop",
         "to_image",
-        "image_copy",
         "numpy_to_image",
     ]
     for name in all_geo_udfs:

@@ -32,8 +32,12 @@ from pyspark.sql.types import (
 
 # Liga
 from liga.logging import logger
+from ligavision.dsl import Mask as DslMask
+from ligavision.dsl import Box2d as DslBox2d
+from ligavision.dsl import Box3d as DslBox3d
+from ligavision.dsl import Point as DslPoint
 
-__all__ = ["PointType", "Box3dType", "Box2dType", "MaskType"]
+__all__ = ["Point", "PointType", "Box3d", "Box3dType", "Box2d", "Box2dType", "Mask","MaskType"]
 
 
 class Box2dType(UserDefinedType):
@@ -58,7 +62,7 @@ class Box2dType(UserDefinedType):
     def scalaUDT(cls) -> str:
         return "org.apache.spark.sql.rikai.Box2dType"
 
-    def serialize(self, obj: "ligavision.dsl.geometry.Box2d"):
+    def serialize(self, obj: "Box2d"):
         """Serialize a Box2d into a PySpark Row"""
         return Row(
             xmin=obj.xmin,
@@ -67,9 +71,7 @@ class Box2dType(UserDefinedType):
             ymax=obj.ymax,
         )
 
-    def deserialize(self, datum: Row) -> "ligavision.dsl.geometry.Box2d":
-        from ligavision.dsl.geometry import Box2d
-
+    def deserialize(self, datum: Row) -> "Box2d":
         if len(datum) != 4:
             logger.error(f"Deserialize box2d: not sufficient data: {datum}")
 
@@ -77,6 +79,9 @@ class Box2dType(UserDefinedType):
 
     def simpleString(self) -> str:
         return "box2d"
+
+class Box2d(DslBox2d):
+    __UDT__ = Box2dType()
 
 
 class PointType(UserDefinedType):
@@ -105,8 +110,6 @@ class PointType(UserDefinedType):
         return Row(x=obj.x, y=obj.y, z=obj.z)
 
     def deserialize(self, datum: Row) -> "Point":
-        from ligavision.dsl.geometry import Point
-
         if len(datum) < 3:
             logger.error(f"Deserialize Point: not sufficient data: {datum}")
 
@@ -115,9 +118,12 @@ class PointType(UserDefinedType):
     def simpleString(self) -> str:
         return "point"
 
+class Point(DslPoint):
+    __UDT__ = PointType()
+
 
 class Box3dType(UserDefinedType):
-    """Spark UDT for :py:class:`~ligavision.dsl.geometry.Box3d` class."""
+    """Spark UDT for :py:class:`~Box3d` class."""
 
     @classmethod
     def sqlType(cls) -> StructType:
@@ -144,14 +150,15 @@ class Box3dType(UserDefinedType):
         return Row(obj.center, obj.length, obj.width, obj.height, obj.heading)
 
     def deserialize(self, datum: Row) -> "Box3d":
-        from ligavision.dsl.geometry import Box3d
-
         if len(datum) < 5:
             logger.error(f"Deserialize Box3d: not sufficient data: {datum}")
         return Box3d(datum[0], datum[1], datum[2], datum[3], datum[4])
 
     def simpleString(self) -> str:
         return "box3d"
+
+class Box3d(DslBox3d):
+    __UDT__ = Box3dType()
 
 
 class MaskType(UserDefinedType):
@@ -182,8 +189,6 @@ class MaskType(UserDefinedType):
         return "org.apache.spark.sql.rikai.MaskType"
 
     def serialize(self, mask: "Mask") -> Row:
-        from ligavision.dsl.geometry import Mask
-
         mask_type = mask.type.value
         if mask.type == Mask.Type.RLE or mask.type == Mask.Type.COCO_RLE:
             return Row(
@@ -205,8 +210,6 @@ class MaskType(UserDefinedType):
             raise ValueError(f"Unrecognized mask type: {mask.type}")
 
     def deserialize(self, datum: Row) -> "Mask":
-        from ligavision.dsl.geometry import Mask
-
         mask_type = Mask.Type(datum["type"])
         height = datum["height"]
         width = datum["width"]
@@ -223,3 +226,25 @@ class MaskType(UserDefinedType):
 
     def simpleString(self) -> str:
         return "mask"
+
+class Mask(DslMask):
+    __UDT__ = MaskType()
+    
+    def __init__(self, dsl: DslMask):
+        super().__init__(dsl.data, dsl.width, dsl.height, dsl.type)
+
+    @staticmethod
+    def from_rle(data: list[int], width: int, height: int) -> Mask:
+        return Mask(DslMask.from_rle(data, width, height))
+        
+    @staticmethod
+    def from_coco_rle(data: list[int], width: int, height: int) -> Mask:
+        return Mask(DslMask.from_coco_rle(data, width, height))
+
+    @staticmethod
+    def from_polygon(data: list[list[float]], width: int, height: int) -> Mask:
+        return Mask(DslMask.from_polygon(data, width, height))
+
+    @staticmethod
+    def from_mask(mask: np.ndarray) -> Mask:
+        return Mask(DslMask.from_mask(mask))
