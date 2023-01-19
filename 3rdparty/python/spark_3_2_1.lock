@@ -13,6 +13,7 @@
 //     "aiohttp",
 //     "fsspec",
 //     "liga==0.2.0.dev8",
+//     "ligavision-dsl==0.2.0.dev3",
 //     "numpy",
 //     "pyspark==3.2.1",
 //     "requests"
@@ -1048,6 +1049,30 @@
           ],
           "requires_python": "<3.10,>=3.8",
           "version": "0.2.dev8"
+        },
+        {
+          "artifacts": [
+            {
+              "algorithm": "sha256",
+              "hash": "1cb97e67b05f497c13e53bab1830c6312cef87eaf2044132947cb36bed92f95c",
+              "url": "https://files.pythonhosted.org/packages/13/3e/610c1b9fdb9cad61ccad3453c7d0fc0360e8410c4617f655f61817c6f567/ligavision_dsl-0.2.0.dev3-py3-none-any.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "ffca3b95b1aff4fcba1cb644e64e57b7e0cae72f12cafc7df616e7b90ab53cf0",
+              "url": "https://files.pythonhosted.org/packages/9f/85/5b82352d5594d277ba200be28f3ce8d424332488e35de9e97660f1e8333c/ligavision-dsl-0.2.0.dev3.tar.gz"
+            }
+          ],
+          "project_name": "ligavision-dsl",
+          "requires_dists": [
+            "Pillow",
+            "aiohttp",
+            "fsspec",
+            "numpy",
+            "requests"
+          ],
+          "requires_python": "<3.10,>=3.8",
+          "version": "0.2.dev3"
         },
         {
           "artifacts": [
@@ -2833,6 +2858,7 @@
     "aiohttp",
     "fsspec",
     "liga==0.2.0.dev8",
+    "ligavision-dsl==0.2.0.dev3",
     "numpy",
     "pyspark==3.2.1",
     "requests"
