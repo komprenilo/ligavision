@@ -16,9 +16,10 @@ interpreter_constraints = [">=3.8,<3.10"]
 enable_resolves = true
 
 [python.resolves]
+  dsl = "3rdparty/python/dsl.lock"
+  dsl_test = "3rdparty/python/dsl_test.lock"
   spark_3_2_1 = "3rdparty/python/spark_3_2_1.lock"
   test = "3rdparty/python/test.lock"
-  dsl = "3rdparty/python/dsl.lock"
 
 [pytest]
   version = "pytest==7.0.1"
