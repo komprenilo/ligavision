@@ -1,2 +1,2 @@
-liga==0.2.0.dev8
+liga==0.2.0.dev11
 Pillow
