@@ -14,64 +14,14 @@
 
 import os
 
-from typing import Optional
-from pyspark.sql import SparkSession
-
 from liga.logging import logger
-from liga.spark import _liga_assembly_jar
+from liga.spark import get_liga_assembly_jar
+from liga.spark import init_session as liga_init_session
 
 from ligavision.__version__ import version
 
 
-def liga_init_spark(
-        conf: Optional[dict] = None,
-        app_name: str = "Liga",
-        scala_version: str = "2.12",
-        num_cores: int = 2,
-) -> SparkSession:
-    import sys
-
-    os.environ["PYSPARK_PYTHON"] = sys.executable
-    os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
-
-    # Avoid reused session polluting configs
-    active_session = SparkSession.getActiveSession()
-    if active_session and conf:
-        for k, v in conf.items():
-            if str(active_session.conf.get(k)) != str(v):
-                print(
-                    f"active session: want {v} for {k}"
-                    f" but got {active_session.conf.get(k)},"
-                    f" will restart session"
-                )
-                active_session.stop()
-                break
-
-    builder = (
-        SparkSession.builder.appName(app_name)
-        .config(
-            "spark.sql.extensions",
-            "ai.eto.rikai.sql.spark.RikaiSparkSessionExtensions",
-        )
-        .config(
-            "spark.driver.extraJavaOptions",
-            "-Dio.netty.tryReflectionSetAccessible=true",
-        )
-        .config(
-            "spark.executor.extraJavaOptions",
-            "-Dio.netty.tryReflectionSetAccessible=true",
-        )
-    )
-    conf = conf or {}
-    for k, v in conf.items():
-        if k == "spark.jars":
-            logger.info(v)
-        builder = builder.config(k, v)
-    session = builder.master(f"local[{num_cores}]").getOrCreate()
-    return session
-
-
-def _liga_vision_jar(vision_type: str, jar_type: str, scala_version: str) -> str:
+def get_liga_vision_jar(vision_type: str, jar_type: str, scala_version: str) -> str:
     name = f"liga-{vision_type}-assembly_{scala_version}"
     url = "https://github.com/liga-ai/liga-vision/releases/download"
     github_jar = f"{url}/v{version}/{name}-{version}.jar"
@@ -89,7 +39,7 @@ def _liga_vision_jar(vision_type: str, jar_type: str, scala_version: str) -> str
             if os.path.exists(local_jar_path):
                 return local_jar_path
             else:
-                raise ValueError("Please run `sbt clean assembly` first")
+                raise ValueError("Please run `./mill 'image[2.12].assembly'` first")
         else:
             logger.warning(
                 "Jar type `local` is for developing purpose, fallback to Jar"
@@ -100,9 +50,9 @@ def _liga_vision_jar(vision_type: str, jar_type: str, scala_version: str) -> str
         raise ValueError(f"Invalid jar_type ({jar_type})!")
 
 
-def init_session(jar_type="github", scala_version: str = "2.12"):
-    liga_uri = _liga_assembly_jar("github", scala_version)
-    liga_image_uri = _liga_vision_jar("image", jar_type, scala_version)
+def init_session(app_name="Liga Vision App", jar_type="github", scala_version: str = "2.12"):
+    liga_uri = get_liga_assembly_jar("github", scala_version)
+    liga_image_uri = get_liga_vision_jar("image", jar_type, scala_version)
     conf = dict(
         [
             (
@@ -111,4 +61,4 @@ def init_session(jar_type="github", scala_version: str = "2.12"):
             )
         ]
     )
-    return liga_init_spark(conf=conf)
+    return liga_init_session(app_name=app_name, conf=conf)
