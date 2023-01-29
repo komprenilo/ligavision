@@ -623,13 +623,13 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "da01e6df1501e6e7c32b5084212ddadd4ee2471602e2cf3e0190f4de6b0ea481",
-              "url": "https://files.pythonhosted.org/packages/1f/aa/a6509b4059359edd00308e3f068212dca53b7252940862cc40981a2bd713/ipython-8.8.0-py3-none-any.whl"
+              "hash": "9c207b0ef2d276d1bfcfeb9a62804336abbe4b170574ea061500952319b1d78c",
+              "url": "https://files.pythonhosted.org/packages/f6/1e/9d1150c390281156e3022c49b06ac8ba0e59bdeb8573723236579cd5a619/ipython-8.9.0-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "f3bf2c08505ad2c3f4ed5c46ae0331a8547d36bf4b21a451e8ae80c0791db95b",
-              "url": "https://files.pythonhosted.org/packages/f5/39/89664d8c3e4dfb0a73862cbbff8eb4028a1e3d4305da80ab0a493848ed9b/ipython-8.8.0.tar.gz"
+              "hash": "71618e82e6d59487bea059626e7c79fb4a5b760d1510d02fab1160db6fdfa1f7",
+              "url": "https://files.pythonhosted.org/packages/2a/48/7a2caa38a3103d18725fc809a379a4c8047b304d0731fde5f7c4bbf6bbe9/ipython-8.9.0.tar.gz"
             }
           ],
           "project_name": "ipython",
@@ -670,7 +670,7 @@
             "pandas; extra == \"test_extra\"",
             "pexpect>4.3; sys_platform != \"win32\"",
             "pickleshare",
-            "prompt-toolkit<3.1.0,>=3.0.11",
+            "prompt-toolkit<3.1.0,>=3.0.30",
             "pygments>=2.4.0",
             "pytest-asyncio; extra == \"all\"",
             "pytest-asyncio; extra == \"doc\"",
@@ -704,7 +704,7 @@
             "typing-extensions; extra == \"doc\""
           ],
           "requires_python": ">=3.8",
-          "version": "8.8"
+          "version": "8.9"
         },
         {
           "artifacts": [
