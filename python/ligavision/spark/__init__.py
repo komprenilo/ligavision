@@ -23,8 +23,8 @@ from ligavision.__version__ import version
 
 def get_liga_vision_jar(vision_type: str, jar_type: str, scala_version: str) -> str:
     name = f"liga-{vision_type}-assembly_{scala_version}"
-    url = "https://github.com/liga-ai/liga-vision/releases/download"
-    github_jar = f"{url}/v{version}/{name}-{version}.jar"
+    url = "https://github.com/liga-ai/ligavision/releases/download"
+    github_jar = f"{url}/ligavision_{version}/{name}-{version}.jar"
     if jar_type == "github":
         if "dev" in version:
             logger.warning(
