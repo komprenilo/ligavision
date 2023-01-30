@@ -30,11 +30,6 @@ class ImageModule(majorVersion: String) extends CrossScalaModule with PublishMod
 
   override def compileIvyDeps = Agg(
     ivy"org.apache.spark::spark-sql:3.2.0",
-    ivy"com.amazonaws:aws-java-sdk-s3:1.11.173"
-  )
-
-  override def ivyDeps = Agg(
-    ivy"com.typesafe.scala-logging::scala-logging:3.9.4"
   )
 
   def assemblyRules = Assembly.defaultRules ++ Seq(ExcludePattern("scala/.*"))
@@ -42,10 +37,7 @@ class ImageModule(majorVersion: String) extends CrossScalaModule with PublishMod
   object test extends Tests with TestModule.ScalaTest {
     override def ivyDeps = Agg(
       ivy"org.apache.spark::spark-sql:3.2.0",
-      ivy"com.amazonaws:aws-java-sdk-s3:1.11.173",
       ivy"org.scalatest::scalatest:3.0.8",
-      ivy"ch.qos.logback:logback-classic:1.2.3",
-      ivy"com.typesafe.scala-logging::scala-logging:3.9.4"
     )
 
     override def forkEnv = Map("LOG_LEVEL" -> "ERROR")
