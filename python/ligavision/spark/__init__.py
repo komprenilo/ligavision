@@ -13,6 +13,7 @@
 #  limitations under the License.
 
 import os
+from typing import Optional
 
 from liga.logging import logger
 from liga.spark import get_liga_assembly_jar
@@ -50,15 +51,18 @@ def get_liga_vision_jar(vision_type: str, jar_type: str, scala_version: str) -> 
         raise ValueError(f"Invalid jar_type ({jar_type})!")
 
 
-def init_session(app_name="Liga Vision App", jar_type="github", scala_version: str = "2.12"):
-    liga_uri = get_liga_assembly_jar("github", scala_version)
-    liga_image_uri = get_liga_vision_jar("image", jar_type, scala_version)
-    conf = dict(
-        [
-            (
-                "spark.jars",
-                ",".join([liga_uri,liga_image_uri])
-            )
-        ]
-    )
+def init_session(
+    app_name="Liga Vision App",
+    conf: Optional[dict] = None,
+    jar_type="github",
+    scala_version: str = "2.12"
+):
+    if conf and "spark.jars" in conf.keys():
+        pass
+    else:
+        liga_uri = get_liga_assembly_jar("github", scala_version)
+        liga_image_uri = get_liga_vision_jar("image", jar_type, scala_version)
+        if not conf:
+            conf = {}
+        conf["spark.jars"] = ",".join([liga_uri,liga_image_uri])
     return liga_init_session(app_name=app_name, conf=conf)
