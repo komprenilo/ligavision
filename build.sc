@@ -44,7 +44,7 @@ class ImageModule(majorVersion: String) extends CrossScalaModule with PublishMod
   }
 }
 
-object image extends mill.Cross[VideoModule]("2.12", "2.13")
+object image extends mill.Cross[ImageModule]("2.12", "2.13")
 
 
 class VideoModule(majorVersion: String) extends CrossScalaModule with PublishModule with ScalafmtModule {
