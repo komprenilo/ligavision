@@ -35,7 +35,6 @@ import Utils.approxEqual
   *
   * @see [[https://github.com/waymo-research/waymo-open-dataset/blob/master/waymo_open_dataset/label.proto Waymo Dataset Spec]]
   */
-@SQLUserDefinedType(udt = classOf[Box3dType])
 @SerialVersionUID(1L)
 class Box3d(
     val center: Point,
@@ -59,6 +58,7 @@ class Box3d(
   override def toString: String =
     f"Box3d(center=$center, l=$length, w=$width, h=$height, heading=$heading)"
 }
+
 
 /** User defined type of 3D Bounding Box
   */
@@ -111,5 +111,3 @@ class Box3dType extends UserDefinedType[Box3d] {
 
   override def typeName: String = "box3d"
 }
-
-case object Box3dType extends Box3dType

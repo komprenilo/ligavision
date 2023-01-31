@@ -35,7 +35,6 @@ object MaskTypeEnum extends Enumeration {
 
 /** Mask of an 2-D image.
   */
-@SQLUserDefinedType(udt = classOf[MaskType])
 @SerialVersionUID(1L)
 class Mask(
     val maskType: MaskTypeEnum.Type,
@@ -81,7 +80,7 @@ object Mask {
   }
 }
 
-private[spark] class MaskType extends UserDefinedType[Mask] {
+private[sql] class MaskType extends UserDefinedType[Mask] {
 
   override def sqlType: DataType = StructType(
     Seq(

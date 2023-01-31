@@ -22,7 +22,7 @@ import org.apache.spark.unsafe.types.UTF8String
 
 /** Image User Defined Type
   */
-private[spark] class ImageType extends UserDefinedType[Image] {
+private[sql] class ImageType extends UserDefinedType[Image] {
 
   override def sqlType: DataType =
     StructType(
@@ -68,7 +68,6 @@ private[spark] class ImageType extends UserDefinedType[Image] {
   *
   * @param uri
   */
-@SQLUserDefinedType(udt = classOf[ImageType])
 @SerialVersionUID(1L)
 class Image(val data: Option[Array[Byte]], val uri: Option[String])
     extends Serializable {
@@ -82,4 +81,11 @@ class Image(val data: Option[Array[Byte]], val uri: Option[String])
   }
 
   override def toString: String = s"Image('${uri.getOrElse("<embedded>")}')"
+
+  override def equals(that: Any): Boolean = that match {
+    case that: Image =>
+      this.uri == that.uri && this.data == that.data
+    case _ =>
+      false
+  }
 }

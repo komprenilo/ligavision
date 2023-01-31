@@ -19,7 +19,9 @@ package org.apache.spark.sql.rikai
 import org.scalactic.{Equality, TolerantNumerics}
 import org.scalatest.FunSuite
 
+
 class Box2dTest extends FunSuite with SparkTestSession {
+  import spark.implicits._
 
   implicit val doubleEq: Equality[Double] =
     TolerantNumerics.tolerantDoubleEquality(1e-4f)
@@ -50,5 +52,12 @@ class Box2dTest extends FunSuite with SparkTestSession {
     val box3 = new Box2d(5, 10, 15, 20)
     val box4 = new Box2d(5, 0, 15, 10)
     assert(!box3.overlaps(box4))
+  }
+
+  test("show box udt") {
+    val box1 = new Box2d(0, 0, 10, 10)
+    val box2 = new Box2d(10, 10, 20, 20)
+    val df = Seq((box1, 1), (box2, 2)).toDF("b2", "id")
+    df.show()
   }
 }

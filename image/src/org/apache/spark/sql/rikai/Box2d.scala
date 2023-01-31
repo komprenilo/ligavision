@@ -21,6 +21,7 @@ import org.apache.spark.sql.catalyst.expressions.GenericInternalRow
 import org.apache.spark.sql.rikai.Utils.approxEqual
 import org.apache.spark.sql.types._
 
+
 /** 2-D Bounding Box
   *
   * @constructor Create a 2-D Bounding Box.
@@ -30,7 +31,6 @@ import org.apache.spark.sql.types._
   * @param xmax x-corrdinate of the bottom-right of the box.
   * @param ymax y-corrdinate of the bottom-right of the box.
   */
-@SQLUserDefinedType(udt = classOf[Box2dType])
 @SerialVersionUID(1L)
 class Box2d(
     val xmin: Double,
@@ -115,7 +115,7 @@ class Box2d(
 
 /** User defined type of 2D Bouding Box
   */
-class Box2dType extends UserDefinedType[Box2d] {
+private[sql] class Box2dType extends UserDefinedType[Box2d] {
 
   override def sqlType: DataType =
     StructType(

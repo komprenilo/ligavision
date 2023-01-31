@@ -23,6 +23,7 @@ import java.io.File
 import java.nio.file.Files
 import scala.reflect.io.Directory
 
+
 class Box3dTest extends FunSuite with SparkTestSession {
   import spark.implicits._
 
@@ -42,7 +43,7 @@ class Box3dTest extends FunSuite with SparkTestSession {
           2.3
         )
       )
-    ).toDF()
+    ).toDF("id", "b3")
 
     df.write.mode(SaveMode.Overwrite).format("parquet").save(testDir.toString())
 
@@ -51,5 +52,12 @@ class Box3dTest extends FunSuite with SparkTestSession {
     assert(df.exceptAll(actualDf).isEmpty)
 
     new Directory(testDir).deleteRecursively()
+  }
+
+  test("show box udt") {
+    val box1 = new Box3d(new Point(1, 2, 3), 1, 2, 3, 2.7)
+    val box2 = new Box3d(new Point(2.5, 4.5, 6.5), 1.2, 2.3, 3.4, 2.3)
+    val df = Seq((box1, 1), (box2, 2)).toDF("b3", "id")
+    df.show()
   }
 }
