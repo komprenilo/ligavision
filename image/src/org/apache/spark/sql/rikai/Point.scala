@@ -21,11 +21,11 @@ import org.apache.spark.sql.catalyst.InternalRow
 
 import Utils.approxEqual
 
+
 /** A Point in 3-D space
   *
   * @constructor create a 3-D Point
   */
-@SQLUserDefinedType(udt = classOf[PointType])
 @SerialVersionUID(1L)
 class Point(
     val x: Double,
@@ -47,7 +47,7 @@ class Point(
 
 /** User defined type for 3-D Point
   */
-private[rikai] class PointType extends UserDefinedType[Point] {
+private[sql] class PointType extends UserDefinedType[Point] {
 
   override def sqlType: DataType =
     StructType(

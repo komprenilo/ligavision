@@ -20,13 +20,13 @@ import org.apache.spark.sql.catalyst.InternalRow
 import org.apache.spark.sql.types._
 import org.apache.spark.unsafe.types.UTF8String
 
+
 /** A reference to a particular Youtube vid. A given Youtube vid is associated with many
   * content streams. These can be video streams of different formats at different bitrates,
   * audio-only streams, and video-only streams.
   *
   * @param vid
   */
-@SQLUserDefinedType(udt = classOf[YouTubeVideoType])
 @SerialVersionUID(1L)
 class YouTubeVideo(val vid: String) extends Serializable {
   override def toString: String = s"YouTubeVideo(vid='$vid')"
@@ -63,18 +63,17 @@ class YouTubeVideoType extends UserDefinedType[YouTubeVideo] {
   override def typeName: String = "youTubeVideo"
 }
 
+
 /** A VideoStream references a particular video stream at a given uri
   *
   * @param uri
   */
-@SQLUserDefinedType(udt = classOf[VideoStreamType])
 @SerialVersionUID(1L)
 class VideoStream(val uri: String) extends Serializable {
   override def toString: String = s"VideoStream(uri='$uri')"
 }
 
-class VideoStreamType extends UserDefinedType[VideoStream] {
-
+private[sql] class VideoStreamType extends UserDefinedType[VideoStream] {
   override def sqlType: DataType =
     StructType(
       Seq(
@@ -104,13 +103,13 @@ class VideoStreamType extends UserDefinedType[VideoStream] {
   override def typeName: String = "videoStream"
 }
 
+
 /** A video segment as defined by the first and last frame numbers
   *
   * @param start_fno the starting frame number (0-index). Must be non-negative
   * @param end_fno the ending frame number. Must be either no-smaller-than start_fno,
   *                or negative to indicate end of video
   */
-@SQLUserDefinedType(udt = classOf[SegmentType])
 @SerialVersionUID(1L)
 class Segment(val start_fno: Int, val end_fno: Int) extends Serializable {
   require(start_fno >= 0, "Start frame number must be non-negative")
@@ -123,7 +122,7 @@ class Segment(val start_fno: Int, val end_fno: Int) extends Serializable {
     s"Segment(start_fno=$start_fno, end_fno=$end_fno)"
 }
 
-class SegmentType extends UserDefinedType[Segment] {
+private[sql] class SegmentType extends UserDefinedType[Segment] {
 
   override def sqlType: DataType =
     StructType(

@@ -38,6 +38,7 @@ class ImageModule(majorVersion: String) extends CrossScalaModule with PublishMod
     override def ivyDeps = Agg(
       ivy"org.apache.spark::spark-sql:3.2.0",
       ivy"org.scalatest::scalatest:3.0.8",
+      ivy"ch.qos.logback:logback-classic:1.2.3",
     )
 
     override def forkEnv = Map("LOG_LEVEL" -> "ERROR")

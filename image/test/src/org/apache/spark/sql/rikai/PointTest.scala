@@ -23,13 +23,21 @@ import java.io.File
 import java.nio.file.Files
 import scala.reflect.io.Directory
 
-class PointTest extends FunSuite with SparkTestSession {
 
+class PointTest extends FunSuite with SparkTestSession {
   import spark.implicits._
 
   test("test point equality") {
     assert(new Point(1, 2, 3) == new Point(1, 2, 3))
     assert(new Point(1, 2, 3) != new Point(10, 20, 30))
+  }
+
+  test("test show points") {
+    val df = Seq(
+      (1, new Point(1, 2, 3)),
+      (2, new Point(4, 5, 6))
+    ).toDF("id", "point")
+    df.show()
   }
 
   test("test serialize points") {
