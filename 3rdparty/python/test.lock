@@ -11,7 +11,7 @@
 //   "generated_with_requirements": [
 //     "Pillow",
 //     "ipython!=8.0.0,>=7.31.1",
-//     "liga<0.3.0,>=0.2.0",
+//     "liga==0.2.1.dev1",
 //     "ligavision-dsl==0.2.0.dev4",
 //     "pyspark==3.2.1"
 //   ],
@@ -207,26 +207,6 @@
           ],
           "requires_python": ">=3.7",
           "version": "1.3.1"
-        },
-        {
-          "artifacts": [
-            {
-              "algorithm": "sha256",
-              "hash": "ff1954eda1ca9072c02bf500387d0c86cb549bef4dbb3b64f39468b547ec5f6b",
-              "url": "https://files.pythonhosted.org/packages/b6/3a/4f2e9d67277cc255a17a34c1b54e02d939ca5991bc596dee3d63e587e512/antlr4_python3_runtime-4.11.1-py3-none-any.whl"
-            },
-            {
-              "algorithm": "sha256",
-              "hash": "a53de701312f9bdacc5258a6872cd6c62b90d3a90ae25e494026f76267333b60",
-              "url": "https://files.pythonhosted.org/packages/e0/64/c548678120cccf784f555972ed37cedcf4f026abeec30ab0340c3af4ea07/antlr4-python3-runtime-4.11.1.tar.gz"
-            }
-          ],
-          "project_name": "antlr4-python3-runtime",
-          "requires_dists": [
-            "typing; python_version < \"3.5\""
-          ],
-          "requires_python": null,
-          "version": "4.11.1"
         },
         {
           "artifacts": [
@@ -855,18 +835,17 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "6890de20d05d5446fd57ca4cbbb6d645a00df46873b116f6f4dc4609042ac8f4",
-              "url": "https://files.pythonhosted.org/packages/57/41/3f16e13d867e24bc68cb4e733dcf99cbee7c888c6b42d4283b0f484257fe/liga-0.2.0-py3-none-any.whl"
+              "hash": "9fc36e0f3aaba51644c1dc75a127ba07d1695335b2c5e7e54e34bf8b46e8e470",
+              "url": "https://files.pythonhosted.org/packages/0b/e8/8f981db314a7941af8618b292e86afe9ec98013fd7c5c0cc1494192d1f51/liga-0.2.1.dev1-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "a1b4f98af55df3f1392265aa16c29b743794ebcbf88c3e5840780f3c9855f687",
-              "url": "https://files.pythonhosted.org/packages/2e/4c/cb9e28ef47f7f1626ebf2199b4707aca8bd3a4679e3eccb08e1092cdbdb8/liga-0.2.0.tar.gz"
+              "hash": "8eb08dc50935bf0335bde42f789932990d910479d1ad1c6f1f4445199fb80ad5",
+              "url": "https://files.pythonhosted.org/packages/01/8d/2d39c21192fbed860c5fa67c83b2f7366b1f3bfe1253ec5f4e3091ee8cb0/liga-0.2.1.dev1.tar.gz"
             }
           ],
           "project_name": "liga",
           "requires_dists": [
-            "antlr4-python3-runtime==4.11.1",
             "fsspec==2022.1.0",
             "jsonschema",
             "numpy",
@@ -878,7 +857,7 @@
             "requests"
           ],
           "requires_python": "<3.10,>=3.8",
-          "version": "0.2"
+          "version": "0.2.1.dev1"
         },
         {
           "artifacts": [
@@ -1071,64 +1050,64 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "ad2925567f43643f51255220424c23d204024ed428afc5aad0f86f3ffc080086",
-              "url": "https://files.pythonhosted.org/packages/49/47/12ef5c22217e16afdf1ba1e7cbf6bc36b5df2e0ddee3f5557bc1e41c9e41/numpy-1.24.1-pp38-pypy38_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+              "hash": "f9006288bcf4895917d02583cf3411f98631275bc67cce355a7f39f8c14338fa",
+              "url": "https://files.pythonhosted.org/packages/96/d2/87a37d505439bb92dd516c882a701fcbcae0efd95d3f1900baef8d88de93/numpy-1.24.2-pp38-pypy38_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "ed5fb71d79e771ec930566fae9c02626b939e37271ec285e9efaf1b5d4370e7d",
-              "url": "https://files.pythonhosted.org/packages/01/a8/de4f84ccbbe0b616b4c36bd74dd21ddcac9f0d69466b91a60e3b8647d5ca/numpy-1.24.1-pp38-pypy38_pp73-macosx_10_9_x86_64.whl"
+              "hash": "c72a6b2f4af1adfe193f7beb91ddf708ff867a3f977ef2ec53c0ffb8283ab9f5",
+              "url": "https://files.pythonhosted.org/packages/28/e4/8acb46849784d2cefa383596299123d3f0330c627fa55c95bfd4a0ef5172/numpy-1.24.2-cp38-cp38-macosx_11_0_arm64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "26089487086f2648944f17adaa1a97ca6aee57f513ba5f1c0b7ebdabbe2b9954",
-              "url": "https://files.pythonhosted.org/packages/14/5d/df640c8bc151c742d5166aecfc394134bf92bba432472bfa7d606badd0fc/numpy-1.24.1-cp38-cp38-macosx_11_0_arm64.whl"
+              "hash": "adbdce121896fd3a17a77ab0b0b5eedf05a9834a18699db6829a64e1dfccca7f",
+              "url": "https://files.pythonhosted.org/packages/38/77/b0afa98a670cb255f15155a856ef257a82aa0b72e435f5f58da31d9dc944/numpy-1.24.2-cp39-cp39-macosx_11_0_arm64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "b0677a52f5d896e84414761531947c7a330d1adc07c3a4372262f25d84af7bf7",
-              "url": "https://files.pythonhosted.org/packages/3b/2b/75d7ed116b17202a89e6cf1eba7e91ba83abb79ece7924d5b2c820f59025/numpy-1.24.1-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+              "hash": "c29e6bd0ec49a44d7690ecb623a8eac5ab8a923bce0bea6293953992edf3a76a",
+              "url": "https://files.pythonhosted.org/packages/56/16/4a1ccd05d4f77f78f64cb9cb9f3121edeeebd23d9264b0dcb903889f9c1e/numpy-1.24.2-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "ef85cf1f693c88c1fd229ccd1055570cb41cdf4875873b7728b6301f12cd05bf",
-              "url": "https://files.pythonhosted.org/packages/43/55/fea3342371187dea4044521c0ba82b90fb5a42fb92446be019b316dd3320/numpy-1.24.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+              "hash": "2eabd64ddb96a1239791da78fa5f4e1693ae2dadc82a76bc76a14cbb2b966e96",
+              "url": "https://files.pythonhosted.org/packages/9c/ee/77768cade9607687fadbcc1dcbb82dba0554154b3aa641f9c17233ffabe8/numpy-1.24.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "28bc9750ae1f75264ee0f10561709b1462d450a4808cd97c013046073ae64ab6",
-              "url": "https://files.pythonhosted.org/packages/81/3a/faa8aa531ec3001ff3b215892de791142e01516105da4c5e40a5686edca2/numpy-1.24.1-cp39-cp39-macosx_10_9_x86_64.whl"
+              "hash": "889b2cc88b837d86eda1b17008ebeb679d82875022200c6e8e4ce6cf549b7acb",
+              "url": "https://files.pythonhosted.org/packages/ba/2b/404f675b848033b23d688e5bdc55ec1d62b62f5568dda7f80edb147b637e/numpy-1.24.2-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "8e669fbdcdd1e945691079c2cae335f3e3a56554e06bbd45d7609a6cf568c700",
-              "url": "https://files.pythonhosted.org/packages/ad/9a/98490aee9ca665cd04291658dd76e19c9b9d17680404aa9a122d5ef6ff79/numpy-1.24.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+              "hash": "4199e7cfc307a778f72d293372736223e39ec9ac096ff0a2e64853b866a8e18a",
+              "url": "https://files.pythonhosted.org/packages/ca/e0/f719500114ec3d291718ddbb1bfc3d1db7f9adb17b5c69aa617fe95c17fc/numpy-1.24.2-cp39-cp39-macosx_10_9_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "84e789a085aabef2f36c0515f45e459f02f570c4b4c4c108ac1179c34d475ed7",
-              "url": "https://files.pythonhosted.org/packages/af/74/070f80c41427f41a48bd4c873768f4989aacac7b8c0a3060566402339ce9/numpy-1.24.1-cp39-cp39-macosx_11_0_arm64.whl"
+              "hash": "92011118955724465fb6853def593cf397b4a1367495e0b59a7e69d40c4eb71d",
+              "url": "https://files.pythonhosted.org/packages/e3/83/1d6e5de945573bf865f05fd92144b4c08c895e4b23fcd9c5ee4955185333/numpy-1.24.2-pp38-pypy38_pp73-macosx_10_9_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "caf65a396c0d1f9809596be2e444e3bd4190d86d5c1ce21f5fc4be60a3bc5b36",
-              "url": "https://files.pythonhosted.org/packages/c5/f7/df97e91bf7f4125ce7fa24296f4dfb6f1fc172c08413146b456f5b1299f1/numpy-1.24.1-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+              "hash": "003a9f530e880cb2cd177cba1af7220b9aa42def9c4afc2a2fc3ee6be7eb2b22",
+              "url": "https://files.pythonhosted.org/packages/e4/a9/6704bb5e1d1d778d3a6ee1278a8d8134f0db160e09d52863a24edb58eab5/numpy-1.24.2.tar.gz"
             },
             {
               "algorithm": "sha256",
-              "hash": "2386da9a471cc00a1f47845e27d916d5ec5346ae9696e01a8a34760858fe9dd2",
-              "url": "https://files.pythonhosted.org/packages/ce/b8/c170db50ec49d5845bd771bc5549fe734ee73083c5c52791915f95d8e2bc/numpy-1.24.1.tar.gz"
+              "hash": "f64bb98ac59b3ea3bf74b02f13836eb2e24e48e0ab0145bbda646295769bd780",
+              "url": "https://files.pythonhosted.org/packages/f4/f4/45e6e3f7a23b9023554903a122c95585e9787f9403d386bafb7a95d24c9b/numpy-1.24.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "b162ac10ca38850510caf8ea33f89edcb7b0bb0dfa5592d59909419986b72407",
-              "url": "https://files.pythonhosted.org/packages/fa/c2/00bed438bc58fd80429b7ea2b28382f99156659ebc6dfa750d1520df59d6/numpy-1.24.1-cp38-cp38-macosx_10_9_x86_64.whl"
+              "hash": "d0a2db9d20117bf523dde15858398e7c0858aadca7c0f088ac0d6edd360e9ad2",
+              "url": "https://files.pythonhosted.org/packages/ff/98/7b71cabcce208f8c67398e812068524e473a143342583d55955cbb92b463/numpy-1.24.2-cp38-cp38-macosx_10_9_x86_64.whl"
             }
           ],
           "project_name": "numpy",
           "requires_dists": [],
           "requires_python": ">=3.8",
-          "version": "1.24.1"
+          "version": "1.24.2"
         },
         {
           "artifacts": [
@@ -1876,13 +1855,13 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "a1ca5df6414f8b5760f7c5f256e326ee21b581742114545b462b35ffe3f04861",
-              "url": "https://files.pythonhosted.org/packages/76/fa/bd160e08ac7f656d818a0e40ff88e1a302b07ad2384864fb288db3c812fa/traitlets-5.8.1-py3-none-any.whl"
+              "hash": "9e6ec080259b9a5940c797d58b613b5e31441c2257b87c2e795c5228ae80d2d8",
+              "url": "https://files.pythonhosted.org/packages/77/75/c28e9ef7abec2b7e9ff35aea3e0be6c1aceaf7873c26c95ae1f0d594de71/traitlets-5.9.0-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "32500888f5ff7bbf3b9267ea31748fa657aaf34d56d85e60f91dda7dc7f5785b",
-              "url": "https://files.pythonhosted.org/packages/be/58/2d930cfab2caca22c827229ca61aabd8102423f7e817805cba706dce1598/traitlets-5.8.1.tar.gz"
+              "hash": "f6cde21a9c68cf756af02035f72d5a723bf607e862e7be33ece505abf4a3bad9",
+              "url": "https://files.pythonhosted.org/packages/39/c3/205e88f02959712b62008502952707313640369144a7fded4cbc61f48321/traitlets-5.9.0.tar.gz"
             }
           ],
           "project_name": "traitlets",
@@ -1896,7 +1875,7 @@
             "sphinx; extra == \"docs\""
           ],
           "requires_python": ">=3.7",
-          "version": "5.8.1"
+          "version": "5.9"
         },
         {
           "artifacts": [
@@ -2098,13 +2077,13 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "9eb0a4c5feab9b08871db0d672745b53450d7f26992fd1e4653aa43345e97b86",
-              "url": "https://files.pythonhosted.org/packages/01/3c/9d84fc1dbac1c5103bf3cd994e4895642001f75eb2139bddbc02aa1906e5/zipp-3.12.0-py3-none-any.whl"
+              "hash": "6c4fe274b8f85ec73c37a8e4e3fa00df9fb9335da96fb789e3b96b318e5097b3",
+              "url": "https://files.pythonhosted.org/packages/37/7d/4a5221043904612db108bbe7d0ad7409015fb143bae137c72d9dfd7b75e1/zipp-3.12.1-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "73efd63936398aac78fd92b6f4865190119d6c91b531532e798977ea8dd402eb",
-              "url": "https://files.pythonhosted.org/packages/35/05/f81a74656c04e94f05c1ef186127cceb913493f1f8a21bb142a93c786ee8/zipp-3.12.0.tar.gz"
+              "hash": "a3cac813d40993596b39ea9e93a18e8a2076d5c378b8bc88ec32ab264e04ad02",
+              "url": "https://files.pythonhosted.org/packages/1f/29/54ba1934c45af649698410456fa8a78a475c82efd5c562e51011079458d1/zipp-3.12.1.tar.gz"
             }
           ],
           "project_name": "zipp",
@@ -2129,7 +2108,7 @@
             "sphinx>=3.5; extra == \"docs\""
           ],
           "requires_python": ">=3.7",
-          "version": "3.12"
+          "version": "3.12.1"
         }
       ],
       "platform_tag": null
@@ -2142,7 +2121,7 @@
   "requirements": [
     "Pillow",
     "ipython!=8.0.0,>=7.31.1",
-    "liga<0.3.0,>=0.2.0",
+    "liga==0.2.1.dev1",
     "ligavision-dsl==0.2.0.dev4",
     "pyspark==3.2.1"
   ],
