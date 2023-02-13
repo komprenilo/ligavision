@@ -30,7 +30,7 @@ class ImageModule(majorVersion: String) extends CrossScalaModule with PublishMod
 
   override def compileIvyDeps = Agg(
     ivy"org.apache.spark::spark-sql:3.2.0",
-    ivy"net.xmacs.liga::liga-spark:0.2.1.dev3",
+    ivy"net.xmacs.liga::liga-spark:0.2.1.dev4",
   )
 
   def assemblyRules = Assembly.defaultRules ++ Seq(ExcludePattern("scala/.*"))
