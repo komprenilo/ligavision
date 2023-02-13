@@ -51,8 +51,8 @@ class LigaImageExtensions extends (SparkSessionExtensions => Unit) {
     RikaiUDTRegistration.register("image", org.apache.spark.sql.rikai.ImageType)
     RikaiUDTRegistration.register("mask", org.apache.spark.sql.rikai.MaskType)
     RikaiUDTRegistration.register("point", org.apache.spark.sql.rikai.PointType)
-    RikaiUDTRegistration.register("videostream", org.apache.spark.sql.rikai.VideoStreamType)
-    RikaiUDTRegistration.register("youtubevideo", org.apache.spark.sql.rikai.YouTubeVideoType)
+    RikaiUDTRegistration.register("videoStream", org.apache.spark.sql.rikai.VideoStreamType)
+    RikaiUDTRegistration.register("youTubeVideo", org.apache.spark.sql.rikai.YouTubeVideoType)
     RikaiUDTRegistration.register("segment", org.apache.spark.sql.rikai.SegmentType)
 
     extensions.injectFunction(

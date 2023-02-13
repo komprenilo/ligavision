@@ -66,7 +66,7 @@ def init_session(
             conf = {}
         conf["spark.jars"] = ",".join([liga_uri,liga_image_uri])
         conf["spark.sql.extensions"] = ",".join([
-            "ai.eto.rikai.sql.spark.RikaiSparkSessionExtensions",
+            "net.xmacs.liga.spark.RikaiSparkSessionExtensions",
             "org.apache.spark.sql.rikai.LigaImageExtensions"
         ])
     return liga_init_session(app_name=app_name, conf=conf)
