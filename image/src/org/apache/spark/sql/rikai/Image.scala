@@ -89,3 +89,5 @@ class Image(val data: Option[Array[Byte]], val uri: Option[String])
       false
   }
 }
+
+case object ImageType extends ImageType

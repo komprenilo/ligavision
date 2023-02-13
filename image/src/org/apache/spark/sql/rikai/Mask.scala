@@ -151,3 +151,5 @@ private[sql] class MaskType extends UserDefinedType[Mask] {
 
   override def toString: String = "mask"
 }
+
+case object MaskType extends MaskType

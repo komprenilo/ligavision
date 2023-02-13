@@ -161,4 +161,4 @@ private[sql] class Box2dType extends UserDefinedType[Box2d] {
   }
 }
 
-object Box2dType extends Box2dType
+case object Box2dType extends Box2dType

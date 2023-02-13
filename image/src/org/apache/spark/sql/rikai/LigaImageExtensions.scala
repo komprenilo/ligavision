@@ -43,10 +43,17 @@ class LigaImageExtensions extends (SparkSessionExtensions => Unit) {
     UDTRegistration.register("org.apache.spark.sql.rikai.Image", "org.apache.spark.sql.rikai.ImageType")
     UDTRegistration.register("org.apache.spark.sql.rikai.Mask", "org.apache.spark.sql.rikai.MaskType")
     UDTRegistration.register("org.apache.spark.sql.rikai.Point", "org.apache.spark.sql.rikai.PointType")
-    UDTRegistration.register("org.apache.spark.sql.rikai.Video", "org.apache.spark.sql.rikai.VideoType")
     UDTRegistration.register("org.apache.spark.sql.rikai.VideoStream", "org.apache.spark.sql.rikai.VideoStreamType")
     UDTRegistration.register("org.apache.spark.sql.rikai.YouTubeVideo", "org.apache.spark.sql.rikai.YouTubeVideoType")
     UDTRegistration.register("org.apache.spark.sql.rikai.Segment", "org.apache.spark.sql.rikai.SegmentType")
+    RikaiUDTRegistration.register("box2d", org.apache.spark.sql.rikai.Box2dType)
+    RikaiUDTRegistration.register("box3d", org.apache.spark.sql.rikai.Box3dType)
+    RikaiUDTRegistration.register("image", org.apache.spark.sql.rikai.ImageType)
+    RikaiUDTRegistration.register("mask", org.apache.spark.sql.rikai.MaskType)
+    RikaiUDTRegistration.register("point", org.apache.spark.sql.rikai.PointType)
+    RikaiUDTRegistration.register("videoStream", org.apache.spark.sql.rikai.VideoStreamType)
+    RikaiUDTRegistration.register("youTubeVideo", org.apache.spark.sql.rikai.YouTubeVideoType)
+    RikaiUDTRegistration.register("segment", org.apache.spark.sql.rikai.SegmentType)
 
     extensions.injectFunction(
       new FunctionIdentifier("area"),
