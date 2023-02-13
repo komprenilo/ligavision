@@ -340,13 +340,13 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "bbbb6717efc886b9d64537b41fb1497cfaf3c9601276be8da2cccfea5a3c8ad8",
-              "url": "https://files.pythonhosted.org/packages/0c/36/c56ef2aea73912190cdbcc39aaa860db8c07c1a5ce8566994ec9425453db/pytest_forked-1.4.0-py3-none-any.whl"
+              "hash": "810958f66a91afb1a1e2ae83089d8dc1cd2437ac96b12963042fbb9fb4d16af0",
+              "url": "https://files.pythonhosted.org/packages/f4/af/9c0bda43e486a3c9bf1e0f876d0f241bc3f229d7d65d09331a0868db9629/pytest_forked-1.6.0-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "8b67587c8f98cbbadfdd804539ed5455b6ed03802203485dd2f53c1422d7440e",
-              "url": "https://files.pythonhosted.org/packages/f1/bc/0121a2e386b261b69f4f5aa48e5304c947451dce70d68628cb28d5cd0d28/pytest-forked-1.4.0.tar.gz"
+              "hash": "4dafd46a9a600f65d822b8f605133ecf5b3e1941ebb3588e943b4e3eb71a5a3f",
+              "url": "https://files.pythonhosted.org/packages/8c/c9/93ad2ba2413057ee694884b88cf7467a46c50c438977720aeac26e73fdb7/pytest-forked-1.6.0.tar.gz"
             }
           ],
           "project_name": "pytest-forked",
@@ -354,8 +354,8 @@
             "py",
             "pytest>=3.10"
           ],
-          "requires_python": ">=3.6",
-          "version": "1.4"
+          "requires_python": ">=3.7",
+          "version": "1.6"
         },
         {
           "artifacts": [
