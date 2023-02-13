@@ -111,3 +111,5 @@ class Box3dType extends UserDefinedType[Box3d] {
 
   override def typeName: String = "box3d"
 }
+
+case object Box3dType extends Box3dType

@@ -63,6 +63,8 @@ class YouTubeVideoType extends UserDefinedType[YouTubeVideo] {
   override def typeName: String = "youTubeVideo"
 }
 
+case object YouTubeVideoType extends YouTubeVideoType
+
 
 /** A VideoStream references a particular video stream at a given uri
   *
@@ -102,6 +104,8 @@ private[sql] class VideoStreamType extends UserDefinedType[VideoStream] {
 
   override def typeName: String = "videoStream"
 }
+
+case object VideoStreamType extends VideoStreamType
 
 
 /** A video segment as defined by the first and last frame numbers
@@ -157,3 +161,5 @@ private[sql] class SegmentType extends UserDefinedType[Segment] {
 
   override def typeName: String = "segment"
 }
+
+case object SegmentType extends SegmentType
