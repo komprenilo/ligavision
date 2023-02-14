@@ -14,7 +14,7 @@
 //     "fsspec",
 //     "ipython!=8.0.0,>=7.31.1",
 //     "jupyterlab",
-//     "liga==0.2.1.dev4",
+//     "liga==0.2.1.dev5",
 //     "matplotlib",
 //     "numpy",
 //     "pyspark==3.2.1",
@@ -1538,13 +1538,13 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "1a04bb359212e23e46adc0116ec82ea128c1e5bd532fde4fbe679787ff36f0cf",
-              "url": "https://files.pythonhosted.org/packages/e6/07/9f97d8fbc3abcc5e495af92a83118786cb3f41d106752901db5ff1b73f83/ipykernel-6.21.1-py3-none-any.whl"
+              "hash": "430d00549b6aaf49bd0f5393150691edb1815afa62d457ee6b1a66b25cb17874",
+              "url": "https://files.pythonhosted.org/packages/45/4b/b0016fb5525b2833f95731ea742bc6700e9d9d3c4184f62e20f4e5a4d753/ipykernel-6.21.2-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "a0f8eece39cab1ee352c9b59ec67bbe44d8299f8238e4c16ff7f4cf0052d3378",
-              "url": "https://files.pythonhosted.org/packages/4f/68/d18cf6d4130ed5719a478aa976ac4affcf8c7f687844b55b67b4be9ade76/ipykernel-6.21.1.tar.gz"
+              "hash": "6e9213484e4ce1fb14267ee435e18f23cc3a0634e635b9fb4ed4677b84e0fdf8",
+              "url": "https://files.pythonhosted.org/packages/ea/ff/69f7318c2ca48c7c47f45b854ef51128192d67761a8f72d4c04ed57e5047/ipykernel-6.21.2.tar.gz"
             }
           ],
           "project_name": "ipykernel",
@@ -1574,7 +1574,7 @@
             "pytest-cov; extra == \"test\"",
             "pytest-timeout; extra == \"test\"",
             "pytest>=7.0; extra == \"test\"",
-            "pyzmq>=17",
+            "pyzmq>=20",
             "sphinx-autodoc-typehints; extra == \"docs\"",
             "sphinx; extra == \"docs\"",
             "sphinxcontrib-github-alt; extra == \"docs\"",
@@ -1585,7 +1585,7 @@
             "trio; extra == \"docs\""
           ],
           "requires_python": ">=3.8",
-          "version": "6.21.1"
+          "version": "6.21.2"
         },
         {
           "artifacts": [
@@ -2401,13 +2401,13 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "510688336b845c928cd99ae5940d344c2a5a789d4fab4dde2ddbda554ced8ce5",
-              "url": "https://files.pythonhosted.org/packages/37/8c/498bcd9a31f0cbe21bb0b5bb230b8475f1517d99e71803d6a7cf9e091329/liga-0.2.1.dev4-py3-none-any.whl"
+              "hash": "a1c8ed6c1dac2c12ee7fda95c9376ef92ee73b68c5ec85fb77b6c16c504a2234",
+              "url": "https://files.pythonhosted.org/packages/c7/79/493bb9bb6a7189b75c86ccd0fbeb5889c236c3a1146b91204d050fb77e73/liga-0.2.1.dev5-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "919f91d11824704564d83e4e3239ca793b8f883f1f98ba84b34765ebd117b479",
-              "url": "https://files.pythonhosted.org/packages/e5/e1/578da890405e228e90651561c9cdcf178e8783f243c653a28bf52c3b9a27/liga-0.2.1.dev4.tar.gz"
+              "hash": "8111ce664f1552cb3f426b7b6e46da0f3e16ce89f1bfd037e42c4437124fddea",
+              "url": "https://files.pythonhosted.org/packages/e4/8f/7da6ee3a387b729f8f0ab60269a9b88f7d7bb4284166b4da1d87b6658c2a/liga-0.2.1.dev5.tar.gz"
             }
           ],
           "project_name": "liga",
@@ -2423,7 +2423,7 @@
             "requests"
           ],
           "requires_python": "<3.10,>=3.8",
-          "version": "0.2.1.dev4"
+          "version": "0.2.1.dev5"
         },
         {
           "artifacts": [
@@ -2522,98 +2522,98 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "01b7f521a9a73c383825813af255f8c4485d1706e4f3e2ed5ae771e4403a40ab",
-              "url": "https://files.pythonhosted.org/packages/aa/de/f6cecb733976649c147848f47cbbd9b206d5383d499490443bc0850f78fb/matplotlib-3.6.3-pp39-pypy39_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+              "hash": "71b751d06b2ed1fd017de512d7439c0259822864ea16731522b251a27c0b2ede",
+              "url": "https://files.pythonhosted.org/packages/fe/c5/2e1dbdea660c8764a742eefa5e661d16c3cb9b9b4a1296785ee552274e39/matplotlib-3.7.0-pp39-pypy39_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "bbddfeb1495484351fb5b30cf5bdf06b3de0bc4626a707d29e43dfd61af2a780",
-              "url": "https://files.pythonhosted.org/packages/05/66/8e92c6bee9cc93003804eb29aede7c9479196859f9a70c0355860651240d/matplotlib-3.6.3-cp39-cp39-manylinux_2_17_i686.manylinux2014_i686.whl"
+              "hash": "0a776462a4a63c0bfc9df106c15a0897aa2dbab6795c693aa366e8e283958854",
+              "url": "https://files.pythonhosted.org/packages/25/a3/ac5c470d1e448d80c67c901ecc332ff1c9f8549290ffe6f70bed9df9d79e/matplotlib-3.7.0-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "6d81b11ede69e3a751424b98dc869c96c10256b2206bfdf41f9c720eee86844c",
-              "url": "https://files.pythonhosted.org/packages/11/eb/86f5fa330c35fac8f9daf1ca48ec317a715bac44f0fa4de4d95ca065a1e8/matplotlib-3.6.3-cp39-cp39-macosx_10_12_x86_64.whl"
+              "hash": "51fb664c37714cbaac69c16d6b3719f517a13c96c3f76f4caadd5a0aa7ed0329",
+              "url": "https://files.pythonhosted.org/packages/31/51/61d71b0e37d644baac9015f07940e2a883e882dab20c314b22e5c8ab498d/matplotlib-3.7.0-pp38-pypy38_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "1f4d69707b1677560cd952544ee4962f68ff07952fb9069ff8c12b56353cb8c9",
-              "url": "https://files.pythonhosted.org/packages/23/6d/2917ed23b17a8c4d1d59974a574cae0a365c392ba8820c8824b03a02f376/matplotlib-3.6.3.tar.gz"
+              "hash": "111ef351f28fd823ed7177632070a6badd6f475607122bc9002a526f2502a0b5",
+              "url": "https://files.pythonhosted.org/packages/31/5a/a51e86a3d900ceec936e1ca7c13d9549fefefd41d22e1cedddcdf309d9b5/matplotlib-3.7.0-cp38-cp38-macosx_11_0_arm64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "81b409b2790cf8d7c1ef35920f01676d2ae7afa8241844e7aa5484fdf493a9a0",
-              "url": "https://files.pythonhosted.org/packages/40/15/444e3cdb0760b4842e70935cebe9f000270a92b7302ef5ee4a38f6c1c1df/matplotlib-3.6.3-pp38-pypy38_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+              "hash": "f4ddac5f59e78d04b20469bc43853a8e619bb6505c7eac8ffb343ff2c516d72f",
+              "url": "https://files.pythonhosted.org/packages/5a/d8/0626d8c38bba48615273254481c63977770070f501e264d0691c88910415/matplotlib-3.7.0-cp39-cp39-manylinux_2_17_i686.manylinux2014_i686.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "debeab8e2ab07e5e3dac33e12456da79c7e104270d2b2d1df92b9e40347cca75",
-              "url": "https://files.pythonhosted.org/packages/45/d1/34b6029409d8459188c992038ebf7df2c7fb1c3cbdf309ef8ef43ed580c2/matplotlib-3.6.3-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+              "hash": "8f6efd313430d7ef70a38a3276281cb2e8646b3a22b3b21eb227da20e15e6813",
+              "url": "https://files.pythonhosted.org/packages/65/c2/34158ff731a12802228434e8d17d2ebb5097394ab9d065205cc262cf2a6f/matplotlib-3.7.0.tar.gz"
             },
             {
               "algorithm": "sha256",
-              "hash": "994637e2995b0342699b396a320698b07cd148bbcf2dd2fa2daba73f34dd19f2",
-              "url": "https://files.pythonhosted.org/packages/68/76/0a29552d09fcef29a01d4e22bb05fe0a081664744714c2922de68492ea29/matplotlib-3.6.3-cp38-cp38-macosx_11_0_arm64.whl"
+              "hash": "fb0304c1cd802e9a25743414c887e8a7cd51d96c9ec96d388625d2cd1c137ae3",
+              "url": "https://files.pythonhosted.org/packages/7a/c4/2652d12fe19580600fd8d3646639c5246f30295159d4ab48f2a63fbaaf9f/matplotlib-3.7.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "809119d1cba3ece3c9742eb01827fe7a0e781ea3c5d89534655a75e07979344f",
-              "url": "https://files.pythonhosted.org/packages/71/4d/6d5176b64cfc5b128e859b7675e72c05db52dcb128196b8a27ba834ff5cd/matplotlib-3.6.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+              "hash": "7d0dcd1a0bf8d56551e8617d6dc3881d8a1c7fb37d14e5ec12cbb293f3e6170a",
+              "url": "https://files.pythonhosted.org/packages/81/56/cca0caa0871e67f285c7c2630aa2d0c4b26a656975a9029a6de8863b5a5a/matplotlib-3.7.0-pp38-pypy38_pp73-manylinux_2_17_i686.manylinux2014_i686.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "68d94a436f62b8a861bf3ace82067a71bafb724b4e4f9133521e4d8012420dd7",
-              "url": "https://files.pythonhosted.org/packages/76/e4/7c2fa2ccd7c27ac3a695e33be8ad1a0b7cddf7127b249934af0ce4097129/matplotlib-3.6.3-pp38-pypy38_pp73-manylinux_2_17_i686.manylinux2014_i686.whl"
+              "hash": "03eb2c8ff8d85da679b71e14c7c95d16d014c48e0c0bfa14db85f6cdc5c92aad",
+              "url": "https://files.pythonhosted.org/packages/8a/80/ff43b269b8096155833ba0f3d04e926cb01fd7ee3a3e7b6fdd2aff5850c1/matplotlib-3.7.0-pp39-pypy39_pp73-manylinux_2_17_i686.manylinux2014_i686.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "bbf269e1d24bc25247095d71c7a969813f7080e2a7c6fa28931a603f747ab012",
-              "url": "https://files.pythonhosted.org/packages/78/53/f59eaad2f5826394706eb544a497cb30c69ceb955a5aaac95a980905de60/matplotlib-3.6.3-cp38-cp38-macosx_10_12_x86_64.whl"
+              "hash": "0dfd4a0cbd151f6439e6d7f8dca5292839ca311e7e650596d073774847ca2e4f",
+              "url": "https://files.pythonhosted.org/packages/8b/24/d4125e9588e3d121a815ea9d65d218124653ff83886e97318977c0375f90/matplotlib-3.7.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "12f999661589981e74d793ee2f41b924b3b87d65fd929f6153bf0f30675c59b1",
-              "url": "https://files.pythonhosted.org/packages/80/8a/0ee248d17cbd5242ebcfa89b66bb1d0093607a081532fb77e106a8729947/matplotlib-3.6.3-pp39-pypy39_pp73-manylinux_2_17_i686.manylinux2014_i686.whl"
+              "hash": "f91d35b3ef51d29d9c661069b9e4ba431ce283ffc533b981506889e144b5b40e",
+              "url": "https://files.pythonhosted.org/packages/94/a9/54ff088e303d93f81dd1bbbf98ca4b0ce6bfa09c21ec93e87645e9ac3ed2/matplotlib-3.7.0-cp38-cp38-manylinux_2_12_i686.manylinux2010_i686.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "38d38cb1ea1d80ee0f6351b65c6f76cad6060bbbead015720ba001348ae90f0c",
-              "url": "https://files.pythonhosted.org/packages/89/d4/7b402f51b2de99834cdedd5c4d586bc73b2c245a0156fca4fe2c48aa83a1/matplotlib-3.6.3-pp39-pypy39_pp73-macosx_10_12_x86_64.whl"
+              "hash": "9d85355c48ef8b9994293eb7c00f44aa8a43cad7a297fbf0770a25cdb2244b91",
+              "url": "https://files.pythonhosted.org/packages/ab/93/30985dd59bc5a7e4f31db944054cd11f36535c47f214984acfb988a8cd89/matplotlib-3.7.0-pp39-pypy39_pp73-macosx_10_12_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "9fb8fb19d03abf3c5dab89a8677e62c4023632f919a62b6dd1d6d2dbf42cd9f5",
-              "url": "https://files.pythonhosted.org/packages/91/68/ca621cc427499562ef860a5d6d260298fb9c97732a28ce9bd514976a8c14/matplotlib-3.6.3-cp38-cp38-macosx_10_12_universal2.whl"
+              "hash": "f910d924da8b9fb066b5beae0b85e34ed1b6293014892baadcf2a51da1c65807",
+              "url": "https://files.pythonhosted.org/packages/af/55/4d92f2c85ecb7659781c6fcc29be0f9efda39ee09d805a922da58d336863/matplotlib-3.7.0-cp39-cp39-macosx_10_12_universal2.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "3f56a7252eee8f3438447f75f5e1148a1896a2756a92285fe5d73bed6deebff4",
-              "url": "https://files.pythonhosted.org/packages/94/25/1cce2a9120cc210ae30a5fe95ff76f7ec32f887f2be96fd38d8ccbc029b4/matplotlib-3.6.3-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
+              "hash": "3493b48e56468c39bd9c1532566dff3b8062952721b7521e1f394eb6791495f4",
+              "url": "https://files.pythonhosted.org/packages/b2/1b/a74f356e1e8c0ddd1726ba47a47a7154cc8f19e434449299f08d7fca52c3/matplotlib-3.7.0-pp38-pypy38_pp73-macosx_10_12_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "2787a16df07370dcba385fe20cdd0cc3cfaabd3c873ddabca78c10514c799721",
-              "url": "https://files.pythonhosted.org/packages/9a/c0/79be310d06a5a4c0461c860474f96d6be9aa869ba785a950f20c089e9bf6/matplotlib-3.6.3-pp38-pypy38_pp73-macosx_10_12_x86_64.whl"
+              "hash": "c869b646489c6a94375714032e5cec08e3aa8d3f7d4e8ef2b0fb50a52b317ce6",
+              "url": "https://files.pythonhosted.org/packages/c5/93/8d7e28c5e1a590442a8e5eedbf4985bce5492b096b5157618441e1cbb620/matplotlib-3.7.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "73b93af33634ed919e72811c9703e1105185cd3fb46d76f30b7f4cfbbd063f89",
-              "url": "https://files.pythonhosted.org/packages/c4/49/80590115bcae4bd8ffb30fc52df459d785dd0f1542312c8c996b7206747c/matplotlib-3.6.3-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl"
+              "hash": "3d1e52365d8d5af699f04581ca191112e1d1220a9ce4386b57d807124d8b55e6",
+              "url": "https://files.pythonhosted.org/packages/ca/f7/a92bec5eb172a0783dfaafa62508e00260a5671fcbc6abf3697ac378c343/matplotlib-3.7.0-cp39-cp39-macosx_11_0_arm64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "29f17b7f2e068dc346687cbdf80b430580bab42346625821c2d3abf3a1ec5417",
-              "url": "https://files.pythonhosted.org/packages/d6/1f/3b1a24758e442bf614bb85a9cecb57b904c4f2b020a6ae79dd7cd62f999b/matplotlib-3.6.3-cp39-cp39-macosx_11_0_arm64.whl"
+              "hash": "cf119eee4e57389fba5ac8b816934e95c256535e55f0b21628b4205737d1de85",
+              "url": "https://files.pythonhosted.org/packages/dd/23/97592879b993caf5bd70a59e51be62f70502c3737eb508c00eb21015a2aa/matplotlib-3.7.0-cp38-cp38-macosx_10_12_universal2.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "77b384cee7ab8cf75ffccbfea351a09b97564fc62d149827a5e864bec81526e5",
-              "url": "https://files.pythonhosted.org/packages/ef/81/55ccf5fba22ecda9150b58ad0a2c2ce6387ba2708c6fb7eeecd2bd3ac2cf/matplotlib-3.6.3-cp38-cp38-manylinux_2_12_i686.manylinux2010_i686.whl"
+              "hash": "cf6346644e8fe234dc847e6232145dac199a650d3d8025b3ef65107221584ba4",
+              "url": "https://files.pythonhosted.org/packages/e6/31/41b761e44ec05df946fbcd78d742741a938ccdbb14a07543b1021b2dab0e/matplotlib-3.7.0-cp39-cp39-macosx_10_12_x86_64.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "6adc441b5b2098a4b904bbf9d9e92fb816fef50c55aa2ea6a823fc89b94bb838",
-              "url": "https://files.pythonhosted.org/packages/f4/b9/8ca889f3ecb050505fa935a9e2af9dd1b73157c80b339d32370117791777/matplotlib-3.6.3-cp39-cp39-macosx_10_12_universal2.whl"
+              "hash": "21bd4033c40b95abd5b8453f036ed5aa70856e56ecbd887705c37dce007a4c21",
+              "url": "https://files.pythonhosted.org/packages/ef/46/ca4a48a835ce20e1cad6fcff5ec034266b4c4dccbb093c38987bd38803b5/matplotlib-3.7.0-cp38-cp38-macosx_10_12_x86_64.whl"
             }
           ],
           "project_name": "matplotlib",
@@ -2621,15 +2621,16 @@
             "contourpy>=1.0.1",
             "cycler>=0.10",
             "fonttools>=4.22.0",
+            "importlib-resources>=3.2.0; python_version < \"3.10\"",
             "kiwisolver>=1.0.1",
-            "numpy>=1.19",
+            "numpy>=1.20",
             "packaging>=20.0",
             "pillow>=6.2.0",
-            "pyparsing>=2.2.1",
+            "pyparsing>=2.3.1",
             "python-dateutil>=2.7"
           ],
           "requires_python": ">=3.8",
-          "version": "3.6.3"
+          "version": "3.7"
         },
         {
           "artifacts": [
@@ -4887,7 +4888,7 @@
     "fsspec",
     "ipython!=8.0.0,>=7.31.1",
     "jupyterlab",
-    "liga==0.2.1.dev4",
+    "liga==0.2.1.dev5",
     "matplotlib",
     "numpy",
     "pyspark==3.2.1",
