@@ -11,7 +11,7 @@
 //   "generated_with_requirements": [
 //     "Pillow",
 //     "ipython!=8.0.0,>=7.31.1",
-//     "liga==0.2.1.dev4",
+//     "liga==0.2.1.dev5",
 //     "ligavision-dsl==0.2.0.dev4",
 //     "pyspark==3.2.1"
 //   ],
@@ -963,13 +963,13 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "510688336b845c928cd99ae5940d344c2a5a789d4fab4dde2ddbda554ced8ce5",
-              "url": "https://files.pythonhosted.org/packages/37/8c/498bcd9a31f0cbe21bb0b5bb230b8475f1517d99e71803d6a7cf9e091329/liga-0.2.1.dev4-py3-none-any.whl"
+              "hash": "a1c8ed6c1dac2c12ee7fda95c9376ef92ee73b68c5ec85fb77b6c16c504a2234",
+              "url": "https://files.pythonhosted.org/packages/c7/79/493bb9bb6a7189b75c86ccd0fbeb5889c236c3a1146b91204d050fb77e73/liga-0.2.1.dev5-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "919f91d11824704564d83e4e3239ca793b8f883f1f98ba84b34765ebd117b479",
-              "url": "https://files.pythonhosted.org/packages/e5/e1/578da890405e228e90651561c9cdcf178e8783f243c653a28bf52c3b9a27/liga-0.2.1.dev4.tar.gz"
+              "hash": "8111ce664f1552cb3f426b7b6e46da0f3e16ce89f1bfd037e42c4437124fddea",
+              "url": "https://files.pythonhosted.org/packages/e4/8f/7da6ee3a387b729f8f0ab60269a9b88f7d7bb4284166b4da1d87b6658c2a/liga-0.2.1.dev5.tar.gz"
             }
           ],
           "project_name": "liga",
@@ -985,7 +985,7 @@
             "requests"
           ],
           "requires_python": "<3.10,>=3.8",
-          "version": "0.2.1.dev4"
+          "version": "0.2.1.dev5"
         },
         {
           "artifacts": [
@@ -2249,7 +2249,7 @@
   "requirements": [
     "Pillow",
     "ipython!=8.0.0,>=7.31.1",
-    "liga==0.2.1.dev4",
+    "liga==0.2.1.dev5",
     "ligavision-dsl==0.2.0.dev4",
     "pyspark==3.2.1"
   ],
