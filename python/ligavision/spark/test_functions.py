@@ -14,14 +14,12 @@
 
 """Unit tests for Rikai provided spark UDFs."""
 
-import os
 from io import BytesIO
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 import pandas.testing as pdt
-import pytest
 from PIL import Image as PILImage
 from pyspark.sql import Row, SparkSession
 from pyspark.sql.functions import col, concat, lit
@@ -34,12 +32,11 @@ from ligavision.spark.functions import (
     box2d,
     box2d_from_center,
     crop,
-    init,
     numpy_to_image,
     to_image,
 )
 from ligavision.spark.types.geometry import Box2dType
-from ligavision.spark.types import ImageType, Image, Box2d, Segment, VideoStream, YouTubeVideo
+from ligavision.spark.types import ImageType, Image, Box2d
 
 
 def test_init(spark):
