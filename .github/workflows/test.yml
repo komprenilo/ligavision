@@ -58,6 +58,8 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
+    - name: mill test
+      run: mill 'image[2.12].test'
     - name: mill asembly
       run: mill 'image[2.12].assembly'
       env:

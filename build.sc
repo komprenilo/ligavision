@@ -19,7 +19,7 @@ class ImageModule(majorVersion: String) extends CrossScalaModule with PublishMod
 
   override def pomSettings = PomSettings(
     description = "Image related UDT/UDF on Apache Spark",
-    organization = "ligaai",
+    organization = "net.xmacs.liga",
     licenses = Seq(License.Common.Apache2),
     url = "https://github.com/liga-ai/liga-vision",
     versionControl = VersionControl.github("liga-ai", "liga-vision"),
@@ -28,16 +28,19 @@ class ImageModule(majorVersion: String) extends CrossScalaModule with PublishMod
     )
   )
 
+  override def ivyDeps = Agg(
+    ivy"net.xmacs.liga::liga-spark:0.2.2",
+  )
+
   override def compileIvyDeps = Agg(
-    ivy"org.apache.spark::spark-sql:3.2.0",
-    ivy"net.xmacs.liga::liga-spark:0.2.1",
+    ivy"org.apache.spark::spark-sql:3.2.1",
   )
 
   def assemblyRules = Assembly.defaultRules ++ Seq(ExcludePattern("scala/.*"))
 
   object test extends Tests with TestModule.ScalaTest {
     override def ivyDeps = Agg(
-      ivy"org.apache.spark::spark-sql:3.2.0",
+      ivy"org.apache.spark::spark-sql:3.2.1",
       ivy"org.scalatest::scalatest:3.0.8",
       ivy"ch.qos.logback:logback-classic:1.2.3",
     )
@@ -62,7 +65,7 @@ class VideoModule(majorVersion: String) extends CrossScalaModule with PublishMod
 
   override def pomSettings = PomSettings(
     description = "Processing Videos on Apache Spark",
-    organization = "eto.ai.rikai",
+    organization = "net.xmacs.liga",
     licenses = Seq(License.Common.Apache2),
     url = "https://github.com/liga-ai/liga-vision",
     versionControl = VersionControl.github("liga-ai", "spark-vision"),
