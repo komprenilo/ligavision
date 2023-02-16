@@ -12,7 +12,7 @@
 //     "Pillow",
 //     "ipython!=8.0.0,>=7.31.1",
 //     "liga<0.3.0,>=0.2.2",
-//     "ligavision-dsl==0.2.0.dev4",
+//     "ligavision-dsl==0.2.0",
 //     "pyspark==3.2.1"
 //   ],
 //   "manylinux": "manylinux2014",
@@ -991,13 +991,13 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "c486592b2365b7b6d6345fb0629356af48aee6cdc12b9dfecb22aabd6d4fc281",
-              "url": "https://files.pythonhosted.org/packages/f9/b3/4f7489a0233d002e437ffc18fcfdf1cb7f24f4cd84946df31178adb898d4/ligavision_dsl-0.2.0.dev4-py3-none-any.whl"
+              "hash": "f70266a91174888873a221c6f45990d3e713b7dfa8923468d3198e7b1c0c584d",
+              "url": "https://files.pythonhosted.org/packages/1b/f2/7e2f7e4fa2b855379f1d8be7f48ba2d1f09be6dd5aaad116fc24ddc75a6b/ligavision_dsl-0.2.0-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "f41c601d9aafaa92d149a1af54a91b5a8db36167e7a52355d902ba34e2b0b57d",
-              "url": "https://files.pythonhosted.org/packages/c6/64/1b7fded36f891c071207f49ca5f4f8e29cf3f78415bcf85d6c98a8bfe5f5/ligavision-dsl-0.2.0.dev4.tar.gz"
+              "hash": "29fc5132da9e2398a3daefc48f902ad69f0c782046edf8fcac0ae97643023c45",
+              "url": "https://files.pythonhosted.org/packages/69/a5/ac8775f66dd8f5fc9fba4f5a488b284154b36578305db77d17f923e1b62f/ligavision-dsl-0.2.0.tar.gz"
             }
           ],
           "project_name": "ligavision-dsl",
@@ -1009,7 +1009,7 @@
             "requests"
           ],
           "requires_python": "<3.10,>=3.8",
-          "version": "0.2.dev4"
+          "version": "0.2"
         },
         {
           "artifacts": [
@@ -2250,7 +2250,7 @@
     "Pillow",
     "ipython!=8.0.0,>=7.31.1",
     "liga<0.3.0,>=0.2.2",
-    "ligavision-dsl==0.2.0.dev4",
+    "ligavision-dsl==0.2.0",
     "pyspark==3.2.1"
   ],
   "requires_python": [
