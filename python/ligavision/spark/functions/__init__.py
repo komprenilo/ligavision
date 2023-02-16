@@ -21,10 +21,10 @@ from ligavision.spark.functions.geometry import *
 from ligavision.spark.functions.io import *
 from ligavision.spark.functions.vision import *
 
-__all__ = ["init"]
+__all__ = ["init_udf"]
 
 
-def init(spark: SparkSession):
+def init_udf(spark: SparkSession):
     """Register all rikai UDFs"""
     from ligavision.spark.functions import geometry, io, vision
 
