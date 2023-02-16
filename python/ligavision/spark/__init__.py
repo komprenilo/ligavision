@@ -62,11 +62,10 @@ def init_session(
     if conf and "spark.jars" in conf.keys():
         pass
     else:
-        liga_uri = get_liga_assembly_jar("github", scala_version)
         liga_image_uri = get_liga_vision_jar("image", jar_type, scala_version)
         if not conf:
             conf = {}
-        conf["spark.jars"] = ",".join([liga_uri,liga_image_uri])
+        conf["spark.jars"] = ",".join([liga_image_uri])
         conf["spark.sql.extensions"] = ",".join([
             "net.xmacs.liga.spark.RikaiSparkSessionExtensions",
             "org.apache.spark.sql.rikai.LigaImageExtensions"
