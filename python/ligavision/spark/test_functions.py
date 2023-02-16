@@ -43,7 +43,6 @@ from ligavision.spark.types import ImageType, Image, Box2d, Segment, VideoStream
 
 
 def test_init(spark):
-    init(spark)
     rikai_udf_names = [
         x.name
         for x in spark.catalog.listFunctions()

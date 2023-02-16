@@ -20,6 +20,7 @@ from liga.spark import get_liga_assembly_jar
 from liga.spark import init_session as liga_init_session
 
 from ligavision.__version__ import version
+from ligavision.spark.functions import init_udf
 
 
 def get_liga_vision_jar(vision_type: str, jar_type: str, scala_version: str) -> str:
@@ -55,7 +56,8 @@ def init_session(
     app_name="Liga Vision App",
     conf: Optional[dict] = None,
     jar_type="github",
-    scala_version: str = "2.12"
+    scala_version: str = "2.12",
+    with_udf=True, 
 ):
     if conf and "spark.jars" in conf.keys():
         pass
@@ -69,4 +71,8 @@ def init_session(
             "net.xmacs.liga.spark.RikaiSparkSessionExtensions",
             "org.apache.spark.sql.rikai.LigaImageExtensions"
         ])
-    return liga_init_session(app_name=app_name, conf=conf)
+    spark = liga_init_session(app_name=app_name, conf=conf)
+    if with_udf:
+        init_udf(spark)
+    return spark
+    
