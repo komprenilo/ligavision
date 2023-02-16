@@ -29,7 +29,7 @@ class ImageModule(majorVersion: String) extends CrossScalaModule with PublishMod
   )
 
   override def ivyDeps = Agg(
-    ivy"net.xmacs.liga::liga-spark:0.2.1",
+    ivy"net.xmacs.liga::liga-spark:0.2.2",
   )
 
   override def compileIvyDeps = Agg(

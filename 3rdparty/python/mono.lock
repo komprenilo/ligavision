@@ -14,7 +14,7 @@
 //     "fsspec",
 //     "ipython!=8.0.0,>=7.31.1",
 //     "jupyterlab",
-//     "liga<0.3.0,>=0.2.1",
+//     "liga<0.3.0,>=0.2.2",
 //     "matplotlib",
 //     "numpy",
 //     "pyspark==3.2.1",
@@ -2401,13 +2401,13 @@
           "artifacts": [
             {
               "algorithm": "sha256",
-              "hash": "9b91ac7bc930ff1e9f5218c233d578657c9d05c3963b37616e83eae35f9241d6",
-              "url": "https://files.pythonhosted.org/packages/7c/f6/938e83776e7c3d4284544d2d078559403d408f6bfad403925ba9de162fb5/liga-0.2.1-py3-none-any.whl"
+              "hash": "cd43fc0169f6aac68873298f9a8134fa766ef1e8296fec536234697db066afc1",
+              "url": "https://files.pythonhosted.org/packages/04/e7/1b2d7637f0eca3af9ff29aba4abbf55eece482429f2f7b582cf1d6ecc09f/liga-0.2.2-py3-none-any.whl"
             },
             {
               "algorithm": "sha256",
-              "hash": "c37a880cf1fa1f10500b94be95c85ee930a9dd51d04e1c1304409eee15750e03",
-              "url": "https://files.pythonhosted.org/packages/63/26/53ab67b5ffe72604591bdc028778d780e06f0a95e53140ec4058b4fd17de/liga-0.2.1.tar.gz"
+              "hash": "abf4ecc41afd57553d6b67821a275c188a8d6f6497fe3e929e7e525329407937",
+              "url": "https://files.pythonhosted.org/packages/97/22/40692e4306a7f72b2728c4f4b25a26a84bae67ee66b4a2ce650cea8c22ca/liga-0.2.2.tar.gz"
             }
           ],
           "project_name": "liga",
@@ -2423,7 +2423,7 @@
             "requests"
           ],
           "requires_python": "<3.10,>=3.8",
-          "version": "0.2.1"
+          "version": "0.2.2"
         },
         {
           "artifacts": [
@@ -4996,7 +4996,7 @@
     "fsspec",
     "ipython!=8.0.0,>=7.31.1",
     "jupyterlab",
-    "liga<0.3.0,>=0.2.1",
+    "liga<0.3.0,>=0.2.2",
     "matplotlib",
     "numpy",
     "pyspark==3.2.1",
