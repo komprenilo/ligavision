@@ -1,4 +1,4 @@
-# Liga Vision: the Liga solution for Computer Vision
+# Liga Vision: Let Data Dance with Computer Vision Models
 ## Developers' Guide
 ### Cheatsheet for mill
 ``` bash
