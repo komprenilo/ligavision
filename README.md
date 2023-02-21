@@ -22,8 +22,8 @@ image | text @ {"color": "#000000"} | box2d
 | Purpose | Operator | Notebook |
 |---------|----------|----------|
 | Image Scaling | `*` | [DSL for Image Scaling](notebooks/DSLImageScale.ipynb) |
-| Image Overlays | `\|` | [DSL for Image Overlays](notebooks/DSLImageOverlays.ipynb) |
-| Overlay Attributes | `*` | [DSL for Overlay Attributes](notebooks/DSLOverlayAttribute.ipynb)
+| Image Overlays | `\|` | [DSL for Image Overlays](notebooks/DSLImageOverlay.ipynb) |
+| Overlay Attributes | `@` | [DSL for Overlay Attributes](notebooks/DSLOverlayAttribute.ipynb)
 
 
 ## History
