@@ -57,7 +57,7 @@ class ObjectDetectionModelType(TorchModelType):
 ### UDFs
 | UDF | Syntax | Notebooks |
 |-----|--------|-----------|
-| `crop` | `select crop(image, box2d)` | [crop.ipynb](notebooks/crop.ipynb) |
+| `crop` | `select crop(image, array(box2d))` | [crop.ipynb](notebooks/UDF_crop.ipynb) |
 
 > TODO: more live notebooks for UDFs.
 
