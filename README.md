@@ -22,11 +22,11 @@ image | text @ {"color": "#000000"} | box2d
 ```
 
 ### Notebooks
-| Purpose | Operator | Notebook |
-|---------|----------|----------|
-| Image Scaling | `*` | [DSL for Image Scaling](notebooks/DSLImageScale.ipynb) |
-| Image Overlays | `\|` | [DSL for Image Overlays](notebooks/DSLImageOverlay.ipynb) |
-| Overlay Attributes | `@` | [DSL for Overlay Attributes](notebooks/DSLOverlayAttribute.ipynb)
+| Purpose | Operator | Notebook | Google Colab Notebook |
+|---------|----------|----------|-----------------------|
+| Image Scaling | `*` | [DSL for Image Scaling](notebooks/DSLImageScale.ipynb) | <a href="https://colab.research.google.com/github/liga-ai/ligavision/blob/main/notebooks/DSLImageScale.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| Image Overlays | `\|` | [DSL for Image Overlays](notebooks/DSLImageOverlay.ipynb) | <a href="https://colab.research.google.com/github/liga-ai/ligavision/blob/main/notebooks/DSLImageOverlay.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| Overlay Attributes | `@` | [DSL for Overlay Attributes](notebooks/DSLOverlayAttribute.ipynb) | <a href="https://colab.research.google.com/github/liga-ai/ligavision/blob/main/notebooks/DSLOverlayAttribute.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 
 ## Apache Spark UDTs and UDFs
 ### UDTs
@@ -55,9 +55,9 @@ class ObjectDetectionModelType(TorchModelType):
 ```
 
 ### UDFs
-| UDF | Syntax | Notebooks |
-|-----|--------|-----------|
-| `crop` | `select crop(image, array(box2d))` | [crop.ipynb](notebooks/UDF_crop.ipynb) |
+| UDF | Syntax | Notebooks | Google Colab |
+|-----|--------|-----------|--------------|
+| `crop` | `select crop(image, array(box2d))` | [crop](notebooks/UDF_crop.ipynb) | <a href="https://colab.research.google.com/github/liga-ai/ligavision/blob/main/notebooks/UDF_crop.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 
 > TODO: more live notebooks for UDFs.
 
