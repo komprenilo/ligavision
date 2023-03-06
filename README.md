@@ -1,3 +1,5 @@
+Merging into https://github.com/komprenilo/liga
+---------------
 # Liga Vision: Let Data Dance with Computer Vision Models
 + `ligavision-dsl`: A clean DSL library to manipulate Image/Video
 + `ligavision`: Apache Spark UDTs and UDFs for Computer Vision on Liga
